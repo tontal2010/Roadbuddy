@@ -17,7 +17,7 @@
 
 <body>
 <h1>Test Register Form</h1>
-<form action="success.jsp" method="post">
+<form action="../META-INF/status/success.jsp" method="post">
     <table style="with: 50%">
         <tr>
             <td>First Name</td>
