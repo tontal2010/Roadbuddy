@@ -11,6 +11,6 @@
     <title>RoadBuddy</title>
   </head>
   <body>
-  เว็บกำลังทำอยู่นะจ๊ะสทาา
+  เว็บกำลังทำอยู่นะจ๊ะ . .
   </body>
 </html>
