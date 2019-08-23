@@ -7,9 +7,18 @@
     <meta charset="UTF-8">
     <title>Insert title here</title>
 </head>
+<%
+    String username = (String) session.getAttribute("username");
+    if (null == username) {
+        session.setAttribute("errorMessage", "คุณต้องทำการเข้าสู่ระบบก่อน ! ");
+        response.sendRedirect("login.jsp");
+    }
+%>
 <body>
 <div align="center">
     <h1>ตรวจสอบรหัสด้วยจ้า</h1>
+
 </div>
+<a href="login.jsp">Login</a>
 </body>
 </html>

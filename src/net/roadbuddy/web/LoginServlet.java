@@ -19,7 +19,7 @@ import net.roadbuddy.database.LoginDao;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 1L;
     private LoginDao loginDao;
 
     public void init() {
@@ -37,8 +37,9 @@ public class LoginServlet extends HttpServlet {
 
         try {
             if (loginDao.validate(loginBean)) {
-                //HttpSession session = request.getSession();
-                // session.setAttribute("username",username);
+                HttpSession session = request.getSession();
+                 session.setAttribute("username",username);
+                session.setAttribute("password",password);
                 response.sendRedirect("loginsuccess.jsp");
             } else {
                 HttpSession session = request.getSession();

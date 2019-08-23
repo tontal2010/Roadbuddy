@@ -34,7 +34,10 @@
     }
 
     if (status > 0) {
+
         System.out.print("You are successfully registered");
+        String username="user1";
+        session.setAttribute("username",username);
         response.sendRedirect("registersuccess.jsp");
     }
 %>

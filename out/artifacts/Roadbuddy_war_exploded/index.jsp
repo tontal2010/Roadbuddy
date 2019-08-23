@@ -12,5 +12,7 @@
   </head>
   <body>
   เว็บกำลังทำอยู่นะจ๊ะ . .
+  <a href="login.jsp">Login</a>
+  <a href="register.jsp">Register</a>
   </body>
 </html>
