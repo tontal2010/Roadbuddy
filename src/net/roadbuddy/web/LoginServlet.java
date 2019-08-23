@@ -1,4 +1,4 @@
-package net.register.web;
+package net.roadbuddy.web;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import net.register.bean.LoginBean;
-import net.register.database.LoginDao;
+import net.roadbuddy.bean.LoginBean;
+import net.roadbuddy.database.LoginDao;
 
 /**
  * @email Ramesh Fadatare
