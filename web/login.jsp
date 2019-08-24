@@ -39,20 +39,23 @@
             <div style="position:absolute; top:280px; left:960px; width:300px; height:100px">
                 <center>
                     <div align="center">
-                        <h1>Login Test</h1>
+
                         <form action="profile/controller/Sign_in_controller.jsp" method="post">
                             <table style="with: 100%">
                                 <tr>
                                     <td>UserName</td>
+                                </tr>
+                                <tr>
                                     <td><input type="text" name="username" /></td>
                                 </tr>
                                 <tr>
                                     <td>Password</td>
+                                </tr>
+                                <tr>
                                     <td><input type="password" name="password" /></td>
                                 </tr>
-
                             </table>
-                            <input type="submit" value="Submit" />
+
                             <div style="position:absolute; top:250px; left:45px; width:400px; height:150px">
                                 <center> <input type="image" src="./img/bt_login.png" width="160" height="50" alt="Submit"/></center>
                             </div>
