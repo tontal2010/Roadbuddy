@@ -42,7 +42,7 @@
                 <center>
                     <div align="center">
                         <h1>Login Test</h1>
-                        <form action="<%=request.getContextPath()%>/login" method="post">
+                        <form action="profile/controller/Sign_in_controller.jsp" method="post">
                             <table style="with: 100%">
                                 <tr>
                                     <td>UserName</td>
