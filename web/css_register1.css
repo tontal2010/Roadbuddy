@@ -1,0 +1,11 @@
+body{background-color: lightgreen}
+@font-face {
+    font-family: 'srinakharin';
+    src: url('./srinakharinwirot webfont/srinakharinwirot-regular.eot');
+    src: url('./srinakharinwirot webfont/srinakharinwirot-regular.eot?#iefix') format('embedded-opentype'),
+    url('./srinakharinwirot webfont/srinakharinwirot-regular.woff2') format('woff2'),
+    url('./srinakharinwirot webfont/srinakharinwirot-regular.woff') format('woff'),
+    url('./srinakharinwirot webfont/srinakharinwirot-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

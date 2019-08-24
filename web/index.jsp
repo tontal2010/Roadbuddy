@@ -9,8 +9,20 @@
 <html>
   <head>
     <title>RoadBuddy</title>
+
+    <style type="text/css">
+      body{background-color: white;
+        font-family: srinakharinwirot , sans-serif;
+      }
+    </style>
   </head>
   <body>
-  เว็บกำลังทำอยู่นะจ๊ะ . .
+  <br>
+  <br>
+  <br>
+  <center><img src="./img/logo1.png" width="450" height="435"/></center>
+  <center><h1> Welocome to Roadbuddy </h1></center>
+  <br>
+  <center><img src="./img/into.png" width="250" height="70"/></center>
   </body>
 </html>
