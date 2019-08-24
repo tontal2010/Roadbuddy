@@ -26,7 +26,7 @@
     session.setAttribute("login_message", "Login Failed, User name and Password is Wrong");
 %>
 <script type="text/javascript">
-    window.location.href="http://localhost:8080/Roadbuddy_war_exploded/login2.jsp";
+    window.location.href="../../login.jsp";
 </script>
 <%
     }

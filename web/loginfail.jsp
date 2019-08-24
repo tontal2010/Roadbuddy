@@ -19,6 +19,6 @@
     <h1>ตรวจสอบรหัสด้วยจ้า</h1>
 
 </div>
-<a href="login2.jsp">Login</a>
+<a href="login.jsp">Login</a>
 </body>
 </html>

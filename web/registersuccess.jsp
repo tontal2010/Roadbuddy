@@ -18,6 +18,6 @@
 <div align="center">
     <h1>You have register successfully</h1>
 </div>
-<a href="login2.jsp">Login</a>
+<a href="login.jsp">Login</a>
 </body>
 </html>
