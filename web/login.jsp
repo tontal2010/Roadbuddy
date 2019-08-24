@@ -43,7 +43,7 @@
                         <form action="profile/controller/Sign_in_controller.jsp" method="post">
                             <table style="with: 100%">
                                 <tr>
-                                    <td>UserName</td>
+                                    <td>UserNamee</td>
                                     <td><input type="text" name="username" /></td>
                                 </tr>
                                 <tr>
