@@ -22,7 +22,7 @@
   <br>
   <br>
   <center><img src="./img/logo1.png" width="25%" height="50%"/></center>
-  <center><h1> Welocome to Roadbuddy </h1></center>
+  <center><h1> Welcome to Roadbuddy </h1></center>
   <br>
   <center><a href="login.jsp"><img src="./img/into.png" width="15%" height="10%" alt="btn_login"/></a></center>
   </body>
