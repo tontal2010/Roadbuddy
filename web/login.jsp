@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <title>Insert title here</title>
     <style type="text/css">
-        body{background-color: white ;
+        body{background-image: url("./img/bg_login.png") ;
             font-family: srinakharinwirot , sans-serif;
         }
     </style>
@@ -21,9 +21,22 @@
 
 <center><table>
     <tr id="header">
-        <td><img src="./img/logo1.png" width="450" height="435"/> </td>
-        <td><img src="./img/layer2signin.png" width="1000" height="1050" />
-            <div style="position:absolute; top:280px; left:450px; width:300px; height:100px">
+        <td><div style="position:absolute; top:130px; left:200px; width:400px; height:150px">
+            <center><img src="./img/logo1.png" width="500" height="480" style="float: right"/></center>
+        </div>
+        </td>
+        <td></td>
+        <td>
+            <div style="position:absolute; top:520px; left:1000px; width:400px; height:150px">
+                <center> <img src="./img/bt_login.png" width="160" height="50"/></center>
+            </div>
+            <div style="position:absolute; top:95px; left:920px; width:400px; height:150px">
+                <center> <img src="./img/signin.png" width="260" height="135"/></center>
+            </div>
+            <div style="position:absolute; top:220px; left:940px; width:400px; height:150px">
+                <center> <img src="./img/layer1signin.png" width="550" height="300"/></center>
+            </div>
+            <div style="position:absolute; top:280px; left:960px; width:300px; height:100px">
                 <center>
                     <div align="center">
                     <h1>Login Test</h1>
@@ -44,6 +57,7 @@
             </div>
                 </center>
             </div>
+
         </td>
     </tr>
 </table></center>
