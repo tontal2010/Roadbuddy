@@ -19,6 +19,6 @@
 <div align="center">
     <h1>ยินดีด้วยล็อคอินสำเร็จ</h1>
 </div>
-<a href="login.jsp">Login</a>
+<a href="login2.jsp">Login</a>
 </body>
 </html>

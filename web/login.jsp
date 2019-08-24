@@ -1,55 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="UTF-8"%>
-<%
-    String errorMessage = (String) session.getAttribute("errorMessage");
-    if (null !=errorMessage) { %>
-<h4> <%=errorMessage %></h4>
-<%}
-%>
-<!DOCTYPE html>
+         pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Insert title here</title>
-    <style type="text/css">
-        body{background-color: white ;
-            font-family: srinakharinwirot , sans-serif;
-        }
-    </style>
 </head>
 <body>
-
-<center><table>
-    <tr id="header">
-        <td><img src="./img/logo1.png" width="450" height="435"/> </td>
-        <td><img src="./img/layer2signin.png" width="1000" height="1050" />
-            <div style="position:absolute; top:280px; left:450px; width:300px; height:100px">
-                <center>
-                    <div align="center">
-                    <h1>Login Test</h1>
-                    <form action="<%=request.getContextPath()%>/login" method="post">
-                        <table style="with: 100%">
-                            <tr>
-                                <td>UserName</td>
-                                <td><input type="text" name="username" /></td>
-                            </tr>
-                            <tr>
-                                <td>Password</td>
-                                <td><input type="password" name="password" /></td>
-                            </tr>
-
-                        </table>
-                        <input type="submit" value="Submit" />
-                    </form>
-            </div>
-                </center>
-            </div>
-        </td>
-    </tr>
-</table></center>
-
-
-
-
+<center>
+    <h3>Login Here</h3>
+    <form action="profile/controller/Sign_in_controller.jsp" method="post">
+        Enter User Name
+        <input type="text" name="user_name"> <br>
+        Enter Password
+        <input type="password" name="password"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <%
+        String message=(String)session.getAttribute("login_message");
+        if(message!=null){
+        %>
+    <h4> <%=message %></h4>
+            <%session.removeAttribute("login_message");%>
+        <%} %>
+</center>
 </body>
 </html>

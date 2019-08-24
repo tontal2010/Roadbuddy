@@ -23,6 +23,6 @@
   <center><img src="./img/logo1.png" width="450" height="435"/></center>
   <center><h1> Welocome to Roadbuddy </h1></center>
   <br>
-  <center><img src="./img/into.png" width="250" height="70"/></center>
+  <center><a href="login2.jsp"><img src="./img/into.png" width="250" height="70" alt="btn_login"/></a></center>
   </body>
 </html>
