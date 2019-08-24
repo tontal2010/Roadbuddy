@@ -24,19 +24,19 @@
 <center><table>
     <tr id="header">
         <td><div style="position:absolute; top:130px; left:200px; width:400px; height:150px">
-            <center><img src="./img/logo1.png" width="120%" height="120%" style="float: right"/></center>
+            <center><img src="./img/logo1.png" width="500" height="480" style="float: right"/></center>
         </div>
         </td>
         <td></td>
         <td>
             <div style="position:absolute; top:520px; left:1000px; width:400px; height:150px">
-                <center> <img src="./img/bt_login.png" width="50%" height="50%"/></center>
+                <center> <img src="./img/bt_login.png" width="160" height="50"/></center>
             </div>
             <div style="position:absolute; top:95px; left:920px; width:400px; height:150px">
-                <center> <img src="./img/signin.png" width="60%" height="60%"/></center>
+                <center> <img src="./img/signin.png" width="260" height="135"/></center>
             </div>
             <div style="position:absolute; top:220px; left:940px; width:400px; height:150px">
-                <center> <img src="./img/layer1signin.png" width="110%" height="110%"/></center>
+                <center> <img src="./img/layer1signin.png" width="550" height="300"/></center>
             </div>
             <div style="position:absolute; top:280px; left:960px; width:300px; height:100px">
                 <center>
