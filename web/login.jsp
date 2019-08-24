@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+         pageEncoding="UTF-8"%>
 <%
     String errorMessage = (String) session.getAttribute("errorMessage");
     if (null !=errorMessage) { %>
@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <title>Insert title here</title>
     <style type="text/css">
         body{background-color: white ;
