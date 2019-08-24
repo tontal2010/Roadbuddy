@@ -23,10 +23,10 @@
 
 <center><table>
     <tr id="header">
-        <td><div style="position:absolute; top:130px; left:200px; width:400px; height:150px">kkk
-            <center><img src="./img/logo.png" width="500" height="480" style="float: right"/></center>
+        <td><div style="position:absolute; top:130px; left:200px; width:400px; height:150px">
+            <center><img src="./img/logo1.png" width="500" height="480" style="float: right"/></center>
         </div>
-        </td>kjjhbjhbhi
+        </td>
         <td></td>
         <td>
 
@@ -43,7 +43,7 @@
                         <form action="profile/controller/Sign_in_controller.jsp" method="post">
                             <table style="with: 100%">
                                 <tr>
-                                    <td>UserNamee</td>
+                                    <td>UserName</td>
                                     <td><input type="text" name="username" /></td>
                                 </tr>
                                 <tr>
