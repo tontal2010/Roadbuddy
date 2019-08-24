@@ -29,9 +29,7 @@
         </td>
         <td></td>
         <td>
-            <div style="position:absolute; top:520px; left:1000px; width:400px; height:150px">
-                <center> <img src="./img/bt_login.png" width="160" height="50"/></center>
-            </div>
+
             <div style="position:absolute; top:95px; left:920px; width:400px; height:150px">
                 <center> <img src="./img/signin.png" width="260" height="135"/></center>
             </div>
@@ -55,6 +53,9 @@
 
                             </table>
                             <input type="submit" value="Submit" />
+                            <div style="position:absolute; top:250px; left:45px; width:400px; height:150px">
+                                <center> <input type="image" src="./img/bt_login.png" width="160" height="50" alt="Submit"/></center>
+                            </div>
                         </form>
                     </div>
                 </center>
