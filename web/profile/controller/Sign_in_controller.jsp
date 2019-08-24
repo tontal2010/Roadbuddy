@@ -19,7 +19,7 @@
         session.setAttribute("user_session", obj_Login_Bean);
 %>
 <script type="text/javascript">
-    window.location.href="http://localhost:8080/Login_Project/user-home-page/<%=obj_Login_Bean.getUser_name()%>";
+    window.location.href="http://localhost:8080/Roadbuddy_war_exploded/user-home-page/<%=obj_Login_Bean.getUser_name()%>";
 </script>
 <%
 }else{

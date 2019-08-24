@@ -14,7 +14,7 @@
         session.setAttribute("login_message", "Please login first");
 %>
 <script type="text/javascript">
-    window.location.href="http://localhost:8080/Login_Project/index.jsp";
+    window.location.href="http://localhost:8080/Roadbuddy_war_exploded/index.jsp";
 </script>
 <%
 }else{
@@ -23,10 +23,10 @@
     <h1>Profile Page</h1>
     <table border="1">
         <tr>
-            <td><a href="http://localhost:8080/Login_Project/user-home-page">Home</a> </td>
-            <td><a href="http://localhost:8080/Login_Project/user-profile">Profile</a> </td>
+            <td><a href="http://localhost:8080/Roadbuddy_war_exploded/user-home-page">Home</a> </td>
+            <td><a href="http://localhost:8080/Roadbuddy_war_exploded/user-profile">Profile</a> </td>
             <td> Welcome <%=obj_Login_Bean.getUser_name() %></td>
-            <td> <a href="http://localhost:8080/Login_Project/Signoutcontroller">Log Out</a></td>
+            <td> <a href="http://localhost:8080/Roadbuddy_war_exploded/Signoutcontroller">Log Out</a></td>
         </tr>
     </table>
 </center>
