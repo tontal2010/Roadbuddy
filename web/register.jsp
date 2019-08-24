@@ -5,7 +5,7 @@
   Time: 22:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
 
 <%
@@ -38,28 +38,47 @@
             <form action="success.jsp" method="post">
                 <table style="with: 50%">
                     <tr>
-                        <td>First Name</td>
+                        <td><h3>ชื่อ</h3></td>
+                    </tr>
+                  <!--      <td>ชื่อ</td>-->
+                     <!--   <td><input type="text" name="firstName" /></td> -->
+                    <tr>
                         <td><input type="text" name="firstName" /></td>
                     </tr>
+
                     <tr>
-                        <td>Last Name</td>
+                        <td><h3>นามสกุล</h3></td>
+                    </tr>
+                    <tr>
                         <td><input type="text" name="lastName" /></td>
                     </tr>
                     <tr>
-                        <td>UserName</td>
-                        <td><input type="text" name="username" /></td>
+                        <td>อีเมล์</td>
+                        <td><input type="text" name="email" /></td>
                     </tr>
                     <tr>
-                        <td>Password</td>
+                        <td>รหัสผ่าน</td>
                         <td><input type="password" name="password" /></td>
                     </tr>
                     <tr>
-                        <td>Address</td>
-                        <td><input type="text" name="address" /></td>
+                        <td>ยืนยันรหัสผ่าน</td>
+                        <td><input type="password" name="confirmpassword" /></td>
                     </tr>
                     <tr>
-                        <td>Contact No</td>
+                        <td>เพศ</td>
+                        <td><input type="text" name="sex" /></td>
+                    </tr>
+                    <tr>
+                        <td>วันเดือนปีเกิด</td>
+                        <td><input type="text" name="borndate" /></td>
+                    </tr>
+                    <tr>
+                        <td>เบอร์ติดต่อ</td>
                         <td><input type="text" name="contact" /></td>
+                    </tr>
+                    <tr>
+                        <td>เบอร์ติดต่อ (กรณีฉุกเฉิน)</td>
+                        <td><input type="text" name="emercontact" /></td>
                     </tr>
                 </table>
                 <input type="submit" value="Submit" /></form>

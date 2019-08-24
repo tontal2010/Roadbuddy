@@ -15,7 +15,7 @@ public class member implements Serializable {
     private String lastName;
     private String username;
     private String password;
-    private String address;
+    private String email;
     private String contact;
     public String getFirstName() {
         return firstName;
@@ -41,11 +41,11 @@ public class member implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getAddress() {
-        return address;
+    public String getEmail() {
+        return email;
     }
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress(String email) {
+        this.email = email;
     }
     public String getContact() {
         return contact;

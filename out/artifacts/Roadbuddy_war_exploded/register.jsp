@@ -5,7 +5,7 @@
   Time: 22:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
 
 <%
@@ -38,11 +38,18 @@
             <form action="success.jsp" method="post">
                 <table style="with: 50%">
                     <tr>
-                        <td>First Name</td>
+                        <td><h3>ชื่อ</h3></td>
+                    </tr>
+                  <!--      <td>ชื่อ</td>-->
+                     <!--   <td><input type="text" name="firstName" /></td> -->
+                    <tr>
                         <td><input type="text" name="firstName" /></td>
                     </tr>
+
                     <tr>
-                        <td>Last Name</td>
+                        <td>นามสกุล</td>
+                    </tr>
+                    <tr>
                         <td><input type="text" name="lastName" /></td>
                     </tr>
                     <tr>
