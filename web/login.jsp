@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
+<%
+    String errorMessage = (String) session.getAttribute("errorMessage");
+    if (null !=errorMessage) { %>
+<h4> <%=errorMessage %></h4>
+<%}
+%>
 <!DOCTYPE html>
 <html>
 <head>

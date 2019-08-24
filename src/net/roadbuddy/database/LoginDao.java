@@ -1,4 +1,4 @@
-package net.register.database;
+package net.roadbuddy.database;
 
 
 import java.sql.Connection;
@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import net.register.bean.LoginBean;
+import net.roadbuddy.bean.LoginBean;
 
 public class LoginDao {
 
@@ -17,7 +17,7 @@ public class LoginDao {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/roadbuddy?useSSL=false", "root", "testadmin");
+                .getConnection("jdbc:mysql://roadbuddy-do-user-6488064-0.db.ondigitalocean.com:25060/roadbuddy?useSSL=false", "doadmin", "ahgwrurult0k4481");
 
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection
