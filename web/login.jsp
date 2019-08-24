@@ -12,7 +12,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>Insert titler here</title>
     <style type="text/css">
         body{background-image: url("./img/bg_login.png") ;
             font-family: srinakharinwirot , sans-serif;
