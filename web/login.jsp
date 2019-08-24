@@ -44,7 +44,7 @@
                             <table style="with: 100%">
                                 <tr>
                                     <td>UserName</td>
-                                    <td><input type="text" name="username" /></td>
+                                    <td><input type="text" name="user_name" /></td>
                                 </tr>
                                 <tr>
                                     <td>Password</td>

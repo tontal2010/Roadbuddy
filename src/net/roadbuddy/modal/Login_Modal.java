@@ -12,7 +12,7 @@ public class Login_Modal {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try {
-            String qurey="select * from admin where user_name=? and password=?";
+            String qurey="select * from member_data where username=? and password=?";
             ps=connection.prepareStatement(qurey);
             ps.setString(1, obj_Login_Bean.getUser_name());
             ps.setString(2, obj_Login_Bean.getPassword());
