@@ -25,7 +25,7 @@
         <tr>
             <td><a href="http://localhost:8080/Roadbuddy_war_exploded/user-home-page">Home</a> </td>
             <td><a href="http://localhost:8080/Roadbuddy_war_exploded/user-profile">Profile</a> </td>
-            <td> Welcome <%=obj_Login_Bean.getUser_name() %></td>
+            <td> Welcome <%=obj_Login_Bean.getEmail() %></td>
             <td> <a href="http://localhost:8080/Roadbuddy_war_exploded/Signoutcontroller">Log Out</a></td>
         </tr>
     </table>

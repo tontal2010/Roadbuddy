@@ -41,14 +41,14 @@
             <div style="position:absolute; top:280px; left:960px; width:300px; height:100px">
                 <center>
                     <div align="center">
-                        <h1>Login Test</h1>
+
                         <form action="profile/controller/Sign_in_controller.jsp" method="post">
                             <table style="with: 100%">
                                 <tr>
                                     <td>UserName</td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="username" /></td>
+                                    <td><input type="text" name="email" /></td>
                                 </tr>
                                 <tr>
                                     <td>Password</td>

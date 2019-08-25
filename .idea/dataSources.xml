@@ -43,11 +43,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="defaultdb@roadbuddy-do-user-6488064-0.db.ondigitalocean.com" uuid="67345057-94ca-4bc5-9883-3c0092a95302">
+    <data-source source="LOCAL" name="roadbuddy@209.97.166.241" uuid="3e0c66dc-d193-43e0-b9ab-53636b8b588d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://roadbuddy-do-user-6488064-0.db.ondigitalocean.com:25060/defaultdb</jdbc-url>
+      <jdbc-url>jdbc:mysql://209.97.166.241:3306/roadbuddy</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />

@@ -1,12 +1,12 @@
 package net.roadbuddy.bean;
 public class Login_Bean {
-    private String username;
+    private String email;
     private String password;
-    public String getUser_name() {
-        return username;
+    public String getEmail() {
+        return email;
     }
-    public void setUser_name(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
     public String getPassword() {
         return password;
