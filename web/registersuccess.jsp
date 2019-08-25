@@ -8,8 +8,8 @@
     <title>Insert title here</title>
 </head>
 <%
-    String username = (String) session.getAttribute("username");
-    if (null == username) {
+    String user1 = (String) session.getAttribute("user1");
+    if (null == user1) {
         session.setAttribute("errorMessage", "คุณต้องสมัครสมาชิกก่อน! ");
         response.sendRedirect("register.jsp");
     }

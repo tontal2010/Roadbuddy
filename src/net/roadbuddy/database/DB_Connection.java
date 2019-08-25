@@ -12,7 +12,7 @@ public class DB_Connection {
         System.out.println("Connection called");
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://209.97.166.241:3306/roadbuddy?useSSL=false", "roadbuddy", "roadbuddyadmin1");
+            connection = DriverManager.getConnection("jdbc:mysql://roadbuddy.social:3306/roadbuddy?useSSL=false", "roadbuddy", "roadbuddyadmin1");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

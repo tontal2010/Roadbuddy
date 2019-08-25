@@ -19,7 +19,7 @@
         session.setAttribute("user_session", obj_Login_Bean);
 %>
 <script type="text/javascript">
-    window.location.href="http://localhost:8080/Roadbuddy_war_exploded/user-home-page/<%=obj_Login_Bean.getEmail()%>";
+    window.location.href="https://roadbuddy.social/user-home-page/<%=obj_Login_Bean.getEmail()%>";
 </script>
 <%
 }else{

@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="Roadbuddy:war">
     <output-path>$PROJECT_DIR$/out/artifacts/Roadbuddy_war</output-path>
-    <root id="archive" name="Roadbuddy_war.war">
+    <root id="archive" name="Roadbuddy.war">
       <element id="artifact" artifact-name="Roadbuddy:war exploded" />
     </root>
   </artifact>

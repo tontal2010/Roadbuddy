@@ -19,7 +19,7 @@ public class memberDao {
         Class.forName("com.mysql.jdbc.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://209.97.166.241:3306/roadbuddy?useSSL=false", "roadbuddy", "roadbuddyadmin1");
+                .getConnection("jdbc:mysql://roadbuddy.social:3306/roadbuddy?useSSL=false", "roadbuddy", "roadbuddyadmin1");
 
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
