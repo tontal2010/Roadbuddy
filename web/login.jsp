@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <title>Insert titler here</title>
     <style type="text/css">
-        body{background-image: url("./img/bg_login.png") ;
+        body{background: white ;
             font-family: srinakharinwirot , sans-serif;
         }
     </style>

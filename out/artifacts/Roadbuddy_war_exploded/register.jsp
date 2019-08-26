@@ -31,7 +31,7 @@
 <center><table>
     <tr id="header"><td><img src="./img/register.png" width=400 height=170/"></td></tr>
     <tr id="nav"><td>
-        <img src="./img/layer1.png "width="1000" height="700/">
+        <img src="./img/layer1.png "width="1000" height="650/">
         <div style="position:absolute; top:280px; left:450px; width:300px; height:100px">
             <center>
             <h1>Test Register Form</h1>
