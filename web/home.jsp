@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>home</title>
+    <title>home1</title>
     <style>
         body{background: #e6e6e6;
         font-family: srinakharinwirot , sans-serif;
@@ -18,9 +18,12 @@
 </head>
 <body>
 <img src="./img/header.png" width="100%" style="float: top"/>
-<img src="./img/laayerhome1.png" width="100%" style="float: top">
+<img src="./img/layerpost.png " width="100%" style="float: top">
+<img src="./img/laayerhome2.png" width="100%" style="float: bottom">
 <center><img src="./img/fids.png" width="13%" style="vertical-align: bottom" ></center>
-
+<img src="./img/layerevent.png" width="100%" style="float: bottom"/>
+<img src="./img/layeradvie.png" width="100%" style="float: bottom"/>
+<img src="./img/layerpostdriver.png" width="100%" style="float: bottom"/>
 
 </body>
 </html>
