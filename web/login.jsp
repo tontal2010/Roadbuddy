@@ -55,7 +55,7 @@
 </center>
 <div style="float: contour">
     <center> <font size="2em">If you not member , please register here</font> </center>
-    <center><<a href="register.jsp"> Register ? </a></center>
+    <center><a href="register.jsp"> Register ? </a></center>
 </div>
 
 
