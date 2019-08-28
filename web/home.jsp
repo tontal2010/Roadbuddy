@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>home1</title>
+    <title>home</title>
     <style>
         body{background: #e6e6e6;
         font-family: srinakharinwirot , sans-serif;
