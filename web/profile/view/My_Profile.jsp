@@ -11,10 +11,10 @@
 <%
     Login_Bean obj_Login_Bean=(Login_Bean)session.getAttribute("user_session");
     if(obj_Login_Bean==null){
-        session.setAttribute("login_message", "Please login first [CODE2]");
+        session.setAttribute("login_message", "Please login first ");
 %>
 <script type="text/javascript">
-    window.location.href="https://roadbuddy.social/index.jsp";
+    window.location.href="https://roadbuddy.social/w/login2.jsp";
 </script>
 <%
 }else{
@@ -23,10 +23,10 @@
     <h1>Profile Page</h1>
     <table border="1">
         <tr>
-            <td><a href="https://roadbuddy.social/user-home-page">Home</a> </td>
-            <td><a href="https://roadbuddy.social/user-profile">Profile</a> </td>
+            <td><a href="https://roadbuddy.social/w/user">Home</a> </td>
+            <td><a href="https://roadbuddy.social/w/user-profile">Profile</a> </td>
             <td> Welcome <%=obj_Login_Bean.getEmail() %></td>
-            <td> <a href="https://roadbuddy.social/Signoutcontroller">Log Out</a></td>
+            <td> <a href="https://roadbuddy.social/w/Signoutcontroller">Log Out</a></td>
         </tr>
     </table>
 </center>

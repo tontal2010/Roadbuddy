@@ -26,7 +26,7 @@
   <center><img src="./img/logo1.png" width="70%" style=" margin: auto auto auto auto;"/></center>
   <center><font size="5em"> Welcome to Roadbuddy Web Application</font></center>
   <br>
-  <center><a href="login.jsp"><img src="./img/into.png" width="25%" alt="btn_login"/></a></center>
+  <center><a href="login2.jsp"><img src="./img/into.png" width="25%" alt="btn_login"/></a></center>
   </div>
   </body>
 </html>

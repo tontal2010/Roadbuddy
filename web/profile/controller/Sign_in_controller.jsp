@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,14 +19,14 @@
         session.setAttribute("user_session", obj_Login_Bean);
 %>
 <script type="text/javascript">
-    window.location.href="https://roadbuddy.social/user-home-page/<%=obj_Login_Bean.getEmail()%>";
+    window.location.href="https://roadbuddy.social/w/user/<%=obj_Login_Bean.getEmail()%>";
 </script>
 <%
 }else{
-    session.setAttribute("login_message", "Login Failed, User name and Password is Wrong");
+    session.setAttribute("login_message", "ไม่สามารถล็อคอินได้ ! กรุณาตรวจสอบอีเมล์หรือรหัสผ่าน");
 %>
 <script type="text/javascript">
-    window.location.href="../../login.jsp";
+    window.location.href="../../login2.jsp";
 </script>
 <%
     }

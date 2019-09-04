@@ -11,8 +11,8 @@ public class memberDao {
 
     public int registerEmployee(member member_data) throws ClassNotFoundException {
         String INSERT_USERS_SQL = "INSERT INTO member_data" +
-                "  (first_name, last_name, username, password, contact,sex,borndate,emercontact) VALUES " +
-                " (?,?,?,?,?,?,?,?);";
+                "  (first_name, last_name, email, password, contact,sex,emercontact) VALUES " +
+                " (?,?,?,?,?,?,?);";
 
         int result = 0;
 
@@ -30,8 +30,8 @@ public class memberDao {
             preparedStatement.setString(4, member_data.getPassword());
             preparedStatement.setString(5, member_data.getContact());
             preparedStatement.setString(6, member_data.getSex());
-            preparedStatement.setString(7, member_data.getBorndate());
-            preparedStatement.setString(8, member_data.getEmercontact());
+
+            preparedStatement.setString(7, member_data.getEmercontact());
 
             System.out.println(preparedStatement);
             // Step 3: Execute the query or update query
