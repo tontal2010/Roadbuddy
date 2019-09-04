@@ -22,43 +22,46 @@
 <body>
 
 <center>
-            <div style="float: contour">
-                <center> <img src="./img/signin.png" width="50%"/></center>
-            </div>
-            <div style="float: contour">
-                <center>
-                    <div align="center">
+<table>
+    <tr>
+        <img src="./img/signin.png" width="50%"/>
+    </tr>
+    <tr>
+        <div align="center" style="position: absolute; top: 20%">
+        <div  style="float: contour">
+            <center>
+                <div align="center" style="position: absolute; top: 40%">
 
-                        <form action="profile/controller/Sign_in_controller.jsp" method="post">
-                            <table style="with: 100%">
-                                <tr>
-                                    <td>UserName</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" name="email" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="password" name="password" /></td>
-                                </tr>
-                            </table>
-                            <br>
-                            <div style="float: contour">
-                                <center> <input type="image" src="./img/bt_login.png" width="25%" alt="Submit"/></center>
-                            </div>
-                        </form>
-                    </div>
-                </center>
-            </div>
+                    <form action="profile/controller/Sign_in_controller.jsp" method="post">
+                        <table style="with: 100%">
+                            <tr>
+                                <td><font size="6em"> Username</font></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="email" /></td>
+                            </tr>
+                            <tr>
+                                <td><font size="6em">Password</font></td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" name="password" /></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <div style="float: contour">
+                            <center> <input type="image" src="./img/bt_login.png" width="25%" alt="Submit"/></center>
+                        </div>
+                    </form>
+                </div>
+            </center>
+        </div>
+        </div>
+    </tr>
+    <tr>
+         <center><font size="3em">If you not member , please register here</font></center>
+        <center><a href="register.jsp"> Register ? </a></center>
+    </tr>
+</table>
 </center>
-<div style="float: contour">
-    <center> <font size="2em">If you not member , please register here</font> </center>
-    <center><a href="register.jsp"> Register ? </a></center>
-</div>
-
-
-
 </body>
 </html>

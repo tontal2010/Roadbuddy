@@ -13,7 +13,7 @@ body
     left: 50%;
     transform: translate(-50%,-50%);
     width: 350px;
-    height: 840px;
+    height: 440px;
     padding: 80px 40px ;
     box-sizing: border-box;
     background: rgba(0,0,0,.5);
@@ -48,8 +48,7 @@ h2
     margin-bottom: 20px;
 }
 .loginBox input[type= "text"],
-.loginBox input[type= "password"],
-.loginBox input[type="number"]
+.loginBox input[type= "password"]
 {
     border: none;
     border-bottom: 1px solid #fff ;
