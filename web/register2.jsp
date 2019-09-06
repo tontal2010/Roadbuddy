@@ -42,6 +42,7 @@
         <input type="password" name="" placeholder="●●●●●●●●">
 
         <input type="submit" name="" value="Next">
+        <input type="submit" name="" value="Back to login">
     </form>
 </div>
 
