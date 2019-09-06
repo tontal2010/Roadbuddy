@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>profile</title>
+    <title>profile1</title>
     <link rel="stylesheet" href="css_profile.css">
     <style>
         body{font-family: srinakharinwirot , sans-serif}
