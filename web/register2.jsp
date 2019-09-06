@@ -13,6 +13,8 @@
         background-color: red;
     }
 </style>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String errorMessage = (String) session.getAttribute("errorMessage");
@@ -35,7 +37,7 @@
 <body>
 <div class="loginBox">
     <h2>Register</h2>
-    <form autocomplete="off"  name="myForm" action="success.jsp" method="post" onsubmit="return validateForm()">
+    <form name="myForm" action="success.jsp" method="post" onsubmit="return validateForm()">
         <p>Name</p>
         <input type="text" name="firstName" placeholder="Name" required>
         <p>Lastname</p>
@@ -65,10 +67,17 @@
     function validateForm() {
         var x = document.forms["myForm"]["password2"].value;
         var y = document.forms["myForm"]["password"].value;
+        var firstnamevar = document.forms["myForm"]["firstName"].value;
          if (x !== y) {
             alert("กรุณากรอกรหัสผ่านทั้งสองให้ตรงกัน !");
             return false;
         }
+         else{
+             sendLineNotify();
+         }
+    }
+    function sendLineNotify(){
+
     }
 </script>
 </body>

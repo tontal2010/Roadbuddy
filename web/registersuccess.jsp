@@ -23,5 +23,6 @@
 <%
 session.removeAttribute("user1");
 %>
+
 </body>
 </html>

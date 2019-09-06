@@ -1,13 +1,17 @@
 package net.roadbuddy.database;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+
 import net.roadbuddy.bean.member;
 
 public class memberDao {
+
+
 
     public int registerEmployee(member member_data) throws ClassNotFoundException {
         String INSERT_USERS_SQL = "INSERT INTO member_data" +

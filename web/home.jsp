@@ -14,9 +14,21 @@
         font-family: srinakharinwirot , sans-serif;
         font-size: 1em;
         }
+        input{
+            border: none;
+            border-bottom: 5px solid chartreuse ;
+            background: transparent;
+            outline: none ;
+            height: 40px;
+            color: black;
+            font-size: 16px;
+
+        }
     </style>
 </head>
 <body>
+<input type="text" name="loca1" placeholder="From">
+<input type="text" name="loca2" placeholder="To">
 <img src="./img/header.png" width="100%" style="float: top"/>
 <img src="./img/layerpost.png " width="100%" style="float: top">
 <img src="./img/laayerhome2.png" width="100%" style="float: bottom">
