@@ -5,6 +5,26 @@
          version="4.0">
 
     <!--<display-name></display-name>-->
+    <mime-mapping>
+        <extension>eot</extension>
+        <mime-type>application/vnd.ms-fontobject</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>otf</extension>
+        <mime-type>application/x-font-opentype</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ttf</extension>
+        <mime-type>application/x-font-ttf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>woff</extension>
+        <mime-type>application/x-font-woff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
@@ -20,7 +40,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
-        <url-pattern>/user-home-page/*</url-pattern>
+        <url-pattern>/user/*</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>My_Profile</servlet-name>

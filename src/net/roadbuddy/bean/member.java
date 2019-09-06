@@ -17,7 +17,7 @@ public class member implements Serializable {
     private String email;
     private String contact;
     private String sex;
-    private String borndate;
+
     private String emercontact;
     public String getFirstName() {
         return firstName;
@@ -55,10 +55,7 @@ public class member implements Serializable {
     public void setSex(String sex) {
         this.sex = sex;
     }
-    public String getBorndate() {
-        return borndate;
-    }
-    public void setBorndate(String borndate) { this.borndate = borndate; }
+
     public String getEmercontact() {
         return emercontact;
     }
