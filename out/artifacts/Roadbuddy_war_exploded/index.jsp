@@ -19,6 +19,14 @@
     </style>
   </head>
   <body>
+  <div class="logo">
+    <div class="roadbuddy">
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
+
+
   <br>
   <br>
   <br>
@@ -27,6 +35,7 @@
   <center><font size="5em"> Welcome to Roadbuddy Web Application</font></center>
   <br>
   <center><a href="login2.jsp"><img src="./img/into.png" width="25%" alt="btn_login"/></a></center>
+  </div>
   </div>
   </body>
 </html>
