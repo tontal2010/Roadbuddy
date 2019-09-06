@@ -35,7 +35,7 @@
 <body>
 <div class="loginBox">
     <h2>Register</h2>
-    <form name="myForm" action="success.jsp" method="post" onsubmit="return validateForm()">
+    <form autocomplete="false"  name="myForm" action="success.jsp" method="post" onsubmit="return validateForm()">
         <p>Name</p>
         <input type="text" name="firstName" placeholder="Name" required>
         <p>Lastname</p>
