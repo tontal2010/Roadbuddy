@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>profile1</title>
+    <title>home</title>
     <link rel="stylesheet" href="css_rateting.css">
     <style>
         body{font-family: srinakharinwirot , sans-serif}
