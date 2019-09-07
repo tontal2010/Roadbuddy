@@ -26,7 +26,7 @@
 <html>
 <head>
     <title>Register-ลงทะเบียน</title>
-    <link rel="stylesheet" href="css_register1.css">
+    <link rel="stylesheet" href="css_register2.css">
     <style>
         body{font-family: srinakharinwirot , sans-serif;
         }

@@ -35,6 +35,13 @@ h2
     color: #ffffff;
     text-align: center;
 }
+h3
+{
+    margin: 0;
+    padding: 0 0 20px;
+    color: #ffffff;
+    text-align: center;
+}
 .loginBox p
 {
     margin: 0;
@@ -48,7 +55,8 @@ h2
     margin-bottom: 20px;
 }
 .loginBox input[type= "text"],
-.loginBox input[type= "password"]
+.loginBox input[type= "password"],
+.loginBox input[type="number"]
 {
     border: none;
     border-bottom: 1px solid #fff ;
@@ -85,10 +93,9 @@ h2
     font-weight: bold;
     text-decoration: none;
 }
-.register
-{
-    color: #1b66ff;
-    font-size: 14px ;
-    font-weight: bold;
-    text-decoration: none;
+.user2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
 }

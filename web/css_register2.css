@@ -47,8 +47,8 @@ h2
     width: 100%;
     margin-bottom: 20px;
 }
-.loginBox input[type= "text"],
-.loginBox input[type= "password"],
+.loginBox input[type="text"],
+.loginBox input[type="password"],
 .loginBox input[type="number"]
 {
     border: none;

@@ -9,13 +9,14 @@
 <html>
 <head>
     <title>profile1</title>
-    <link rel="stylesheet" href="css_profile.css">
+    <link rel="stylesheet" href="css_rateting.css">
     <style>
         body{font-family: srinakharinwirot , sans-serif}
     </style>
 </head>
 <body>
-<div class="container" style="position: center">
+<div class="box">
+<div class="container">
     <table>
         <tr>
             <div class="row">
@@ -23,7 +24,7 @@
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="our-team">
                         <div class="picture">
-                            <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+                            <img class="img-fluid" src="./img/10.jpg">
                         </div>
                         <div class="team-content">
                             <h3 class="name">Michele Miller</h3>
@@ -40,7 +41,7 @@
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="our-team">
                             <div class="picture">
-                                <img class="img-fluid" src="https://picsum.photos/130/130?image=839">
+                                <img class="img-fluid" src="./img/10.jpg">
                             </div>
                             <div class="team-content">
                                 <h3 class="name">Patricia Knott</h3>
@@ -57,7 +58,7 @@
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="our-team">
                             <div class="picture">
-                                <img class="img-fluid" src="https://picsum.photos/130/130?image=856">
+                                <img class="img-fluid" src="./img/10.jpg">
                             </div>
                             <div class="team-content">
                                 <h3 class="name">Justin Ramos</h3>
@@ -74,7 +75,7 @@
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="our-team">
                             <div class="picture">
-                                <img class="img-fluid" src="https://picsum.photos/130/130?image=836">
+                                <img class="img-fluid" src="./img/10.jpg">
                             </div>
                             <div class="team-content">
                                 <h3 class="name">Mary Huntley</h3>
@@ -93,7 +94,6 @@
 
     </table>
 </div>
-
 </div>
 </body>
 </html>

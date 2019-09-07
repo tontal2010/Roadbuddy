@@ -52,10 +52,10 @@
         <p>Password</p>
         <input type="password" name="password" placeholder="●●●●●●●●">
         <input type="submit" name="Submit" value="Sign In">
-        <a href="#">Forget Password</a>
+        <a href="#"><u>Forget Password</u></a>
         <br>
         <a>If you not member , please register here</a>
-        <a href="register2.jsp">Register ?</a>
+        <a href="register2.jsp"><font color="#3781c5"><u>Register ?</u></font></a>
     </form>
 </div>
 
