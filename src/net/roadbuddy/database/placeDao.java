@@ -1,22 +1,21 @@
 package net.roadbuddy.database;
 
 
+import net.roadbuddy.bean.place;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
-import net.roadbuddy.bean.member;
-
-public class memberDao {
+public class placeDao {
 
 
 
-    public int registerEmployee(member member_data) throws ClassNotFoundException {
-        String INSERT_USERS_SQL = "INSERT INTO member_data" +
-                "  (first_name, last_name, email, password, contact,sex,emercontact) VALUES " +
-                " (?,?,?,?,?,?,?);";
+    public int registerEmployee(place placedriver) throws ClassNotFoundException {
+        String INSERT_USERS_SQL = "INSERT INTO placedriver" +
+                "  ('from', 'to', username, partnernum, date,time) VALUES " +
+                " (?,?,?,?,?,?);";
 
         int result = 0;
 
@@ -28,14 +27,13 @@ public class memberDao {
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             //preparedStatement.setInt(1, 1);
-            preparedStatement.setString(1, member_data.getFirstName());
-            preparedStatement.setString(2, member_data.getLastName());
-            preparedStatement.setString(3, member_data.getEmail());
-            preparedStatement.setString(4, member_data.getPassword());
-            preparedStatement.setString(5, member_data.getContact());
-            preparedStatement.setString(6, member_data.getSex());
+            preparedStatement.setString(1, placedriver.getFrom());
+            preparedStatement.setString(2, placedriver.getTo());
+            preparedStatement.setString(3, placedriver.getUsername());
+            preparedStatement.setString(4, placedriver.getPartnernum());
+            preparedStatement.setString(5, placedriver.getDate());
+            preparedStatement.setString(6, placedriver.getTime());
 
-            preparedStatement.setString(7, member_data.getEmercontact());
 
             System.out.println(preparedStatement);
             // Step 3: Execute the query or update query

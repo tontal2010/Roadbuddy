@@ -16,18 +16,18 @@
 </head>
 <body>
 <%@ page import="net.roadbuddy.bean.LineNotify" %>
-<jsp:useBean id="member_data"
-             class="net.roadbuddy.bean.member" />
+<jsp:useBean id="placedriver"
+             class="net.roadbuddy.bean.place" />
 
-<jsp:setProperty property="*" name="member_data" />
+<jsp:setProperty property="*" name="placedriver" />
 
 <%
 
-    memberDao memberDao = new memberDao();
+    placeDao placeDao = new placeDao();
     int status = 0;
 
     try {
-        status = memberDao.registerEmployee(member_data);
+        status = placeDao.registerEmployee(placedriver);
     } catch (ClassNotFoundException e) {
         e.printStackTrace();
         System.out.print("Error Number status = "+status);
@@ -39,12 +39,12 @@
         String user1="user1";
         session.setAttribute("user1",user1);
         response.sendRedirect("registersuccess.jsp");
-        String firstname1 = request.getParameter("firstName");
+        /*String firstname1 = request.getParameter("firstName");
         String lastname1 = request.getParameter("lastName");
         String email1 = request.getParameter("email");
         LineNotify lineNotify = new LineNotify ();
         lineNotify.callEvent("RI9xqCovsaGvrjdtqgGy2Z3qkOqlr54z0C5MrShWG6D","\nมีการสมัครสมาชิกใหม่ \nชื่อ: "+firstname1+" "+lastname1+"\nEmail: "+email1);
-
+*/
     }
 %>
 </body>

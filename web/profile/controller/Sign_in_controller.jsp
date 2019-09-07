@@ -17,6 +17,7 @@
     boolean flag=obj_Login_Modal.check_user_name(obj_Login_Bean);
     if(flag){
         session.setAttribute("user_session", obj_Login_Bean);
+
 %>
 <script type="text/javascript">
     window.location.href="https://roadbuddy.social/w/user/<%=obj_Login_Bean.getEmail()%>";
