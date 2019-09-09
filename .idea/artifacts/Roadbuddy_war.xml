@@ -3,6 +3,11 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Roadbuddy_war</output-path>
     <root id="archive" name="w.war">
       <element id="artifact" artifact-name="Roadbuddy:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

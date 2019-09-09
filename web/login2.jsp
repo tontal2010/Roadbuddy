@@ -4,34 +4,11 @@
   Date: 04-Sep-19
   Time: 2:12 PM
   To change this template use File | Settings | File Templates.
---%>
+--%><%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
-    h3{
-        text-align: center;
-    }
-    h3 span {
-        background-color: red;
-    }
+
 </style>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    String errorMessage = (String) session.getAttribute("errorMessage");
-    if (null !=errorMessage) { %>
-<h3><span> <%=errorMessage %></span></h3>
-<%
-    session.removeAttribute("errorMessage");
-%>
-<%}
-%>
-<%
-    String login_message = (String) session.getAttribute("login_message");
-    if (null !=login_message) { %>
-<h3><span> <%=login_message %></span></h3>
-<%
-    session.removeAttribute("login_message");
-%>
-<%}
-%>
+
 <html>
 <head>
     <title>login-เข้าสู่ระบบ</title>
@@ -45,12 +22,12 @@
 <div class="loginBox">
     <img src="./img/user1.png" class="user"/>
     <h2>log in here</h2>
-    <form action="profile/controller/Sign_in_controller.jsp" method="post">
-        <p>Email</p>
-
-        <input type="text" name="email" placeholder="Enter Email">
-        <p>Password</p>
-        <input type="password" name="password" placeholder="●●●●●●●●">
+    <form action="${pageContext.request.contextPath}/loginprocess" method="post">
+        <p>Email</p><p><font size="3" color="red">${loginFailMsg}</font></p>
+        <p><font size="3" color="red">${errorInNameMsg}</font></p>
+        <input type="text" name="name" placeholder="Enter Email" value="${user.name}" autofocus>
+        <p>Password</p><p><font size="3" color="red">${errorInPassMsg}</font> </p>
+        <input type="password" name="password" placeholder="●●●●●●●●" value="${user.pass}">
         <input type="submit" name="Submit" value="Sign In">
         <a href="#"><u>Forget Password</u></a>
         <br>

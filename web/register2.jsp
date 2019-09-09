@@ -5,26 +5,7 @@
   Time: 4:32 PM
   To change this template use File | Settings | File Templates.
 --%>
-<style>
-    h3{
-        text-align: center;
-    }
-    h3 span {
-        background-color: red;
-    }
-</style>
-
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    String errorMessage = (String) session.getAttribute("errorMessage");
-    if (null !=errorMessage) { %>
-<h3><span> <%=errorMessage %></span></h3>
-<%
-    session.removeAttribute("errorMessage");
-    %>
-<%}
-%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8"%>
 <html>
 <head>
     <title>Register-ลงทะเบียน</title>
@@ -37,27 +18,27 @@
 <body>
 <div class="loginBox">
     <h2>Register</h2>
-    <form name="myForm" action="success.jsp" method="post" onsubmit="return validateForm()">
-        <p>Name</p>
-        <input type="text" name="firstName" placeholder="Name" required>
-        <p>Lastname</p>
-        <input type="text" name="lastName" placeholder="Lastname"required>
-        <SELECT name="sex" required>
+    <form name="myForm" action="${pageContext.request.contextPath}/createUserProcess" method="post" onsubmit="return validateForm()">
+        <p>Name</p><p><font size="3" color="red">${errorInNameMsg}</font></p>
+        <input type="text" name="name" placeholder="Name" value="${user.name}" >
+        <p>Lastname</p><p><font size="3" color="red">${errorInLNameMsg}</font></p>
+        <input type="text" name="lastname" placeholder="Lastname" value="${user.lname}" >
+        <SELECT name="sex" required><p><font size="3" color="red">${errorInSex}</font></p>
             <OPTION SELECTED value="">Gender</OPTION>
             <OPTION VALUE=male>male</OPTION>
             <OPTION VALUE=female>female</OPTION>
             <OPTION VALUE=other>other</OPTION>
         </SELECT>
         <br><br>
-        <p>Phone number</p>
-        <input type="number" name="contact" placeholder="Phone number" required>
-        <p>Emergency phone numbers</p>
-        <input type="number" name="emercontact" placeholder="Emergency phone numbers" required>
-        <p>Email</p>
-        <input type="email" name="email" placeholder="Enter Email" required>
-        <p>Password</p>
-        <input type="password" name="password" placeholder="●●●●●●●●" required pattern="\S+">
-        <p>Password again</p>
+        <p>Phone number</p><p><font size="3" color="red">${errorInPnum}</font></p>
+        <input type="number" name="contact" placeholder="Phone number" value="${user.pnum}" >
+        <p>Emergency phone numbers</p><p><font size="3" color="red">${errorInEmernum}</font></p>
+        <input type="number" name="emercontact" placeholder="Emergency phone numbers" value="${user.emerpnum}" >
+        <p>Email</p><p><font size="3" color="red">${errorInEmail}</font></p>
+        <input type="email" name="email" placeholder="Enter Email" value="${user.email}">
+        <p>Password</p><p><font size="3" color="red">${errorInPassMsg}</font></p>
+        <input type="password" name="password" placeholder="●●●●●●●●" pattern="\S+" value="${user.pass}">
+        <p>Password again</p><p><font size="3" color="red">${errorInPass2Msg}</font></p>
         <input type="password" name="password2" placeholder="●●●●●●●●">
 
         <input type="submit" value="Submit" >
