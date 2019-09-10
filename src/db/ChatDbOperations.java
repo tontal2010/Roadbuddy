@@ -126,7 +126,7 @@ public class ChatDbOperations {
 
 
 
-			System.out.println("testget" +loggedInUser.getLname());
+
             changeUserStatus(userid, User.ONLINE);
 			
 			loggedInUser.setStatus(User.ONLINE);

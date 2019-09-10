@@ -203,9 +203,12 @@ public class User implements Serializable{
 		this.Number = Number;
 	}
 	@Override
-	public String toString() {
+	/*public String toString() {
 		return " {id:" + id + ", name:\"" + name + "\", pass:\"" + pass
 				+ "\", status:\"" + status + "\"}";
+	}*/
+	public String toString() {
+		return " {"+ id +":"+ name + ":" + email +":"+ lname + ":" + pnum + ":" + emerpnum +":"+ sex +":"+ status+"}";
 	}
 	
 }
