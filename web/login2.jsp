@@ -5,9 +5,19 @@
   Time: 2:12 PM
   To change this template use File | Settings | File Templates.
 --%><%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<style>
-
+<style type="text/css">
+    h3{
+        color: red;
+        font-size: 20px;
+    }
 </style>
+
+<%
+    String errorMessage = (String) session.getAttribute("errorMessage");
+    if (null !=errorMessage) { %>
+<h3> <%=errorMessage %></h3>
+<%}
+%>
 
 <html>
 <head>

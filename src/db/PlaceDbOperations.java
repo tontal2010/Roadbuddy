@@ -1,7 +1,6 @@
 package db;
 
 import exceptions.ChatDbFailure;
-
 import model.User;
 
 import java.sql.*;
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ChatDbOperations {
+public class PlaceDbOperations {
 
 	/**
 	 * Insert into User Table 
@@ -24,20 +23,22 @@ public class ChatDbOperations {
 		// Turn off auto-commit of db changes as they occur
 		dbConn.setAutoCommit(false);
 		
-		String insertStmt = "INSERT INTO `rb_2`.`rb_member`  (`name`, `pass`,`sex`,`pnum`,`emerpnum`,`email`,`lname`,`status`)  " +
-				"VALUES (? ,?,?,?,?,?,?,?);";
+		String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`time`,`numberpass`,`platenum`,`numjoin`,`pnum`)  " +
+				"VALUES (? ,?,?,?,?,?,?,?,?,?);";
 
 				
 		PreparedStatement queryStmt ;
 		queryStmt = dbConn.prepareStatement(insertStmt);
 		queryStmt.setString(1, user.getName()); 
-		queryStmt.setString(2,user.getPass());
-		queryStmt.setString(3,user.getSex());
-		queryStmt.setString(4,user.getPnum());
-		queryStmt.setString(5,user.getEmerpnum());
-		queryStmt.setString(6,user.getEmail());
-		queryStmt.setString(7,user.getLname());
-		queryStmt.setString(8,"offline");
+		queryStmt.setString(2,user.getLname());
+		queryStmt.setString(3,user.getFrom());
+		queryStmt.setString(4,user.getToo());
+		queryStmt.setString(5,user.getDate());
+		queryStmt.setString(6,user.getTime());
+		queryStmt.setString(7,user.getNumber());
+		queryStmt.setString(8,"OOO33กน");
+		queryStmt.setString(9,"O");
+		queryStmt.setString(10,user.getPnum());
 		System.out.println(queryStmt);
 		try {
 			queryStmt.executeUpdate();
@@ -86,15 +87,14 @@ public class ChatDbOperations {
 			String pnum = results.getString("pnum");
 			String emerpnum = results.getString("emerpnum");
 			String email = results.getString("email");
-			String name = results.getString("name");
-			loggedInUser.setLname(lname);System.out.println("Set "+lname);
-			loggedInUser.setSex(sex);System.out.println("Set "+ sex);
-			loggedInUser.setPnum(pnum);System.out.println("Set "+ pnum);
-			loggedInUser.setEmerpnum(emerpnum);System.out.println("Set "+ emerpnum);
-			loggedInUser.setEmail(name);System.out.println("Set "+ name);
-			loggedInUser.setId(userid);System.out.println("Set "+ userid);
-			loggedInUser.setName(userName);System.out.println("Set "+ userName);
-			loggedInUser.setPass(password);System.out.println("Set "+ password);
+			loggedInUser.setLname(lname);
+			loggedInUser.setSex(sex);
+			loggedInUser.setPnum(pnum);
+			loggedInUser.setEmerpnum(emerpnum);
+			loggedInUser.setEmail(email);
+			loggedInUser.setId(userid);
+			loggedInUser.setName(userName);
+			loggedInUser.setPass(password);
 			
 			changeUserStatus(userid, User.ONLINE);
 			

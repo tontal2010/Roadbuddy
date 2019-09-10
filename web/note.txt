@@ -1,0 +1,10 @@
+this.From = From;
+		this.Too = Too;
+		this.Date = Date;
+		this.Time = Time;
+		this.Number = Number;
+
+
+
+
+		String From,String Too,String Date,String Time,String Number

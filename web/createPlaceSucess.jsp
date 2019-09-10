@@ -10,11 +10,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Create User Success</title>
+		<title>Create Place Success</title>
 	</head>
 	
 	<body>
-		    <h1>Create User Success !</h1>
-			<a href="${pageContext.request.contextPath}/login2.jsp">Go to Login page</a>
+		    <h1>Create Place Success !</h1>
+			<a href="${pageContext.request.contextPath}/home.jsp">Go to Login page</a>
 	</body>
 </html>
