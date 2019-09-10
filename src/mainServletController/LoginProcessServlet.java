@@ -74,7 +74,7 @@ public class LoginProcessServlet extends HttpServlet {
 				session = request.getSession();
 				session.setAttribute("loginUser", loginUser);
 				session.setAttribute("login", "yes");
-				
+				System.out.println("usr"+ loginUser);
 				dispatch = context.getRequestDispatcher("/home.jsp");
 			}
 		}

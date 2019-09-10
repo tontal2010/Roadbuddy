@@ -1,6 +1,6 @@
 package services;
 
-import db.PlaceDbOperations;
+import db.ChatDbOperations;
 import model.User;
 
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ public class PlaceService {
 		System.out.println("Adding New User :: " + newUser);
 
 		try {
-			PlaceDbOperations.insertUser(newUser);
+			ChatDbOperations.insertPlace(newUser);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

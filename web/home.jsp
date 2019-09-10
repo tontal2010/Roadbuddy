@@ -312,7 +312,7 @@
     </div>
     <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Profile</a>
+        <li><a href="driver.jsp">Profile</a>
         <li><a href="#">Chat</a>
         <li><a href="#">Log out</a>
     </ul>

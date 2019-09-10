@@ -4,8 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.sql.Time;
-
-public class User implements Serializable {
+ //implements Serializable
+public class User implements Serializable{
 	private static final long serialVersionUID = -5161680823918839255L;
 	private int id;
 	private String name;

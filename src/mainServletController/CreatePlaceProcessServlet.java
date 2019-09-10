@@ -41,18 +41,18 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		System.out.println("Date "+ user.getDate());
 		System.out.println("Numpassenger "+ user.getNumber());
 
-		if (user.getName() == null || user.getLname() == null || user.getFrom() == null || user.getToo() == null || user.getTime() == null || user.getDate() == null || user.getNumber() == null) {
+		if ( user.getFrom() == null || user.getToo() == null || user.getTime() == null || user.getDate() == null || user.getNumber() == null) {
 			System.out.println("There is an error returning back!");
 			/* The form contained invalid data, transfer control back to original form */
 			
 			request.setAttribute("user", user);
-
+/*
 			if(user.getName() == null){
 				request.setAttribute("errorInNameMsg", "ข้อผิดพลาดเกี่ยวกับชื่อ !");}
 
 			if(user.getLname() == null){
 				request.setAttribute("errorInLNameMsg", "ข้อผิดพลาดเกี่ยวกับนามสกุล !");}
-			if(user.getFrom() == null){
+*/			if(user.getFrom() == null){
 				request.setAttribute("errorInFrom", "กรุณาพิมพ์ว่าคุณเริ่มอยู่ที่ไหน !");}
 			if(user.getToo() == null){
 				request.setAttribute("errorInToo", "กรุณาบอกว่าคุณจะไปที่ใด !");}
