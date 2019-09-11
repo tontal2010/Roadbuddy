@@ -20,9 +20,12 @@ public class User implements Serializable{
 	// Driver Create
 	private String From;
 	private String Too;
-	private String Date;
+	private String Day;
+	 private String Month;
 	private String Time;
 	private String Number;
+	private String Minute;
+	 private String Year;
 
 	public static final String ONLINE="online";
 	public static final String OFFLINE="offline";
@@ -30,12 +33,13 @@ public class User implements Serializable{
 	public User() {
 		super();
 	}
-	public User(String From,String Too,String Date,String Time,String Number){
+	public void setPlace(String From,String Too,String Day,String Time,String Number){
 		this.From = From;
 		this.Too = Too;
-		this.Date = Date;
+		this.Day = Day;
 		this.Time = Time;
 		this.Number = Number;
+
 
 	}
 	
@@ -103,13 +107,25 @@ public class User implements Serializable{
 			if(!request.getParameter("time").equals(""))
 				Time = request.getParameter("time");
 		}
-		if(request.getParameter("date") != null){
-			if(!request.getParameter("date").equals(""))
-				Date = request.getParameter("date");
+		if(request.getParameter("day") != null){
+			if(!request.getParameter("day").equals(""))
+				Day = request.getParameter("day");
 		}
 		if(request.getParameter("number") != null){
 			if(!request.getParameter("number").equals(""))
 				Number = request.getParameter("number");
+		}
+		if(request.getParameter("minute") != null){
+			if(!request.getParameter("minute").equals(""))
+				Minute = request.getParameter("minute");
+		}
+		if(request.getParameter("month") != null){
+			if(!request.getParameter("month").equals(""))
+				Month = request.getParameter("month");
+		}
+		if(request.getParameter("year") != null){
+			if(!request.getParameter("year").equals(""))
+				Year = request.getParameter("year");
 		}
 
 
@@ -152,10 +168,13 @@ public class User implements Serializable{
 	public String getTime() {
 		return Time;
 	}
-	public String getDate() {
-		return Date;
+	public String getDay() {
+		return Day;
 	}
 	public String getNumber(){ return Number;}
+	 public String getMinute(){ return Minute;}
+	 public String getMonth(){ return Month;}
+	 public String getYear(){ return Year;}
 	
 	public void setId(int id) {
 		this.id = id;
@@ -163,6 +182,9 @@ public class User implements Serializable{
 	public void setPass2(String pass2) {
 		this.pass2 = pass2;
 	}
+	 public void setMinute(String Minute) {
+		 this.Minute = Minute;
+	 }
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -196,12 +218,18 @@ public class User implements Serializable{
 	public void setTime(String Time) {
 		this.Time = Time;
 	}
-	public void setDate(String Date) {
-		this.Date = Date;
+	public void setDay(String Day) {
+		this.Day = Day;
 	}
 	public void setNumber(String Number) {
 		this.Number = Number;
 	}
+	 public void setMonth(String Month) {
+		 this.Month = Month;
+	 }
+	 public void setYear(String Year) {
+		 this.Year = Year;
+	 }
 	@Override
 	/*public String toString() {
 		return " {id:" + id + ", name:\"" + name + "\", pass:\"" + pass

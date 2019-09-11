@@ -3,6 +3,7 @@ package mainServletController;
 import model.User;
 import services.PlaceService;
 
+import javax.jws.soap.SOAPBinding;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -26,22 +27,42 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String loginDetail = request.getParameter("loginUser");
+		int locateA = 0;
+		int leng = loginDetail.length();
+		String text="";
+		for(int a =0;a<=leng;a++){
+			char s = loginDetail.charAt(a);
+			if(s == '/'){
+
+
+
+			}else{
+				text = text + s;
+			}
+		}
+
 
 		System.out.println("Do Post");
 		ServletContext context;
 		context = getServletContext();
-		
+		User us = new User();
+		us.setPlace(loginDetail);
 		User user = new User(request);
+
 		RequestDispatcher dispatch;
 		System.out.println("name is "+ user.getName());
 		System.out.println("Lastname is "+ user.getLname());
 		System.out.println("From "+ user.getFrom());
 		System.out.println("To "+ user.getToo());
 		System.out.println("Time "+ user.getTime());
-		System.out.println("Date "+ user.getDate());
+		System.out.println("Minute "+ user.getMinute());
+		System.out.println("Day "+ user.getDay());
+		System.out.println("Month "+ user.getMonth());
+		System.out.println("Year "+ user.getYear());
 		System.out.println("Numpassenger "+ user.getNumber());
 
-		if ( user.getFrom() == null || user.getToo() == null || user.getTime() == null || user.getDate() == null || user.getNumber() == null) {
+		if ( user.getFrom() == null || user.getToo() == null || user.getTime() == null || user.getDay() == null || user.getNumber() == null) {
 			System.out.println("There is an error returning back!");
 			/* The form contained invalid data, transfer control back to original form */
 			
@@ -58,11 +79,11 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 				request.setAttribute("errorInToo", "กรุณาบอกว่าคุณจะไปที่ใด !");}
 			if(user.getTime() == null){
 				request.setAttribute("errorInTime", "กรุณาใส่เวลาที่จะไป !");}
-			if(user.getDate() == null){
+			if(user.getDay() == null){
 				request.setAttribute("errorInDate", "กรุณาใส่วันที่จะไป !");}
 			if(user.getNumber() == null){
 				request.setAttribute("errorInNumber", "กรุณาใส่จำนวนของผู้โดยสาร !");}
-			dispatch = context.getRequestDispatcher("/driver.jsp");
+			dispatch = context.getRequestDispatcher("/home.jsp");
 			dispatch.forward(request, response);
 			return;
 		} 
