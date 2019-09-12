@@ -28,16 +28,38 @@
 <img src="./img/layerevent.png" width="100%" style="float: bottom"/>
 <img src="./img/layeradvie.png" width="100%" style="float: bottom"/>
 <img src="./img/layerpostdriver.png" width="100%" style="float: bottom"/>-->
+<nav>
+    <div class="toggle">
+        <i class="fa fa-bars menu" aria-hidden="true"></i>
+    </div>
+    <ul>
+        <li><a href="home.jsp">Home</a></li>
+        <li><a href="profile2.jsp">Profile</a>
+        <li><a href="#">Chat</a>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="login2.jsp">Log out</a>
+        <li>ROAD BUDDY</li>
+    </ul>
+</nav>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.menu').click(function () {
+            $('ul').toggleClass('active');
+        })
+    })
+</script>
 
-<div class="postBox">
-<div align="center">
+
+
+<div class="postBox" align="center">
 <form action="">
     <table>
         <tr>
-            <td><input type="radio" name="gender" value="male"> Driver        <br></td> <td>Form </td><td><input type="text" name="form"><br></td>
+            <td><input type="radio" name="gender" value="male"> Driver<br></td> <td>Form </td><td><input type="text" name="form" placeholder="Ex FutureparkRangsit"><br></td>
         </tr>
         <tr>
-            <td><input type="radio" name="gender" value="female"> Passenger         <br></td><td>To </td><td><input type="text" name="to"></td>
+            <td><input type="radio" name="gender" value="female"> Passenger<br></td><td>To </td><td><input type="text" name="to" placeholder="Ex Ongkharak"></td>
         </tr>
         <tr>
             <td>
@@ -67,6 +89,7 @@
                 <OPTION VALUE=t22>22</OPTION>
                 <OPTION VALUE=t23>23</OPTION>
             </select>
+                :
                 <select>
                     <OPTION VALUE=tt0>00</OPTION>
                     <OPTION VALUE=tt1>01</OPTION>
@@ -130,7 +153,7 @@
                     <OPTION VALUE=tt59>59</OPTION>
                 </select>
             </td>
-            <td>Date  </td>
+            <td>Date</td>
             <td>
                 <select>
                     <OPTION SELECTED value="">Day</OPTION>
@@ -200,10 +223,27 @@
                 </select>
             </td>
         </tr>
+        <tr>
+            <td>Number of passengers <select>
+                <OPTION VALUE=n1>1</OPTION>
+                <OPTION VALUE=n2>2</OPTION>
+                <OPTION VALUE=n3>3</OPTION>
+                <OPTION VALUE=n4>4</OPTION>
+                <OPTION VALUE=n5>5</OPTION>
+                <OPTION VALUE=n6>6</OPTION>
+                <OPTION VALUE=n7>7</OPTION>
+                <OPTION VALUE=n8>8</OPTION>
+                <OPTION VALUE=n9>9</OPTION>
+                <OPTION VALUE=n10>10</OPTION>
+                <OPTION VALUE=n11>11</OPTION>
+                <OPTION VALUE=n12>12</OPTION>
+            </select>
+            </td>
+            <td></td>
+            <td><div class="btn" align="center">Post</div></td>
+        </tr>
     </table>
-    <div class="btn" align="center">Post</div>
 </form>
-</div>
 </div>
 
 <div class="findsBox" align="center">
@@ -306,24 +346,100 @@
     Post
 </div>
 
-<nav>
-    <div class="toggle">
-        <i class="fa fa-bars menu" aria-hidden="true"></i>
-    </div>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Profile</a>
-        <li><a href="#">Chat</a>
-        <li><a href="#">Log out</a>
-    </ul>
-</nav>
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.menu').click(function () {
-            $('ul').toggleClass('active');
-        })
-    })
-</script>
+<div class="psPassenger" align="center">
+    <table width="100%">
+        <tr>
+            <td>
+                <center><img src="./img/rating1.jpg" class="profile-img"/></center>
+            </td>
+            <td>
+                <h3>Kingpatcha Bussas</h3>
+                <table>
+                    <tr>
+                        <td><p>Status </p></td><td><p>Passenger</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Frome</p></td><td><p>มหาวิทยาลัยศรีนครินทรวิโรฒ องครักษ์</p></td>
+                    </tr>
+                    <tr>
+                        <td> <p>To</p></td><td><p>ฟิวเจอร์ปาร์ค รังสิต</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Time</p></td><td><p>14:30</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Date</p></td><td><p>15 Sep 2019</p></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="psDriverBox" align="center">
+    <table width="100%" >
+        <tr>
+            <td>
+                <center><img src="./img/rating2.jpg" class="profile-img"/></center>
+            </td>
+            <td>
+                <h3>Sompong sonthi</h3>
+                <table>
+                    <tr>
+                        <td><p>Status </p></td><td><p>Driver</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Frome</p></td><td><p>มหาวิทยาลัยศรีนครินทรวิโรฒ องครักษ์</p></td>
+                    </tr>
+                    <tr>
+                        <td> <p>To</p></td><td><p>ฟิวเจอร์ปาร์ค รังสิต</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Time</p></td><td><p>14:30</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Date</p></td><td><p>15 Sep 2019</p></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+<div class="psPassenger2" align="center">
+    <table width="100%">
+        <tr>
+            <td>
+                <center><img src="./img/rating3.jpg" class="profile-img"/></center>
+            </td>
+            <td>
+                <h3>Mario KP</h3>
+                <table>
+                    <tr>
+                        <td><p>Status </p></td><td><p>Passenger</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Frome</p></td><td><p>ไอคอนสยาม กรุงเทพมหานคร</p></td>
+                    </tr>
+                    <tr>
+                        <td> <p>To</p></td><td><p>พัทยา</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Time</p></td><td><p>17:30</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Date</p></td><td><p>18 Sep 2019</p></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
 </body>
 </html>

@@ -3,6 +3,58 @@ body{
     padding: 0;
     font-family: srinakharinwirot , sans-serif;
 }
+nav
+{
+    width: 100%;
+    background: #fffbfb;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+ul li:hover{
+    background: #c3e5f2;
+}
+ul li a {
+    color: #17517c;
+    text-decoration: none;
+}
+.toggle
+{
+    width: 100%;
+    padding: 10px 20px;
+    background: #3781c5;
+    text-align: right;
+    box-sizing:border-box ;
+    color: white;
+    font-size: 30px;
+    display: none;
+}
+@media(max-width: 768px) {
+    .toggle {
+        display: block;
+    }
+
+    ul {
+        width: 100%;
+        display: none;
+    }
+
+    ul li {
+        display: block;
+        text-align: center;
+    }
+    .active{
+        display: block;
+    }
+}
+
 .postBox{
     position: absolute;
     top: 25%;
@@ -16,7 +68,7 @@ body{
 }
 .findsBox{
     position: absolute;
-    top: 45%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
@@ -27,7 +79,7 @@ body{
 }
 .evenBox{
     position: absolute;
-    top: 70%;
+    top: 66%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
@@ -152,7 +204,7 @@ body{
 
 .box{
     position: absolute;
-    top: 120%;
+    top: 112%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
@@ -163,63 +215,61 @@ body{
 }
 .postDriverPassengerBox{
     position: absolute;
-    top: 188%;
+    top: 193%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
-    height: 450px;
+    height: 750px;
     padding: 20px 10px ;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.5);
 }
-nav
-{
-    width: 100%;
-    background: #17517c;
+.psPassenger{
+    position: absolute;
+    top: 170%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 225px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(118, 224, 255, 0.5);
 }
-ul{
-    width: 80%;
-    margin: 0 auto;
-    padding: 0;
+.psPassenger .profile-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
 }
-ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 20px;
+.psDriverBox{
+    position: absolute;
+    top: 203%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 225px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(101, 255, 153, 0.5);
 }
-ul li:hover{
-    background: #1da1f2;
+.psDriverBox .profile-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
 }
-ul li a {
-    color: white;
-    text-decoration: none;
-}
-.toggle
-{
-    width: 100%;
-    padding: 10px 20px;
-    background: #3781c5;
-    text-align: right;
-    box-sizing:border-box ;
-    color: white;
-    font-size: 30px;
-    display: none;
-}
-@media(max-width: 768px) {
-    .toggle {
-        display: block;
-    }
 
-    ul {
-        width: 100%;
-        display: none;
-    }
-
-    ul li {
-        display: block;
-        text-align: center;
-    }
-    .active{
-        display: block;
-    }
+.psPassenger2{
+    position: absolute;
+    top: 236%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 225px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(118, 224, 255, 0.5);
+}
+.psPassenger2 .profile-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
 }

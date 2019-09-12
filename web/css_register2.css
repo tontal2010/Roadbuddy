@@ -59,8 +59,6 @@ h2
     height: 40px;
     color: #ffff;
     font-size: 16px;
-
-
 }
 .loginBox input:valid{
     color: greenyellow;
