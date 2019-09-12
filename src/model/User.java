@@ -104,10 +104,7 @@ public class User implements Serializable{
 			if(!request.getParameter("time").equals(""))
 				Time = request.getParameter("time");
 		}
-		if(request.getParameter("day") != null){
-			if(!request.getParameter("day").equals(""))
-				Day = request.getParameter("day");
-		}
+
 		if(request.getParameter("number") != null){
 			if(!request.getParameter("number").equals(""))
 				Number = request.getParameter("number");
@@ -115,6 +112,10 @@ public class User implements Serializable{
 		if(request.getParameter("minute") != null){
 			if(!request.getParameter("minute").equals(""))
 				Minute = request.getParameter("minute");
+		}
+		if(request.getParameter("day") != null){
+			if(!request.getParameter("day").equals(""))
+				Day = request.getParameter("day");
 		}
 		if(request.getParameter("month") != null){
 			if(!request.getParameter("month").equals(""))
@@ -124,6 +125,7 @@ public class User implements Serializable{
 			if(!request.getParameter("year").equals(""))
 				Year = request.getParameter("year");
 		}
+
 
 
 
@@ -233,7 +235,7 @@ public class User implements Serializable{
 				+ "\", status:\"" + status + "\"}";
 	}*/
 	public String toString() {
-		return " {"+ id +"/"+ name + "/" + email +"/"+ lname + "/" + pnum + "/" + emerpnum +"/"+ sex +"/"+ status+"}";
+		return  name + "/" + email +"/"+ lname + "/" + pnum + "/" + emerpnum +"/"+ sex +"/"+ status;
 	}
 	
 }

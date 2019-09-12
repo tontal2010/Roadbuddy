@@ -35,7 +35,7 @@
     <form action="${pageContext.request.contextPath}/loginprocess" method="post">
         <p>Email</p><p><font size="3" color="red">${loginFailMsg}</font></p>
         <p><font size="3" color="red">${errorInNameMsg}</font></p>
-        <input type="text" name="name" placeholder="Enter Email" value="${user.name}" autofocus>
+        <input type="text" name="email" placeholder="Enter Email" value="${user.email}" autofocus>
         <p>Password</p><p><font size="3" color="red">${errorInPassMsg}</font> </p>
         <input type="password" name="password" placeholder="●●●●●●●●" value="${user.pass}">
         <input type="submit" name="Submit" value="Sign In">

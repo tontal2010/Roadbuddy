@@ -65,7 +65,7 @@ public class ChatDbOperations {
 		queryStmt.setString(2,data.getLname());
         queryStmt.setString(3,user.getFrom());
         queryStmt.setString(4,user.getToo());
-        queryStmt.setString(5,user.getDate());
+        queryStmt.setString(5,user.getDay());
         queryStmt.setString(6,user.getTime());
         queryStmt.setString(7,user.getNumber());
         queryStmt.setString(8,"OOO33กน");
@@ -106,22 +106,17 @@ public class ChatDbOperations {
 			throw  new ChatDbFailure(ChatDbFailure.INVALID_CREDENTIAL);
 		} else {
 			userid = results.getInt("userid");
-
+/*
 			String lname = results.getString("lname");
 			String sex = results.getString("sex");
 			String pnum = results.getString("pnum");
 			String emerpnum = results.getString("emerpnum");
 			String email = results.getString("email");
 			String name = results.getString("name");
+*/
 
 
-			loggedInUser.setLname(lname);System.out.println("Set "+lname);
-			loggedInUser.setSex(sex);System.out.println("Set "+ sex);
-			loggedInUser.setPnum(pnum);System.out.println("Set "+ pnum);
-			loggedInUser.setEmerpnum(emerpnum);System.out.println("Set "+ emerpnum);
-			loggedInUser.setEmail(name);System.out.println("Set "+ name);
-			loggedInUser.setId(userid);System.out.println("Set "+ userid);
-			loggedInUser.setName(userName);System.out.println("Set "+ userName);
+			loggedInUser.setEmail(userName);System.out.println("Set "+ userName);
 			loggedInUser.setPass(password);System.out.println("Set "+ password);
 
 

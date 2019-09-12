@@ -27,36 +27,15 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String loginDetail = request.getParameter("loginUser");
-		int numslash = 1;
-		int leng = loginDetail.length();
-		String name ="";
-		String lname = "";
-		for(int a =0;a<=leng;a++){
-			char s = loginDetail.charAt(a);
-
-			if(s != '/'){
-
-				if (numslash == 1){
-					name = name +s;
-				}
-				if (numslash == 2){
-					lname = lname +s;
-				}
-			}else{
-				numslash = numslash+1;
-
-
-			}
-		}
-
+		System.out.println("1");
 
 		System.out.println("Do Post");
 		ServletContext context;
 		context = getServletContext();
-		User us = new User();
-		us.setPlace(name,lname);
 		User user = new User(request);
+
+
+
 
 		RequestDispatcher dispatch;
 		System.out.println("name is "+ user.getName());
@@ -75,13 +54,13 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 			/* The form contained invalid data, transfer control back to original form */
 			
 			request.setAttribute("user", user);
-/*
+
 			if(user.getName() == null){
 				request.setAttribute("errorInNameMsg", "ข้อผิดพลาดเกี่ยวกับชื่อ !");}
 
 			if(user.getLname() == null){
 				request.setAttribute("errorInLNameMsg", "ข้อผิดพลาดเกี่ยวกับนามสกุล !");}
-*/			if(user.getFrom() == null){
+			if(user.getFrom() == null){
 				request.setAttribute("errorInFrom", "กรุณาพิมพ์ว่าคุณเริ่มอยู่ที่ไหน !");}
 			if(user.getToo() == null){
 				request.setAttribute("errorInToo", "กรุณาบอกว่าคุณจะไปที่ใด !");}

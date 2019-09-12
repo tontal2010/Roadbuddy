@@ -23,8 +23,60 @@
         var string2 = '<%= session.getAttribute("loginUser").toString() %>';
 
     </script>
-    <% String login = session.getAttribute("loginUser").toString();
-        session.setAttribute("loginUser",login);
+    <% String loginDetail = session.getAttribute("loginUser").toString();
+        int numslash = 1;
+        int leng = loginDetail.length();
+        String name ="";
+        String email = "";
+        String lname = "";
+        String pnum ="";
+        for(int a =0;a<leng;a++){
+            char s = loginDetail.charAt(a);
+            System.out.println("index " + a + " is "+s);
+
+            if(s != '/'){
+
+                if (numslash == 1){
+                    name = name +s;
+                }
+                if (numslash == 2){
+                    email = email +s;
+                }
+                if (numslash == 3){
+                    lname = lname + s;
+                }
+                if (numslash == 4){
+                    pnum = pnum + s;
+                }
+            }else{
+                if(numslash == 1){
+
+                    System.out.println("string name = "+name);
+                    numslash = numslash+1;
+                }
+                if(numslash == 2){
+
+                    numslash = numslash+1;
+                }
+                if(numslash == 3){
+
+                    numslash = numslash+1;
+                }
+                if(numslash == 4){
+
+                    numslash = numslash+1;
+                }
+
+
+
+            }
+        }
+
+
+
+
+
+
     %>
 
 </head>
@@ -40,12 +92,15 @@
 <div class="postBox">
 <div align="center">
 <form action="${pageContext.request.contextPath}/createPlaceProcess" method="post">
+    <input type="hidden" name="name" value="<%=name%>"/>
+    <input type="hidden" name="lastname" value="<%=lname%>"/>
+    <input type="hidden" name="lastname" value="<%=lname%>"/>
     <table>
         <tr>
-            <td><input type="radio" name="gender" value="male"> Driver        <br></td> <td>Form </td><td><input type="text" name="form" value="${user.form}"><br></td>
+            <td><input type="radio" name="gender" value="male"> Driver        <br></td> <td>Form </td><td><input type="text" name="from" value="${user.from}"><br></td>
         </tr>
         <tr>
-            <td><input type="radio" name="gender" value="female"> Passenger         <br></td><td>To </td><td><input type="text" name="to" value="${user.to}"></td>
+            <td><input type="radio" name="gender" value="female"> Passenger         <br></td><td>To </td><td><input type="text" name="to" value="${user.too}"></td>
         </tr>
         <tr>
             <td>
@@ -209,7 +264,8 @@
             </td>
         </tr>
     </table>
-    <div class="btn" align="center">Post</div>
+    <div class="btn" align="center" >Post</div>
+    <input type="submit" value="Submit" >
 </form>
 </div>
 </div>

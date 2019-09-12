@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="croppie" type="kotlin.js">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/croppie.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

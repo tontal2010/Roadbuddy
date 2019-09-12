@@ -41,7 +41,7 @@ public class LoginProcessServlet extends HttpServlet {
 		User loginUser=null;
 		
 		User user = new User(request);
-		String tName = user.getName();
+		String tName = user.getEmail();
 		String tPass = user.getPass();
 		
 		////////////// If one of the username/password field is empty//////////
@@ -67,7 +67,7 @@ public class LoginProcessServlet extends HttpServlet {
 			}
 			//////If Database do not have any match found then login user/Password incorrect////
 			if(loginUser==null){
-				request.setAttribute("loginFailMsg", "ไม่พบผู้ใช้นี้ !");
+				request.setAttribute("loginFailMsg", "ไม่พบผู้ใช้นี ้ !");
 				dispatch = context.getRequestDispatcher("/login2.jsp");
 			 }
 			else{ //////////Else success!! //////
