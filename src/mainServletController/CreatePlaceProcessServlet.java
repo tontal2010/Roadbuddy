@@ -36,7 +36,7 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		System.out.println("name is "+ user.getName());
 		System.out.println("Lastname is "+ user.getLname());
 		System.out.println("From "+ user.getFrom());
-		System.out.println("Too "+ user.getToo());
+		System.out.println("To "+ user.getToo());
 		System.out.println("Time "+ user.getTime());
 		System.out.println("Date "+ user.getDate());
 		System.out.println("Numpassenger "+ user.getNumber());
