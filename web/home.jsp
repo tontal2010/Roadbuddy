@@ -67,10 +67,12 @@
                     System.out.println("string name = " + name);
                     numslash = numslash + 1;
                 } else if (numslash == 2) {
-                    System.out.println("string email = " + email);
+                    System.out.println("string lname = " + lname);
+
                     numslash = numslash + 1;
                 } else if (numslash == 3) {
-                    System.out.println("string lname = " + lname);
+
+                    System.out.println("string email = " + email);
                     numslash = numslash + 1;
                 } else if (numslash == 4) {
                     System.out.println("string pnum = " + pnum);
