@@ -235,7 +235,7 @@ public class User implements Serializable{
 				+ "\", status:\"" + status + "\"}";
 	}*/
 	public String toString() {
-		return  name + "/" + email +"/"+ lname + "/" + pnum ;
+		return  name + "/" + lname +"/"+ email + "/" + pnum ;
 	}
 	
 }

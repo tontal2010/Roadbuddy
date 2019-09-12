@@ -53,10 +53,10 @@
                     name = name + s;
                 }
                 if (numslash == 2) {
-                    email = email + s;
+                    lname = lname + s;
                 }
                 if (numslash == 3) {
-                    lname = lname + s;
+                    email = email + s;
                 }
                 if (numslash == 4) {
                     pnum = pnum + s;
