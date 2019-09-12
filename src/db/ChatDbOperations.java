@@ -106,16 +106,17 @@ public class ChatDbOperations {
 			throw  new ChatDbFailure(ChatDbFailure.INVALID_CREDENTIAL);
 		} else {
 			userid = results.getInt("userid");
-/*
+
 			String lname = results.getString("lname");
 			String sex = results.getString("sex");
 			String pnum = results.getString("pnum");
 			String emerpnum = results.getString("emerpnum");
 			String email = results.getString("email");
 			String name = results.getString("name");
-*/
 
-
+			loggedInUser.setName(name);System.out.println("Set "+ name);
+			loggedInUser.setLname(lname);System.out.println("Set "+ lname);
+			loggedInUser.setPnum(pnum);System.out.println("Set "+ pnum);
 			loggedInUser.setEmail(userName);System.out.println("Set "+ userName);
 			loggedInUser.setPass(password);System.out.println("Set "+ password);
 

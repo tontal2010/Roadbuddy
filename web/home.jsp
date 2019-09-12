@@ -31,7 +31,7 @@
         String lname = "";
         String pnum ="";
         for(int a =0;a<leng;a++){
-            char s = loginDetail.charAt(a);
+
             System.out.println("index " + a + " is "+s);
 
             if(s != '/'){
@@ -54,16 +54,16 @@
                     System.out.println("string name = "+name);
                     numslash = numslash+1;
                 }
-                if(numslash == 2){
-
+                else if(numslash == 2){
+                    System.out.println("string email = "+email);
                     numslash = numslash+1;
                 }
-                if(numslash == 3){
-
+                else if(numslash == 3){
+                    System.out.println("string lname = "+lname);
                     numslash = numslash+1;
                 }
-                if(numslash == 4){
-
+                else if(numslash == 4){
+                    System.out.println("string pnum = "+pnum);
                     numslash = numslash+1;
                 }
 
@@ -93,8 +93,9 @@
 <div align="center">
 <form action="${pageContext.request.contextPath}/createPlaceProcess" method="post">
     <input type="hidden" name="name" value="<%=name%>"/>
+    <input type="hidden" name="email" value="<%=email%>"/>
     <input type="hidden" name="lastname" value="<%=lname%>"/>
-    <input type="hidden" name="lastname" value="<%=lname%>"/>
+    <input type="hidden" name="pnum" value="<%=pnum%>"/>
     <table>
         <tr>
             <td><input type="radio" name="gender" value="male"> Driver        <br></td> <td>Form </td><td><input type="text" name="from" value="${user.from}"><br></td>
@@ -195,8 +196,8 @@
             </td>
             <td>Date  </td>
             <td>
-                <select>
-                    <OPTION SELECTED value="" name="day">Day</OPTION>
+                <select name="day">
+                    <OPTION SELECTED value="" >Day</OPTION>
                     <OPTION VALUE=1>1</OPTION>
                     <OPTION VALUE=2>2</OPTION>
                     <OPTION VALUE=3>3</OPTION>
@@ -229,8 +230,8 @@
                     <OPTION VALUE=30>30</OPTION>
                     <OPTION VALUE=31>31</OPTION>
                 </select>
-                <select>
-                    <OPTION SELECTED value="" name="month">Months</OPTION>
+                <select name="month">
+                    <OPTION SELECTED value="" >Months</OPTION>
                     <OPTION VALUE=January>January</OPTION>
                     <OPTION VALUE=February>February</OPTION>
                     <OPTION VALUE=March>March</OPTION>
@@ -244,8 +245,8 @@
                     <OPTION VALUE=November>November</OPTION>
                     <OPTION VALUE=December>December</OPTION>
                 </select>
-                <select>
-                    <option selected value="" name="year">Year</option>
+                <select name="year">
+                    <option selected value="" >Year</option>
                     <OPTION VALUE=2019>2019</OPTION>
                     <OPTION VALUE=2020>2020</OPTION>
                     <OPTION VALUE=2021>2021</OPTION>
