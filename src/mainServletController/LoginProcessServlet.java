@@ -76,7 +76,7 @@ public class LoginProcessServlet extends HttpServlet {
 				session.setAttribute("loginUser", loginUser);
 				session.setAttribute("login", "yes");
 				LineNotify lineNotify = new LineNotify ();
-				lineNotify.callEvent("KgHCReBvyITkPFGwWqCF2GXV0gjwnqnl3RVFIFNkP0I",loginUser+" เข้าสู่ระบบ");
+				lineNotify.callEvent("KgHCReBvyITkPFGwWqCF2GXV0gjwnqnl3RVFIFNkP0I","[ "+loginUser+" ]"+" เข้าสู่ระบบ");
 				System.out.println("usr"+ loginUser);
 				dispatch = context.getRequestDispatcher("/home.jsp");
 			}
