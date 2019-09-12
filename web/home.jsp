@@ -32,7 +32,7 @@
         String pnum ="";
         for(int a =0;a<leng;a++){
 
-            System.out.println("index " + a + " is "+s);
+            System.out.println("indexพ " + a + " is "+s);
 
             if(s != '/'){
 
