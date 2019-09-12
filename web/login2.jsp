@@ -5,9 +5,19 @@
   Time: 2:12 PM
   To change this template use File | Settings | File Templates.
 --%><%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<style>
-
+<style type="text/css">
+    h3{
+        color: red;
+        font-size: 20px;
+    }
 </style>
+
+<%
+    String errorMessage = (String) session.getAttribute("errorMessage");
+    if (null !=errorMessage) { %>
+<h3> <%=errorMessage %></h3>
+<%}
+%>
 
 <html>
 <head>
@@ -25,7 +35,7 @@
     <form action="${pageContext.request.contextPath}/loginprocess" method="post">
         <p>Email</p><p><font size="3" color="red">${loginFailMsg}</font></p>
         <p><font size="3" color="red">${errorInNameMsg}</font></p>
-        <input type="text" name="name" placeholder="Enter Email" value="${user.name}" autofocus>
+        <input type="text" name="email" placeholder="Enter Email" value="${user.email}" autofocus>
         <p>Password</p><p><font size="3" color="red">${errorInPassMsg}</font> </p>
         <input type="password" name="password" placeholder="●●●●●●●●" value="${user.pass}">
         <input type="submit" name="Submit" value="Sign In">

@@ -4,6 +4,7 @@ import exceptions.ChatDbFailure;
 
 import model.User;
 
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +12,7 @@ import java.util.List;
 
 public class ChatDbOperations {
 
-	/**
-	 * Insert into User Table 
-	 * @param status - online/offline
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 */
+
 	public static void insertUser(User user) throws SQLException{
 		Connection dbConn;
 		System.out.println("Trying to create dbConn");
@@ -30,7 +27,7 @@ public class ChatDbOperations {
 				
 		PreparedStatement queryStmt ;
 		queryStmt = dbConn.prepareStatement(insertStmt);
-		queryStmt.setString(1, user.getName()); 
+		queryStmt.setString(1, user.getName());
 		queryStmt.setString(2,user.getPass());
 		queryStmt.setString(3,user.getSex());
 		queryStmt.setString(4,user.getPnum());
@@ -47,14 +44,43 @@ public class ChatDbOperations {
 			dbErrorRollBackTx(dbConn); // call this function to give error and ROLLBACK
 		}
 	}
+    public static void insertPlace(User user) throws SQLException{
+        Connection dbConn;
+        System.out.println("Trying to create dbConn");
+        dbConn = ChatAppDataSource.getConnection();
 
-	/**
-	 * Checking to see if User Name and Password are correct.
-	 * If correct it change user status to online
-	 * @param status - change to online
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 * 			or when invalid password
-	 */
+        // Turn off auto-commit of db changes as they occur
+        dbConn.setAutoCommit(false);
+
+        String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`time`,`numberpass`,`platenum`,`numjoin`,`pnum`)  " +
+                "VALUES (? ,?,?,?,?,?,?,?,?,?);";
+
+
+        PreparedStatement queryStmt ;
+        queryStmt = dbConn.prepareStatement(insertStmt);
+       // queryStmt.setString(1, user.getName());
+       // queryStmt.setString(2,user.getLname());
+		User data = new User();
+		queryStmt.setString(1, data.getName());
+		queryStmt.setString(2,data.getLname());
+        queryStmt.setString(3,user.getFrom());
+        queryStmt.setString(4,user.getToo());
+        queryStmt.setString(5,user.getDay());
+        queryStmt.setString(6,user.getTime());
+        queryStmt.setString(7,user.getNumber());
+        queryStmt.setString(8,"OOO33กน");
+        queryStmt.setString(9,"O");
+        queryStmt.setString(10,user.getPnum());
+        System.out.println(queryStmt);
+        try {
+            queryStmt.executeUpdate();
+            dbConn.commit(); // make changes permanent
+            dbConn.close();
+        } catch (SQLException ex) {
+            dbErrorRollBackTx(dbConn); // call this function to give error and ROLLBACK
+        }
+    }
+
 	public static User loginToAccount(String userName, String password) throws ChatDbFailure,SQLException {
 		Connection dbConn;
 		int rowsAffected;
@@ -80,12 +106,23 @@ public class ChatDbOperations {
 			throw  new ChatDbFailure(ChatDbFailure.INVALID_CREDENTIAL);
 		} else {
 			userid = results.getInt("userid");
-			
-			loggedInUser.setId(userid);
-			loggedInUser.setName(userName);
-			loggedInUser.setPass(password);
-			
-			changeUserStatus(userid, User.ONLINE);
+/*
+			String lname = results.getString("lname");
+			String sex = results.getString("sex");
+			String pnum = results.getString("pnum");
+			String emerpnum = results.getString("emerpnum");
+			String email = results.getString("email");
+			String name = results.getString("name");
+*/
+
+
+			loggedInUser.setEmail(userName);System.out.println("Set "+ userName);
+			loggedInUser.setPass(password);System.out.println("Set "+ password);
+
+
+
+
+            changeUserStatus(userid, User.ONLINE);
 			
 			loggedInUser.setStatus(User.ONLINE);
 			
@@ -108,22 +145,12 @@ public class ChatDbOperations {
 		changeUserStatus(userid, User.OFFLINE);
 		System.out.println("Logout Sucessfull !! ");
 	}
-	
-	/**
-	 * Updating Users with status to offline
-	 * @param userid - userId
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 */
+
 	public static void logOutUserWithName(String name) throws SQLException, ChatDbFailure {
 		changeUserStatus(name, User.OFFLINE);
 		System.out.println("Logout Sucessfull !! ");
 	}
-	
-	/**
-	 * Updating Users with status
-	 * @param status - online/offline
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 */
+
 	public static void changeUserStatus(int userid, String newStatus)throws ChatDbFailure,SQLException {
 		Connection dbConn;
 		int rowsAffected;

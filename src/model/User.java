@@ -3,8 +3,9 @@ package model;
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
-
-public class User implements Serializable {
+import java.sql.Time;
+ //implements Serializable
+public class User implements Serializable{
 	private static final long serialVersionUID = -5161680823918839255L;
 	private int id;
 	private String name;
@@ -16,14 +17,30 @@ public class User implements Serializable {
 	private String email;
 	private String lname;
 	private String pass2;
+	// Driver Create
+	private String From;
+	private String Too;
+	private String Day;
+	 private String Month;
+	private String Time;
+	private String Number;
+	private String Minute;
+	 private String Year;
+
 	public static final String ONLINE="online";
 	public static final String OFFLINE="offline";
 	
 	public User() {
 		super();
 	}
+	public void setPlace(String From,String Too){
+		this.From = From;
+		this.Too = Too;
+
+
+	}
 	
-	public User(String name, String lname, String sex, String pnum , String emerpnum, String email, String pass ,String pass2) {
+	public User(String name, String lname, String sex, String pnum , String emerpnum, String email, String pass ,String pass2 ) {
 		super();
 		this.name = name;
 		this.lname = lname;
@@ -33,17 +50,23 @@ public class User implements Serializable {
 		this.email = email;
 		this.pass = pass;
 		this.pass2 = pass2;
+
+
+
 	}
 	public User(HttpServletRequest request) throws UnsupportedEncodingException {
 		extractFormData(request);
 	}	
 	private void extractFormData(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("UTF-8");
-		if(!request.getParameter("name").equals(""))
-			name = request.getParameter("name");
-
-		if(!request.getParameter("password").equals(""))
-			pass = request.getParameter("password");
+		if(request.getParameter("name") != null) {
+			if (!request.getParameter("name").equals(""))
+				name = request.getParameter("name");
+		}
+		if(request.getParameter("password") != null) {
+			if (!request.getParameter("password").equals(""))
+				pass = request.getParameter("password");
+		}
 		if(request.getParameter("lastname") != null){
 			if(!request.getParameter("lastname").equals(""))
 				lname = request.getParameter("lastname");
@@ -68,6 +91,41 @@ public class User implements Serializable {
 			if(!request.getParameter("password2").equals(""))
 				pass2 = request.getParameter("password2");
 		}
+
+		if(request.getParameter("from") != null){
+			if(!request.getParameter("from").equals(""))
+				From = request.getParameter("from");
+		}
+		if(request.getParameter("to") != null){
+			if(!request.getParameter("to").equals(""))
+				Too = request.getParameter("to");
+		}
+		if(request.getParameter("time") != null){
+			if(!request.getParameter("time").equals(""))
+				Time = request.getParameter("time");
+		}
+
+		if(request.getParameter("number") != null){
+			if(!request.getParameter("number").equals(""))
+				Number = request.getParameter("number");
+		}
+		if(request.getParameter("minute") != null){
+			if(!request.getParameter("minute").equals(""))
+				Minute = request.getParameter("minute");
+		}
+		if(request.getParameter("day") != null){
+			if(!request.getParameter("day").equals(""))
+				Day = request.getParameter("day");
+		}
+		if(request.getParameter("month") != null){
+			if(!request.getParameter("month").equals(""))
+				Month = request.getParameter("month");
+		}
+		if(request.getParameter("year") != null){
+			if(!request.getParameter("year").equals(""))
+				Year = request.getParameter("year");
+		}
+
 
 
 
@@ -100,6 +158,22 @@ public class User implements Serializable {
 	public String getPass2() {
 		return pass2;
 	}
+	public String getFrom() {
+		return From;
+	}
+	public String getToo() {
+		return Too;
+	}
+	public String getTime() {
+		return Time;
+	}
+	public String getDay() {
+		return Day;
+	}
+	public String getNumber(){ return Number;}
+	 public String getMinute(){ return Minute;}
+	 public String getMonth(){ return Month;}
+	 public String getYear(){ return Year;}
 	
 	public void setId(int id) {
 		this.id = id;
@@ -107,6 +181,9 @@ public class User implements Serializable {
 	public void setPass2(String pass2) {
 		this.pass2 = pass2;
 	}
+	 public void setMinute(String Minute) {
+		 this.Minute = Minute;
+	 }
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -131,10 +208,34 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public void setFrom(String From) {
+		this.From = From;
+	}
+	public void setToo(String Too) {
+		this.Too = Too;
+	}
+	public void setTime(String Time) {
+		this.Time = Time;
+	}
+	public void setDay(String Day) {
+		this.Day = Day;
+	}
+	public void setNumber(String Number) {
+		this.Number = Number;
+	}
+	 public void setMonth(String Month) {
+		 this.Month = Month;
+	 }
+	 public void setYear(String Year) {
+		 this.Year = Year;
+	 }
 	@Override
-	public String toString() {
+	/*public String toString() {
 		return " {id:" + id + ", name:\"" + name + "\", pass:\"" + pass
 				+ "\", status:\"" + status + "\"}";
+	}*/
+	public String toString() {
+		return  name + "/" + email +"/"+ lname + "/" + pnum + "/" + emerpnum +"/"+ sex +"/"+ status;
 	}
 	
 }
