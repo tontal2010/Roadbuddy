@@ -113,3 +113,54 @@ body{
     cursor: pointer;
     border-radius: 50px;
 }
+nav
+{
+    width: 100%;
+    background: #fffbfb;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+ul li:hover{
+    background: #c3e5f2;
+}
+ul li a {
+    color: #17517c;
+    text-decoration: none;
+}
+.toggle
+{
+    width: 100%;
+    padding: 10px 20px;
+    background: #3781c5;
+    text-align: right;
+    box-sizing:border-box ;
+    color: white;
+    font-size: 30px;
+    display: none;
+}
+@media(max-width: 768px) {
+    .toggle {
+        display: block;
+    }
+
+    ul {
+        width: 100%;
+        display: none;
+    }
+
+    ul li {
+        display: block;
+        text-align: center;
+    }
+    .active{
+        display: block;
+    }
+}

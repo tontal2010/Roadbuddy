@@ -60,7 +60,7 @@
 <body>
 <div id="demo-basic"></div>
 <div class="loginBox">
-    <h2>Registerr</h2>
+    <h2>Register</h2>
     <label for="file-input">
         <center><img class="user2" src="./img/user1.png" id="userimg"/></center>
     </label>

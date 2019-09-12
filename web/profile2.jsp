@@ -17,6 +17,19 @@
     </style>
 </head>
 <body>
+<nav>
+    <div class="toggle">
+        <i class="fa fa-bars menu" aria-hidden="true"></i>
+    </div>
+    <ul>
+        <li><a href="home.jsp">Home</a></li>
+        <li><a href="profile2.jsp">Profile</a>
+        <li><a href="#">Chat</a>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="login2.jsp">Log out</a>
+        <li>ROAD BUDDY</li>
+    </ul>
+</nav>
 <div class="wrapper">
     <div class="container">
         <img src="./img/10.jpg" alt="" class="profile-img">
