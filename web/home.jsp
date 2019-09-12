@@ -32,7 +32,7 @@
         String pnum ="";
         for(int a =0;a<leng;a++){
 
-            System.out.println("indexพ " + a + " is "+s);
+            System.out.println("index " + a + " is "+s);
 
             if(s != '/'){
 
@@ -288,7 +288,7 @@
             </td>
         </tr>
         <tr>
-            <td>Number of passengers <select name="numpass">
+            <td>Number of passengers <select name="number">
                 <OPTION VALUE=n1>1</OPTION>
                 <OPTION VALUE=n2>2</OPTION>
                 <OPTION VALUE=n3>3</OPTION>
