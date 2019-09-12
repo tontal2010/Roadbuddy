@@ -33,12 +33,9 @@ public class User implements Serializable{
 	public User() {
 		super();
 	}
-	public void setPlace(String From,String Too,String Day,String Time,String Number){
+	public void setPlace(String From,String Too){
 		this.From = From;
 		this.Too = Too;
-		this.Day = Day;
-		this.Time = Time;
-		this.Number = Number;
 
 
 	}
@@ -236,7 +233,7 @@ public class User implements Serializable{
 				+ "\", status:\"" + status + "\"}";
 	}*/
 	public String toString() {
-		return " {"+ id +":"+ name + ":" + email +":"+ lname + ":" + pnum + ":" + emerpnum +":"+ sex +":"+ status+"}";
+		return " {"+ id +"/"+ name + "/" + email +"/"+ lname + "/" + pnum + "/" + emerpnum +"/"+ sex +"/"+ status+"}";
 	}
 	
 }

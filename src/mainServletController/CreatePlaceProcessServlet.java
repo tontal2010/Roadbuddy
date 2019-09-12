@@ -28,17 +28,25 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String loginDetail = request.getParameter("loginUser");
-		int locateA = 0;
+		int numslash = 1;
 		int leng = loginDetail.length();
-		String text="";
+		String name ="";
+		String lname = "";
 		for(int a =0;a<=leng;a++){
 			char s = loginDetail.charAt(a);
-			if(s == '/'){
 
+			if(s != '/'){
 
-
+				if (numslash == 1){
+					name = name +s;
+				}
+				if (numslash == 2){
+					lname = lname +s;
+				}
 			}else{
-				text = text + s;
+				numslash = numslash+1;
+
+
 			}
 		}
 
@@ -47,7 +55,7 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		ServletContext context;
 		context = getServletContext();
 		User us = new User();
-		us.setPlace(loginDetail);
+		us.setPlace(name,lname);
 		User user = new User(request);
 
 		RequestDispatcher dispatch;
