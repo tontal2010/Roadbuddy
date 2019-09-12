@@ -31,7 +31,7 @@
         String lname = "";
         String pnum ="";
         for(int a =0;a<leng;a++){
-
+            char s = loginDetail.charAt(a);
             System.out.println("index " + a + " is "+s);
 
             if(s != '/'){
