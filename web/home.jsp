@@ -19,6 +19,14 @@
         }
 
     </style>
+    <script>
+        var string2 = '<%= session.getAttribute("loginUser").toString() %>';
+
+    </script>
+    <% String login = session.getAttribute("loginUser").toString();
+        session.setAttribute("loginUser",login);
+    %>
+
 </head>
 <body>
 <!--<img src="./img/header.png" width="100%" style="float: top"/>-->
@@ -31,109 +39,109 @@
 
 <div class="postBox">
 <div align="center">
-<form action="">
+<form action="${pageContext.request.contextPath}/createPlaceProcess" method="post">
     <table>
         <tr>
-            <td><input type="radio" name="gender" value="male"> Driver        <br></td> <td>Form </td><td><input type="text" name="form"><br></td>
+            <td><input type="radio" name="gender" value="male"> Driver        <br></td> <td>Form </td><td><input type="text" name="form" value="${user.form}"><br></td>
         </tr>
         <tr>
-            <td><input type="radio" name="gender" value="female"> Passenger         <br></td><td>To </td><td><input type="text" name="to"></td>
+            <td><input type="radio" name="gender" value="female"> Passenger         <br></td><td>To </td><td><input type="text" name="to" value="${user.to}"></td>
         </tr>
         <tr>
             <td>
-                Time  <select>
-                <OPTION VALUE=t0>00</OPTION>
-                <OPTION VALUE=t1>01</OPTION>
-                <OPTION VALUE=t2>02</OPTION>
-                <OPTION VALUE=t3>03</OPTION>
-                <OPTION VALUE=t4>04</OPTION>
-                <OPTION VALUE=t5>05</OPTION>
-                <OPTION VALUE=t6>06</OPTION>
-                <OPTION VALUE=t7>07</OPTION>
-                <OPTION VALUE=t8>08</OPTION>
-                <OPTION VALUE=t9>09</OPTION>
-                <OPTION VALUE=t10>10</OPTION>
-                <OPTION VALUE=t11>11</OPTION>
-                <OPTION VALUE=t12>12</OPTION>
-                <OPTION VALUE=t13>13</OPTION>
-                <OPTION VALUE=t14>14</OPTION>
-                <OPTION VALUE=t15>15</OPTION>
-                <OPTION VALUE=t16>16</OPTION>
-                <OPTION VALUE=t17>17</OPTION>
-                <OPTION VALUE=t18>18</OPTION>
-                <OPTION VALUE=t19>19</OPTION>
-                <OPTION VALUE=t20>20</OPTION>
-                <OPTION VALUE=t21>21</OPTION>
-                <OPTION VALUE=t22>22</OPTION>
-                <OPTION VALUE=t23>23</OPTION>
+                Time  <select name="time">
+                <OPTION VALUE=00>00</OPTION>
+                <OPTION VALUE=01>01</OPTION>
+                <OPTION VALUE=02>02</OPTION>
+                <OPTION VALUE=03>03</OPTION>
+                <OPTION VALUE=04>04</OPTION>
+                <OPTION VALUE=05>05</OPTION>
+                <OPTION VALUE=06>06</OPTION>
+                <OPTION VALUE=07>07</OPTION>
+                <OPTION VALUE=08>08</OPTION>
+                <OPTION VALUE=09>09</OPTION>
+                <OPTION VALUE=10>10</OPTION>
+                <OPTION VALUE=11>11</OPTION>
+                <OPTION VALUE=12>12</OPTION>
+                <OPTION VALUE=13>13</OPTION>
+                <OPTION VALUE=14>14</OPTION>
+                <OPTION VALUE=15>15</OPTION>
+                <OPTION VALUE=16>16</OPTION>
+                <OPTION VALUE=17>17</OPTION>
+                <OPTION VALUE=18>18</OPTION>
+                <OPTION VALUE=19>19</OPTION>
+                <OPTION VALUE=20>20</OPTION>
+                <OPTION VALUE=21>21</OPTION>
+                <OPTION VALUE=22>22</OPTION>
+                <OPTION VALUE=23>23</OPTION>
             </select>
-                <select>
-                    <OPTION VALUE=tt0>00</OPTION>
-                    <OPTION VALUE=tt1>01</OPTION>
-                    <OPTION VALUE=tt2>02</OPTION>
-                    <OPTION VALUE=tt3>03</OPTION>
-                    <OPTION VALUE=tt4>04</OPTION>
-                    <OPTION VALUE=tt5>05</OPTION>
-                    <OPTION VALUE=tt6>06</OPTION>
-                    <OPTION VALUE=tt7>07</OPTION>
-                    <OPTION VALUE=tt8>08</OPTION>
-                    <OPTION VALUE=tt9>09</OPTION>
-                    <OPTION VALUE=tt10>10</OPTION>
-                    <OPTION VALUE=tt11>11</OPTION>
-                    <OPTION VALUE=tt12>12</OPTION>
-                    <OPTION VALUE=tt13>13</OPTION>
-                    <OPTION VALUE=tt14>14</OPTION>
-                    <OPTION VALUE=tt15>15</OPTION>
-                    <OPTION VALUE=tt16>16</OPTION>
-                    <OPTION VALUE=tt17>17</OPTION>
-                    <OPTION VALUE=tt18>18</OPTION>
-                    <OPTION VALUE=tt19>19</OPTION>
-                    <OPTION VALUE=tt20>20</OPTION>
-                    <OPTION VALUE=tt21>21</OPTION>
-                    <OPTION VALUE=tt22>22</OPTION>
-                    <OPTION VALUE=tt23>23</OPTION>
-                    <OPTION VALUE=tt24>24</OPTION>
-                    <OPTION VALUE=tt25>25</OPTION>
-                    <OPTION VALUE=tt26>26</OPTION>
-                    <OPTION VALUE=tt27>27</OPTION>
-                    <OPTION VALUE=tt28>28</OPTION>
-                    <OPTION VALUE=tt29>29</OPTION>
-                    <OPTION VALUE=tt30>30</OPTION>
-                    <OPTION VALUE=tt31>31</OPTION>
-                    <OPTION VALUE=tt32>32</OPTION>
-                    <OPTION VALUE=tt33>33</OPTION>
-                    <OPTION VALUE=tt34>34</OPTION>
-                    <OPTION VALUE=tt35>35</OPTION>
-                    <OPTION VALUE=tt36>36</OPTION>
-                    <OPTION VALUE=tt37>37</OPTION>
-                    <OPTION VALUE=tt38>38</OPTION>
-                    <OPTION VALUE=tt39>39</OPTION>
-                    <OPTION VALUE=tt40>40</OPTION>
-                    <OPTION VALUE=tt41>41</OPTION>
-                    <OPTION VALUE=tt42>42</OPTION>
-                    <OPTION VALUE=tt43>43</OPTION>
-                    <OPTION VALUE=tt44>44</OPTION>
-                    <OPTION VALUE=tt45>45</OPTION>
-                    <OPTION VALUE=tt46>46</OPTION>
-                    <OPTION VALUE=tt47>47</OPTION>
-                    <OPTION VALUE=tt48>48</OPTION>
-                    <OPTION VALUE=tt49>49</OPTION>
-                    <OPTION VALUE=tt50>50</OPTION>
-                    <OPTION VALUE=tt51>51</OPTION>
-                    <OPTION VALUE=tt52>52</OPTION>
-                    <OPTION VALUE=tt53>53</OPTION>
-                    <OPTION VALUE=tt54>54</OPTION>
-                    <OPTION VALUE=tt55>55</OPTION>
-                    <OPTION VALUE=tt56>56</OPTION>
-                    <OPTION VALUE=tt57>57</OPTION>
-                    <OPTION VALUE=tt58>58</OPTION>
-                    <OPTION VALUE=tt59>59</OPTION>
+                <select name="minute">
+                    <OPTION VALUE=00>00</OPTION>
+                    <OPTION VALUE=01>01</OPTION>
+                    <OPTION VALUE=02>02</OPTION>
+                    <OPTION VALUE=03>03</OPTION>
+                    <OPTION VALUE=04>04</OPTION>
+                    <OPTION VALUE=05>05</OPTION>
+                    <OPTION VALUE=06>06</OPTION>
+                    <OPTION VALUE=07>07</OPTION>
+                    <OPTION VALUE=08>08</OPTION>
+                    <OPTION VALUE=09>09</OPTION>
+                    <OPTION VALUE=10>10</OPTION>
+                    <OPTION VALUE=11>11</OPTION>
+                    <OPTION VALUE=12>12</OPTION>
+                    <OPTION VALUE=13>13</OPTION>
+                    <OPTION VALUE=14>14</OPTION>
+                    <OPTION VALUE=15>15</OPTION>
+                    <OPTION VALUE=16>16</OPTION>
+                    <OPTION VALUE=17>17</OPTION>
+                    <OPTION VALUE=18>18</OPTION>
+                    <OPTION VALUE=19>19</OPTION>
+                    <OPTION VALUE=20>20</OPTION>
+                    <OPTION VALUE=21>21</OPTION>
+                    <OPTION VALUE=22>22</OPTION>
+                    <OPTION VALUE=23>23</OPTION>
+                    <OPTION VALUE=24>24</OPTION>
+                    <OPTION VALUE=25>25</OPTION>
+                    <OPTION VALUE=26>26</OPTION>
+                    <OPTION VALUE=27>27</OPTION>
+                    <OPTION VALUE=28>28</OPTION>
+                    <OPTION VALUE=29>29</OPTION>
+                    <OPTION VALUE=30>30</OPTION>
+                    <OPTION VALUE=31>31</OPTION>
+                    <OPTION VALUE=32>32</OPTION>
+                    <OPTION VALUE=33>33</OPTION>
+                    <OPTION VALUE=34>34</OPTION>
+                    <OPTION VALUE=35>35</OPTION>
+                    <OPTION VALUE=36>36</OPTION>
+                    <OPTION VALUE=37>37</OPTION>
+                    <OPTION VALUE=38>38</OPTION>
+                    <OPTION VALUE=39>39</OPTION>
+                    <OPTION VALUE=40>40</OPTION>
+                    <OPTION VALUE=41>41</OPTION>
+                    <OPTION VALUE=42>42</OPTION>
+                    <OPTION VALUE=43>43</OPTION>
+                    <OPTION VALUE=44>44</OPTION>
+                    <OPTION VALUE=45>45</OPTION>
+                    <OPTION VALUE=46>46</OPTION>
+                    <OPTION VALUE=47>47</OPTION>
+                    <OPTION VALUE=48>48</OPTION>
+                    <OPTION VALUE=49>49</OPTION>
+                    <OPTION VALUE=50>50</OPTION>
+                    <OPTION VALUE=51>51</OPTION>
+                    <OPTION VALUE=52>52</OPTION>
+                    <OPTION VALUE=53>53</OPTION>
+                    <OPTION VALUE=54>54</OPTION>
+                    <OPTION VALUE=55>55</OPTION>
+                    <OPTION VALUE=56>56</OPTION>
+                    <OPTION VALUE=57>57</OPTION>
+                    <OPTION VALUE=58>58</OPTION>
+                    <OPTION VALUE=59>59</OPTION>
                 </select>
             </td>
             <td>Date  </td>
             <td>
                 <select>
-                    <OPTION SELECTED value="">Day</OPTION>
+                    <OPTION SELECTED value="" name="day">Day</OPTION>
                     <OPTION VALUE=1>1</OPTION>
                     <OPTION VALUE=2>2</OPTION>
                     <OPTION VALUE=3>3</OPTION>
@@ -167,7 +175,7 @@
                     <OPTION VALUE=31>31</OPTION>
                 </select>
                 <select>
-                    <OPTION SELECTED value="">Months</OPTION>
+                    <OPTION SELECTED value="" name="month">Months</OPTION>
                     <OPTION VALUE=January>January</OPTION>
                     <OPTION VALUE=February>February</OPTION>
                     <OPTION VALUE=March>March</OPTION>
@@ -182,7 +190,7 @@
                     <OPTION VALUE=December>December</OPTION>
                 </select>
                 <select>
-                    <option selected value="">Year</option>
+                    <option selected value="" name="year">Year</option>
                     <OPTION VALUE=2019>2019</OPTION>
                     <OPTION VALUE=2020>2020</OPTION>
                     <OPTION VALUE=2021>2021</OPTION>
