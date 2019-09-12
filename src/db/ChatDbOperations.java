@@ -52,25 +52,28 @@ public class ChatDbOperations {
         // Turn off auto-commit of db changes as they occur
         dbConn.setAutoCommit(false);
 
-        String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`time`,`numberpass`,`platenum`,`numjoin`,`pnum`)  " +
-                "VALUES (? ,?,?,?,?,?,?,?,?,?);";
+        String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`month`,`year`,`time`,`minute`,`numberpass`,`platenum`,`numjoin`,`pnum`)  " +
+                "VALUES (? ,?,?,?,?,?,?,?,?,?,?,?,?);";
 
 
         PreparedStatement queryStmt ;
         queryStmt = dbConn.prepareStatement(insertStmt);
        // queryStmt.setString(1, user.getName());
        // queryStmt.setString(2,user.getLname());
-		User data = new User();
-		queryStmt.setString(1, data.getName());
-		queryStmt.setString(2,data.getLname());
+
+		queryStmt.setString(1, user.getName());
+		queryStmt.setString(2,user.getLname());
         queryStmt.setString(3,user.getFrom());
-        queryStmt.setString(4,user.getToo());
+		queryStmt.setString(4,user.getToo());
         queryStmt.setString(5,user.getDay());
-        queryStmt.setString(6,user.getTime());
-        queryStmt.setString(7,user.getNumber());
-        queryStmt.setString(8,"OOO33กน");
-        queryStmt.setString(9,"O");
-        queryStmt.setString(10,user.getPnum());
+        queryStmt.setString(6,user.getMonth());
+        queryStmt.setString(7,user.getYear());
+        queryStmt.setString(8,user.getTime());
+		queryStmt.setString(9,user.getMinute());
+		queryStmt.setString(10,user.getNumber());
+        queryStmt.setString(11,"OOO33กน");
+        queryStmt.setString(12,"O");
+        queryStmt.setString(13,user.getPnum());
         System.out.println(queryStmt);
         try {
             queryStmt.executeUpdate();
@@ -190,7 +193,7 @@ public class ChatDbOperations {
 	public static void changeUserStatus(String name, String newStatus)throws ChatDbFailure,SQLException {
 		Connection dbConn;
 		int rowsAffected;
-		String queryStr = "UPDATE user SET status = ? where name = ?;";
+		String queryStr = "UPDATE rb_2.rb_member SET status = ? where name = ?;";
 		
 		dbConn = ChatAppDataSource.getConnection();
 		

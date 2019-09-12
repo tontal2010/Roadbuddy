@@ -2,7 +2,7 @@ package mainServletController;
 
 import model.User;
 import services.UserService;
-
+import model.LineNotify;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/createUserProcess")
@@ -69,8 +70,11 @@ public class CreateUserProcessServlet extends HttpServlet {
 		
 		System.out.println("Trying to create user");
 		UserService.createUser(user);
-		System.out.println("User Created Sccuess");
-		
+		System.out.println("User Created Success");
+		HttpSession session = request.getSession();
+		LineNotify lineNotify = new LineNotify ();
+		lineNotify.callEvent("KgHCReBvyITkPFGwWqCF2GXV0gjwnqnl3RVFIFNkP0I","มีการสมัครสมาชิกใหม่/nชื่อ : "+user.getName()+" "+user.getLname()+"\nEmail : "+user.getEmail());
+		session.setAttribute("createuser","yes");
 		dispatch = context.getRequestDispatcher("/createUserSucess.jsp");
 		dispatch.forward(request, response);
 		

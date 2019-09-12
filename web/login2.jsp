@@ -11,12 +11,17 @@
         font-size: 20px;
     }
 </style>
-
+<%
+    if ((session.getAttribute("login") == "yes")){
+        response.sendRedirect("home.jsp");
+    }
+%>
 <%
     String errorMessage = (String) session.getAttribute("errorMessage");
     if (null !=errorMessage) { %>
 <h3> <%=errorMessage %></h3>
 <%}
+    session.removeAttribute("errorMessage");
 %>
 
 <html>

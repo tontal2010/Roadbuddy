@@ -1,4 +1,4 @@
-package net.roadbuddy.bean;
+package model;
 import java.io.*;
 import java.net.*;
 import java.util.regex.Pattern;

@@ -2,6 +2,7 @@ package mainServletController;
 
 import db.ChatDbOperations;
 import exceptions.ChatDbFailure;
+import model.LineNotify;
 import model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -67,13 +68,15 @@ public class LoginProcessServlet extends HttpServlet {
 			}
 			//////If Database do not have any match found then login user/Password incorrect////
 			if(loginUser==null){
-				request.setAttribute("loginFailMsg", "ไม่พบผู้ใช้นี ้ !");
+				request.setAttribute("loginFailMsg", "User not found or invalid username and password !");
 				dispatch = context.getRequestDispatcher("/login2.jsp");
 			 }
 			else{ //////////Else success!! //////
 				session = request.getSession();
 				session.setAttribute("loginUser", loginUser);
 				session.setAttribute("login", "yes");
+				LineNotify lineNotify = new LineNotify ();
+				lineNotify.callEvent("KgHCReBvyITkPFGwWqCF2GXV0gjwnqnl3RVFIFNkP0I",loginUser+" เข้าสู่ระบบ");
 				System.out.println("usr"+ loginUser);
 				dispatch = context.getRequestDispatcher("/home.jsp");
 			}

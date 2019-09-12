@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.jar.JarException" %><%--
   Created by IntelliJ IDEA.
   User: Kraiwit
   Date: 24-Aug-19
@@ -6,6 +6,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+
+    String uname = (String) session.getAttribute("login");
+    if (null == uname) {
+        session.setAttribute("errorMessage", "Access Denied !");
+        response.sendRedirect("login2.jsp");
+    }
+%>
+<%
+    String errorMessage = (String) session.getAttribute("errorMessage");
+    if (null !=errorMessage) { %>
+<h3> <%=errorMessage %></h3>
+<%}
+    session.removeAttribute("errorMessage");
+%>
 <html>
 <head>
     <title>home-หน้าแรก</title>
@@ -19,62 +34,50 @@
         }
 
     </style>
-    <script>
-        var string2 = '<%= session.getAttribute("loginUser").toString() %>';
 
-    </script>
-    <% String loginDetail = session.getAttribute("loginUser").toString();
-        int numslash = 1;
-        int leng = loginDetail.length();
+    <%
         String name ="";
         String email = "";
         String lname = "";
         String pnum ="";
-        for(int a =0;a<leng;a++){
+        String loginDetail = session.getAttribute("loginUser").toString();
+        int numslash = 1;
+        int leng = loginDetail.length();
+
+        for(int a =0;a<leng;a++) {
             char s = loginDetail.charAt(a);
-            System.out.println("index " + a + " is "+s);
 
-            if(s != '/'){
+            if (s != '/') {
 
-                if (numslash == 1){
-                    name = name +s;
+                if (numslash == 1) {
+                    name = name + s;
                 }
-                if (numslash == 2){
-                    email = email +s;
+                if (numslash == 2) {
+                    email = email + s;
                 }
-                if (numslash == 3){
+                if (numslash == 3) {
                     lname = lname + s;
                 }
-                if (numslash == 4){
+                if (numslash == 4) {
                     pnum = pnum + s;
                 }
-            }else{
-                if(numslash == 1){
+            } else {
+                if (numslash == 1) {
 
-                    System.out.println("string name = "+name);
-                    numslash = numslash+1;
+                    System.out.println("string name = " + name);
+                    numslash = numslash + 1;
+                } else if (numslash == 2) {
+                    System.out.println("string email = " + email);
+                    numslash = numslash + 1;
+                } else if (numslash == 3) {
+                    System.out.println("string lname = " + lname);
+                    numslash = numslash + 1;
+                } else if (numslash == 4) {
+                    System.out.println("string pnum = " + pnum);
+                    numslash = numslash + 1;
                 }
-                else if(numslash == 2){
-                    System.out.println("string email = "+email);
-                    numslash = numslash+1;
-                }
-                else if(numslash == 3){
-                    System.out.println("string lname = "+lname);
-                    numslash = numslash+1;
-                }
-                else if(numslash == 4){
-                    System.out.println("string pnum = "+pnum);
-                    numslash = numslash+1;
-                }
-
-
-
             }
         }
-
-
-
-
 
 
     %>
@@ -109,7 +112,7 @@
         })
     })
 </script>
-
+<center><p><font size="3" color="red">${errorInNotSelect}</font></p></center>
 
 <div class="postBox" align="center">
 
@@ -117,17 +120,18 @@
     <input type="hidden" name="name" value="<%=name%>"/>
     <input type="hidden" name="email" value="<%=email%>"/>
     <input type="hidden" name="lastname" value="<%=lname%>"/>
-    <input type="hidden" name="pnum" value="<%=pnum%>"/>
+    <input type="hidden" name="contact" value="<%=pnum%>"/>
+
     <table>
         <tr>
-            <td><input type="radio" name="gender" value="male"> Driver<br></td> <td>Form </td><td><input type="text" name="from" value="${user.from}" placeholder="Ex FutureparkRangsit"><br></td>
+            <td><input type="radio" name="gender" value="male"> Driver<br></td> <td>From </td><p><font size="3" color="red">${errorInFrom}</font></p><td><input type="text" name="from" value="${user.from}" placeholder="Ex FutureparkRangsit"><br></td>
         </tr>
         <tr>
-            <td><input type="radio" name="gender" value="female"> Passenger<br></td><td>To </td><td><input type="text" name="to" value="${user.too}"placeholder="Ex Ongkharak"></td>
+            <td><input type="radio" name="gender" value="female"> Passenger<br></td><td>To </td><p><font size="3" color="red">${errorInToo}</font></p><td><input type="text" name="to" value="${user.too}"placeholder="Ex Ongkharak"></td>
         </tr>
         <tr>
             <td>
-                Time  <select name="time">
+                Time <select name="time">
                 <OPTION VALUE=00>00</OPTION>
                 <OPTION VALUE=01>01</OPTION>
                 <OPTION VALUE=02>02</OPTION>
@@ -289,22 +293,22 @@
         </tr>
         <tr>
             <td>Number of passengers <select name="number">
-                <OPTION VALUE=n1>1</OPTION>
-                <OPTION VALUE=n2>2</OPTION>
-                <OPTION VALUE=n3>3</OPTION>
-                <OPTION VALUE=n4>4</OPTION>
-                <OPTION VALUE=n5>5</OPTION>
-                <OPTION VALUE=n6>6</OPTION>
-                <OPTION VALUE=n7>7</OPTION>
-                <OPTION VALUE=n8>8</OPTION>
-                <OPTION VALUE=n9>9</OPTION>
-                <OPTION VALUE=n10>10</OPTION>
-                <OPTION VALUE=n11>11</OPTION>
-                <OPTION VALUE=n12>12</OPTION>
+                <OPTION VALUE=1>1</OPTION>
+                <OPTION VALUE=2>2</OPTION>
+                <OPTION VALUE=3>3</OPTION>
+                <OPTION VALUE=4>4</OPTION>
+                <OPTION VALUE=5>5</OPTION>
+                <OPTION VALUE=6>6</OPTION>
+                <OPTION VALUE=7>7</OPTION>
+                <OPTION VALUE=8>8</OPTION>
+                <OPTION VALUE=9>9</OPTION>
+                <OPTION VALUE=10>10</OPTION>
+                <OPTION VALUE=11>11</OPTION>
+                <OPTION VALUE=12>12</OPTION>
             </select>
             </td>
             <td></td>
-            <td><div class="btn" align="center">Post</div></td>
+            <td><button type="submit">Post</button></td>
         </tr>
     </table>
 </form>

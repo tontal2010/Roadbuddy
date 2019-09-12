@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/createPlaceProcess")
@@ -49,27 +50,28 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		System.out.println("Year "+ user.getYear());
 		System.out.println("Numpassenger "+ user.getNumber());
 
-		if ( user.getFrom() == null || user.getToo() == null || user.getTime() == null || user.getDay() == null || user.getNumber() == null) {
+		if ( user.getFrom() == null ||user.getMonth() == null ||user.getYear() == null || user.getToo() == null || user.getTime() == null || user.getDay() == null || user.getNumber() == null) {
 			System.out.println("There is an error returning back!");
 			/* The form contained invalid data, transfer control back to original form */
 			
 			request.setAttribute("user", user);
-
-			if(user.getName() == null){
-				request.setAttribute("errorInNameMsg", "ข้อผิดพลาดเกี่ยวกับชื่อ !");}
-
-			if(user.getLname() == null){
-				request.setAttribute("errorInLNameMsg", "ข้อผิดพลาดเกี่ยวกับนามสกุล !");}
+/*
 			if(user.getFrom() == null){
 				request.setAttribute("errorInFrom", "กรุณาพิมพ์ว่าคุณเริ่มอยู่ที่ไหน !");}
 			if(user.getToo() == null){
 				request.setAttribute("errorInToo", "กรุณาบอกว่าคุณจะไปที่ใด !");}
 			if(user.getTime() == null){
-				request.setAttribute("errorInTime", "กรุณาใส่เวลาที่จะไป !");}
+				request.setAttribute("errorInNotSelectT", "Please select !");}
+
 			if(user.getDay() == null){
-				request.setAttribute("errorInDate", "กรุณาใส่วันที่จะไป !");}
+				request.setAttribute("errorInNotSelectD", "Please select !");}
+			if(user.getYear() == null){
+				request.setAttribute("errorInNotSelectY", "Please select !");}
+			if(user.getMonth() == null){
+				request.setAttribute("errorInNotSelectM", "Please select !");}
 			if(user.getNumber() == null){
-				request.setAttribute("errorInNumber", "กรุณาใส่จำนวนของผู้โดยสาร !");}
+				request.setAttribute("errorInNumber", "กรุณาใส่จำนวนของผู้โดยสาร !");}*/
+			request.setAttribute("errorInNotSelect", "กรุณากรอกข้อมุลให้ครบ !");
 			dispatch = context.getRequestDispatcher("/home.jsp");
 			dispatch.forward(request, response);
 			return;
@@ -78,7 +80,8 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		System.out.println("Trying to create user");
 		PlaceService.createUser(user);
 		System.out.println("User Created Sccuess");
-		
+		HttpSession session = request.getSession();
+		session.setAttribute("create", "yes");
 		dispatch = context.getRequestDispatcher("/createPlaceSucess.jsp");
 		dispatch.forward(request, response);
 		

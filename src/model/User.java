@@ -29,17 +29,17 @@ public class User implements Serializable{
 
 	public static final String ONLINE="online";
 	public static final String OFFLINE="offline";
-	
+
 	public User() {
 		super();
-	}
+	}/*
 	public void setPlace(String From,String Too){
 		this.From = From;
 		this.Too = Too;
 
 
 	}
-	
+
 	public User(String name, String lname, String sex, String pnum , String emerpnum, String email, String pass ,String pass2 ) {
 		super();
 		this.name = name;
@@ -53,7 +53,7 @@ public class User implements Serializable{
 
 
 
-	}
+	}*/
 	public User(HttpServletRequest request) throws UnsupportedEncodingException {
 		extractFormData(request);
 	}	

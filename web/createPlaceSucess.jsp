@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <%
-	String uname = (String) session.getAttribute("user");
+	String uname = (String) session.getAttribute("create");
 	if (null == uname) {
 		session.setAttribute("errorMessage", "Access Denied !");
-		response.sendRedirect("register2.jsp");
+		response.sendRedirect("home.jsp");
 	}
 %>
 <html>
@@ -15,6 +16,7 @@
 	
 	<body>
 		    <h1>Create Place Success !</h1>
-			<a href="${pageContext.request.contextPath}/home.jsp">Go to Login page</a>
+			<h1>Redirecting . . .</h1>
+			<meta http-equiv="Refresh" content="5; url=${pageContext.request.contextPath}/home.jsp" />
 	</body>
 </html>
