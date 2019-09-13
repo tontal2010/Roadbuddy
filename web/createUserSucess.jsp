@@ -16,6 +16,6 @@
 	<body>
 		    <h1>Create User Success !</h1>
 			<h1>Redirecting . . .</h1>
-			<meta http-equiv="Refresh" content="5; url=${pageContext.request.contextPath}/login2.jsp" />
+			<meta http-equiv="Refresh" content="3; url=${pageContext.request.contextPath}/login2.jsp" />
 	</body>
 </html>

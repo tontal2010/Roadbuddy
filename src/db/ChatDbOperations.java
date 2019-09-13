@@ -21,8 +21,8 @@ public class ChatDbOperations {
 		// Turn off auto-commit of db changes as they occur
 		dbConn.setAutoCommit(false);
 		
-		String insertStmt = "INSERT INTO `rb_2`.`rb_member`  (`name`, `pass`,`sex`,`pnum`,`emerpnum`,`email`,`lname`,`status`)  " +
-				"VALUES (? ,?,?,?,?,?,?,?);";
+		String insertStmt = "INSERT INTO `rb_2`.`rb_member`  (`name`, `pass`,`sex`,`pnum`,`emerpnum`,`email`,`lname`,`status`,`uploadimg`)  " +
+				"VALUES (? ,?,?,?,?,?,?,?,?);";
 
 				
 		PreparedStatement queryStmt ;
@@ -35,6 +35,7 @@ public class ChatDbOperations {
 		queryStmt.setString(6,user.getEmail());
 		queryStmt.setString(7,user.getLname());
 		queryStmt.setString(8,"offline");
+		queryStmt.setString(9,"0");
 		System.out.println(queryStmt);
 		try {
 			queryStmt.executeUpdate();
@@ -116,7 +117,8 @@ public class ChatDbOperations {
 			String emerpnum = results.getString("emerpnum");
 			String email = results.getString("email");
 			String name = results.getString("name");
-
+			String img = results.getString("uploadimg");
+			loggedInUser.setImg(img);System.out.println("Set "+ img);
 			loggedInUser.setName(name);System.out.println("Set "+ name);
 			loggedInUser.setLname(lname);System.out.println("Set "+ lname);
 			loggedInUser.setPnum(pnum);System.out.println("Set "+ pnum);
@@ -185,11 +187,7 @@ public class ChatDbOperations {
 		
 	}
 	
-	/**
-	 * Updating Users with status
-	 * @param status - online/offline
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 */
+
 	public static void changeUserStatus(String name, String newStatus)throws ChatDbFailure,SQLException {
 		Connection dbConn;
 		int rowsAffected;
@@ -259,16 +257,11 @@ public class ChatDbOperations {
 	
 
 	
-	/**
-	 * Selects Users with name field
-	 * @param username - name
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 * @return ListOf User with Name as @param
-	 */
+
 	public static List<User> findAllUserWithName(String username) throws SQLException
 	{
 		Connection dbConn;
-		String queryStr = "SELECT userid, name " + "FROM user "
+		String queryStr = "SELECT userid, name " + "FROM rb_2.rb_member "
 				+ "WHERE name = '" + username + "'";
 		
 		dbConn = ChatAppDataSource.getConnection();
@@ -298,18 +291,12 @@ public class ChatDbOperations {
 		dbConn.close();
 		return userWithName;
 	}
-	
-	/**
-	 * Selects Users with ID field
-	 * @param userid - ID
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 * @return ListOf User with Name as @param
-	 */
-	public static User findUserWithId(int searchUserId) throws SQLException{
+
+	public static User findUserWithEmail(String searchUserId) throws SQLException{
 		
 		Connection dbConn;
-		String queryStr = "SELECT userid, name " + "FROM user "
-				+ "WHERE userid = '" + searchUserId + "'";
+		String queryStr = "SELECT * " + "FROM rb_2.rb_member "
+				+ "WHERE email = '" + searchUserId + "'";
 		
 		dbConn = ChatAppDataSource.getConnection();
 		Statement queryStmt = dbConn.createStatement();
@@ -317,15 +304,28 @@ public class ChatDbOperations {
 		
 		User userWithId= new User();
 		int userid;
-		String name;
+		String name,lname,pnum,email,uploadimg,imgfull,sex;
 		
 		results = queryStmt.executeQuery(queryStr);
 		while (results.next()) { // process results
 			
 			userid = results.getInt("userid");
 			name = results.getString("name");
+			lname = results.getString("lname");
+			pnum = results.getString("pnum");
+			email = results.getString("email");
+			uploadimg = results.getString("uploadimg");
+			imgfull = results.getString("img");
+			sex = results.getString("sex");
 			userWithId.setId(userid);
-			userWithId.setName(name);			
+			userWithId.setName(name);
+			userWithId.setLname(lname);
+			userWithId.setPnum(pnum);
+			userWithId.setEmail(email);
+			userWithId.setImg(uploadimg);
+			userWithId.setImgfull(imgfull);
+			userWithId.setSex(sex);
+
 		}
 		
 		// Free resources
@@ -335,11 +335,6 @@ public class ChatDbOperations {
 		return userWithId;
 	}
 
-	/**
-	 * Insert into messege_receipt Table 
-	 * @param status - online/offline
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 */
 
 
 	public static void deleteUser(String name) throws SQLException, ChatDbFailure{
@@ -350,7 +345,7 @@ public class ChatDbOperations {
 		// Turn off auto-commit of db changes as they occur
 		dbConn.setAutoCommit(false);
 		
-		String deleteStmt = "DELETE FROM `manisha_chat_project`.`user` WHERE `name`= ? ;";
+		String deleteStmt = "DELETE FROM `rb_2`.`rb_member` WHERE `name`= ? ;";
 				
 		PreparedStatement queryStmt ;
 		queryStmt = dbConn.prepareStatement(deleteStmt);

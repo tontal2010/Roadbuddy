@@ -70,6 +70,28 @@ h3
 {
     color: rgba(255,255,255,.5);
 }
+.upload-result{
+    border : none;
+    outline: none;
+    height: 40px;
+    width: 270px;
+    color: #ffff;
+    font-size: 16px;
+    background: #3781c5;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.upload-result2{
+    border : none;
+    outline: none;
+    height: 40px;
+    width: 270px;
+    color: #ffff;
+    font-size: 16px;
+    background: #3781c5;
+    cursor: pointer;
+    border-radius: 20px;
+}
 .loginBox input[type="submit"]
 {
     border : none;

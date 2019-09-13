@@ -45,9 +45,9 @@
         <input type="text" name="lastname" placeholder="Lastname" value="${user.lname}" >
         <SELECT name="sex" required><p><font size="3" color="red">${errorInSex}</font></p>
             <OPTION SELECTED value="">Gender</OPTION>
-            <OPTION VALUE=male>male</OPTION>
-            <OPTION VALUE=female>female</OPTION>
-            <OPTION VALUE=other>other</OPTION>
+            <OPTION VALUE=Male>male</OPTION>
+            <OPTION VALUE=Female>female</OPTION>
+            <OPTION VALUE=Other>other</OPTION>
         </SELECT>
         <br><br>
         <p>Phone number</p><p><font size="3" color="red">${errorInPnum}</font></p>

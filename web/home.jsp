@@ -5,7 +5,7 @@
   Time: 4:20 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8"%>
 <%
 
     String uname = (String) session.getAttribute("login");
@@ -40,14 +40,18 @@
         String email = "";
         String lname = "";
         String pnum ="";
+        String img ="";
+        String imgfull="";
+        request.setCharacterEncoding( "UTF-8" );
         String loginDetail = session.getAttribute("loginUser").toString();
+        System.out.println(loginDetail);
         int numslash = 1;
         int leng = loginDetail.length();
 
         for(int a =0;a<leng;a++) {
             char s = loginDetail.charAt(a);
 
-            if (s != '/') {
+            if (s != '#') {
 
                 if (numslash == 1) {
                     name = name + s;
@@ -60,6 +64,12 @@
                 }
                 if (numslash == 4) {
                     pnum = pnum + s;
+                }
+                if (numslash == 5) {
+                    img = img + s;
+                }
+                if (numslash == 6) {
+                    imgfull = imgfull + s;
                 }
             } else {
                 if (numslash == 1) {
@@ -77,8 +87,21 @@
                 } else if (numslash == 4) {
                     System.out.println("string pnum = " + pnum);
                     numslash = numslash + 1;
+                }else if (numslash == 5) {
+                    System.out.println("string imgUpload = " + img);
+                    numslash = numslash + 1;
                 }
+            else if (numslash == 6) {
+                System.out.println("string imgUploadFull = " + imgfull);
+                numslash = numslash + 1;
             }
+            }
+        }
+        session.setAttribute("email",email);
+        if(img.equals("0")){
+
+            session.setAttribute("errorMessage", "Please add your image profile !");
+            response.sendRedirect("register3.jsp");
         }
 
 
@@ -99,10 +122,10 @@
     </div>
     <ul>
         <li><a href="home.jsp">Home</a></li>
-        <li><a href="profile2.jsp">Profile</a>
+        <li><a href="${pageContext.request.contextPath}/profileprocess">Profile</a>
         <li><a href="#">Chat</a>
         <li><a href="#">Notifications</a></li>
-        <li><a href="login2.jsp">Log out</a>
+        <li><a href="${pageContext.request.contextPath}/logoutprocess">Log out</a>
         <li>ROAD BUDDY</li>
     </ul>
 </nav>

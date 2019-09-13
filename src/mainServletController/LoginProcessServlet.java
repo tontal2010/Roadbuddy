@@ -44,21 +44,26 @@ public class LoginProcessServlet extends HttpServlet {
 		User user = new User(request);
 		String tName = user.getEmail();
 		String tPass = user.getPass();
-		
+
 		////////////// If one of the username/password field is empty//////////
 
-		if (tName == null || tPass == null) {
+
+
+		if (tName == null || tPass == null ) {
 			System.out.println("There is an error returning back!");
 			/* The form contained invalid data, transfer colontrol back to original form */
 			
 			request.setAttribute("user", user);
+
+
 			if(tName == null){
 				request.setAttribute("errorInNameMsg", "กรุณาใส่ Username !");}
 			if(tPass == null){
 				request.setAttribute("errorInPassMsg", "กรุณาใส่รหัสผ่าน !");}
 			dispatch = context.getRequestDispatcher("/login2.jsp");
-		} 
-		///////Otherwise try to login//////
+
+		}
+		//Otherwise try to login//////
 		else{
 		
 			try {
@@ -66,12 +71,15 @@ public class LoginProcessServlet extends HttpServlet {
 			} catch (ChatDbFailure | SQLException e) {
 				e.printStackTrace();
 			}
+
 			//////If Database do not have any match found then login user/Password incorrect////
 			if(loginUser==null){
 				request.setAttribute("loginFailMsg", "User not found or invalid username and password !");
 				dispatch = context.getRequestDispatcher("/login2.jsp");
 			 }
 			else{ //////////Else success!! //////
+
+
 				session = request.getSession();
 				session.setAttribute("loginUser", loginUser);
 				session.setAttribute("login", "yes");

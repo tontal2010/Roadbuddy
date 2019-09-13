@@ -6,6 +6,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String name = "",lname = "",email ="",pnum ="",fullimg ="",sex ="";
+    try {
+        name = session.getAttribute("name").toString();
+        lname = session.getAttribute("lname").toString();
+        email = session.getAttribute("email").toString();
+        pnum = session.getAttribute("pnum").toString();
+        sex = session.getAttribute("sex").toString();
+        fullimg = session.getAttribute("imgfull").toString();
+    }catch (NullPointerException e){
+        e.printStackTrace();
+    }
+
+
+%>
 <html>
 <head>
     <title>profile-โปรไฟล์</title>
@@ -32,19 +47,19 @@
 </nav>
 <div class="wrapper">
     <div class="container">
-        <img src="./img/10.jpg" alt="" class="profile-img">
+        <img src="<%=fullimg%>" alt="" class="profile-img">
 
         <div class="content">
             <div class="sub-content">
-                <h1>Roger Federer</h1>
+                <h1><%=name%> <%=lname%></h1>
                 <span>เดินทาง กรุงเทพ หัวหิน ทุกวันศุกร์ ใครสนใจร่วมเดินทางติดต่อได้เลยค่ะ</span>
             </div>
 
             <br>
             <div class="sub-content2">
-                <img src="./img/icon_age.png" width="25px"/><span> 19 Years </span><img src="./img/icon_gender.png" width="25px"/><span>Female</span><br>
-                <img src="./img/icon_tel.png"width="25px"/><span> 0971326965</span><br>
-                <img src="./img/icon_email.png"width="25px"/><span> Kraiwitroopchom@gmail.com</span><br>
+                <img src="./img/icon_age.png" width="25px"/><span> 19 Years </span><img src="./img/icon_gender.png" width="25px"/><span><%=sex%>></span><br>
+                <img src="./img/icon_tel.png"width="25px"/><span> <%=pnum%></span><br>
+                <img src="./img/icon_email.png"width="25px"/><span> <%=email%>></span><br>
             </div>
             <br>
             <div class="btn3">history</div>

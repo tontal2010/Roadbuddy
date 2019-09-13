@@ -5,7 +5,22 @@
   Time: 8:25 PM3
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8"%>
+<%
+    String errorMessage = (String) session.getAttribute("errorMessage");
+    if (null !=errorMessage) { %>
+<h3 style="color: red"> <%=errorMessage %></h3>
+<%}
+    session.removeAttribute("errorMessage");
+%>
+<%
+    request.setCharacterEncoding( "UTF-8" );
+   String email = session.getAttribute("email").toString();
+
+
+   System.out.println("register4 " + email);
+
+%>
 <html>
 <head>
     <title>Register-ลงทะเบียน</title>
@@ -24,57 +39,36 @@
         }
 
     </style>
-    <script>
-        var loadFile = function(event) {
-            var output = document.getElementById('output');
-            output.src = URL.createObjectURL(event.target.files[0]);
-            loca = URL.createObjectURL(event.target.files[0]);
-            document.getElementById('userimg').style.display = 'none';
-            document.getElementById('output').style.width = '150px';
-            document.getElementById('output').style.heighth = '150px';
-            document.getElementById('output').style.objectFit = 'cover';
-            document.getElementById('imgup').style.display = 'block';
-            document.getElementById('output').style.borderRadius = '50%';
 
-            $(function() {
-                var basic = $('#imgup').croppie({
-                    viewport: {
-                        width: 150,
-                        height: 150,
-                        type: 'circle'
-                    }
-                });
-                basic.croppie('bind', {
-                    url: loca,
-                    points: [77, 469, 280, 739]
-                });
-                basic.croppie('result', 'html').then(function(html) {
-                    // html is div (overflow hidden)
-                    // with img positioned inside.
-                });
-            });
-        };
-
-    </script>
 </head>
 <body>
 <div id="demo-basic"></div>
 <div class="loginBox">
     <h2>Register</h2>
-    <label for="file-input">
+    <label for="upload">
         <center><img class="user2" src="./img/user1.png" id="userimg"/></center>
-    </label>
-    <center><div style="width: 200px; height: 200px; display: none;" id="imgup"><img id="output"style="display: none"/></div><input accept="image/*" onchange="loadFile(event)" class="t1" id="file-input" type="file" /><!--<img src="./img/user1.png" class="user2">--></center>
+    </label> <form method="post" action="uploadServlet" enctype="multipart/form-data">
+    <input type="hidden" name="email" value="<%=email%>"/>
+
+    <input type="hidden" name="upload2" id="hidden"/>
+    <center><div style="width: 200px; height: 200px; display: none;" id="upload-demo"><img id="output"style="display: none"/></div><input name="photo" accept="image/*" onchange="loadFile(event)" class="t1" id="upload" type="file" /><!--<img src="./img/user1.png" class="user2">--></center>
     <br><br>
 
     <h3>Upload profile picture</h3>
-    <button id="result" class="basic-result">Upload</button>
-    <form action="success.jsp" method="post">
 
 
 
-        <input type="submit" value="Submit">
-    </form>
+
+        <button type="button" id="upload-result2"  class="upload-result"><p id="text"></p></button>
+        <button type="submit" id="upload-result3"  class="upload-result2">Submit</button>
+      <!--  <input class="upload-result" type="submit" value="Submit">-->
+
 </div>
+
+
+<script src="./demo.js"></script>
+<script>
+    Demo.init();
+</script>
 </body>
 </html>

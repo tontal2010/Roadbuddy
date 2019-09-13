@@ -26,7 +26,8 @@ public class User implements Serializable{
 	private String Number;
 	private String Minute;
 	 private String Year;
-
+	 private String img;
+	 private String imgfull;
 	public static final String ONLINE="online";
 	public static final String OFFLINE="offline";
 
@@ -125,6 +126,10 @@ public class User implements Serializable{
 			if(!request.getParameter("year").equals(""))
 				Year = request.getParameter("year");
 		}
+		if(request.getParameter("img") != null){
+			if(!request.getParameter("img").equals(""))
+				img = request.getParameter("img");
+		}
 
 
 
@@ -134,6 +139,12 @@ public class User implements Serializable{
 	public int getId() {
 		return id;
 	}
+	 public String getImg() {
+		 return img;
+	 }
+	 public String getImgfull() {
+		 return imgfull;
+	 }
 	public String getName() {
 		return name;
 	}
@@ -181,6 +192,12 @@ public class User implements Serializable{
 	public void setPass2(String pass2) {
 		this.pass2 = pass2;
 	}
+	 public void setImg(String img) {
+		 this.img = img;
+	 }
+	 public void setImgfull(String imgfull) {
+		 this.imgfull = imgfull;
+	 }
 	 public void setMinute(String Minute) {
 		 this.Minute = Minute;
 	 }
@@ -235,7 +252,7 @@ public class User implements Serializable{
 				+ "\", status:\"" + status + "\"}";
 	}*/
 	public String toString() {
-		return  name + "/" + lname +"/"+ email + "/" + pnum ;
+		return  name + "#" + lname +"#"+ email + "#" + pnum + "#" + img + "#" + imgfull + "#" + sex + "#";
 	}
 	
 }

@@ -15,8 +15,22 @@
     if ((session.getAttribute("login") == "yes")){
         response.sendRedirect("home.jsp");
     }
+
+    String src = "./img/user1.png";
+    try{
+        src = session.getAttribute("img").toString();
+        System.out.println(src);
+
+    }catch (NullPointerException e){
+        src = "./img/user1.png";
+    }
+
+
+
+
 %>
 <%
+
     String errorMessage = (String) session.getAttribute("errorMessage");
     if (null !=errorMessage) { %>
 <h3> <%=errorMessage %></h3>
@@ -35,7 +49,7 @@
 </head>
 <body>
 <div class="loginBox">
-    <img src="./img/user1.png" class="user"/>
+    <img src="<%=src%>" class="user"/>
     <h2>log in here</h2>
     <form action="${pageContext.request.contextPath}/loginprocess" method="post">
         <p>Email</p><p><font size="3" color="red">${loginFailMsg}</font></p>
