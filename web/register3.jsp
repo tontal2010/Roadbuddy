@@ -66,7 +66,7 @@
     </label>
     <center><div style="width: 200px; height: 200px; display: none;" id="imgup"><img id="output"style="display: none"/></div><input accept="image/*" onchange="loadFile(event)" class="t1" id="file-input" type="file" /><!--<img src="./img/user1.png" class="user2">--></center>
     <br><br>
-    <div style="overflow: hidden;width: 150px;height: 150px;"><img width="150px" height="150px"></div>
+
     <h3>Upload profile picture</h3>
     <button id="result" class="basic-result">Upload</button>
     <form action="success.jsp" method="post">
