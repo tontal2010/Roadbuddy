@@ -149,10 +149,10 @@
 
     <table>
         <tr>
-            <td><input type="radio" name="gender" value="male"> Driver<br></td> <td>From </td><p><font size="3" color="red">${errorInFrom}</font></p><td><input type="text" name="from" value="${user.from}" placeholder="Ex FutureparkRangsit"><br></td>
+            <td><input type="radio" name="check" value="dri"> Driver<br></td> <td>From </td><p><font size="3" color="red">${errorInFrom}</font></p><td><input type="text" name="from" value="${user.from}" placeholder="Ex FutureparkRangsit"><br></td>
         </tr>
         <tr>
-            <td><input type="radio" name="gender" value="female"> Passenger<br></td><td>To </td><p><font size="3" color="red">${errorInToo}</font></p><td><input type="text" name="to" value="${user.too}"placeholder="Ex Ongkharak"></td>
+            <td><input type="radio" name="check" value="pass"> Passenger<br></td><td>To </td><p><font size="3" color="red">${errorInToo}</font></p><td><input type="text" name="to" value="${user.too}"placeholder="Ex Ongkharak"></td>
         </tr>
         <tr>
             <td>
