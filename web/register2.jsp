@@ -43,12 +43,6 @@
         <input type="text" name="name" placeholder="Name" value="${user.name}" >
         <p>Lastname</p><p><font size="3" color="red">${errorInLNameMsg}</font></p>
         <input type="text" name="lastname" placeholder="Lastname" value="${user.lname}" >
-        <SELECT name="sex" required><p><font size="3" color="red">${errorInSex}</font></p>
-            <OPTION SELECTED value="">Gender</OPTION>
-            <OPTION VALUE=Male>male</OPTION>
-            <OPTION VALUE=Female>female</OPTION>
-            <OPTION VALUE=Other>other</OPTION>
-        </SELECT>
         <br>
         <p> Brith Day </p>
         <select name="day">
@@ -102,21 +96,65 @@
         </select>
         <select name="year">
             <option selected value="" >Year</option>
-            <OPTION VALUE=2019>2019</OPTION>
-            <OPTION VALUE=2020>2020</OPTION>
-            <OPTION VALUE=2021>2021</OPTION>
-            <OPTION VALUE=2022>2022</OPTION>
-            <OPTION VALUE=2022>2023</OPTION>
-            <OPTION VALUE=2024>2024</OPTION>
-            <OPTION VALUE=2025>2025</OPTION>
-            <OPTION VALUE=2026>2026</OPTION>
-            <OPTION VALUE=2027>2027</OPTION>
-            <OPTION VALUE=2028>2028</OPTION>
-            <OPTION VALUE=2029>2029</OPTION>
-            <OPTION VALUE=2030>2030</OPTION>
-            <OPTION VALUE=2031>2031</OPTION>
-            <OPTION VALUE=2032>2032</OPTION>
+            <OPTION VALUE=1960>1960</OPTION>
+            <OPTION VALUE=1961>1961</OPTION>
+            <OPTION VALUE=1962>1962</OPTION>
+            <OPTION VALUE=1963>1963</OPTION>
+            <OPTION VALUE=1964>1964</OPTION>
+            <OPTION VALUE=1965>1965</OPTION>
+            <OPTION VALUE=1966>1966</OPTION>
+            <OPTION VALUE=1967>1967</OPTION>
+            <OPTION VALUE=1968>1968</OPTION>
+            <OPTION VALUE=1969>1969</OPTION>
+            <OPTION VALUE=1970>1970</OPTION>
+            <OPTION VALUE=1971>1971</OPTION>
+            <OPTION VALUE=1972>1972</OPTION>
+            <OPTION VALUE=1973>1973</OPTION>
+            <OPTION VALUE=1974>1974</OPTION>
+            <OPTION VALUE=1975>1975</OPTION>
+            <OPTION VALUE=1976>1976</OPTION>
+            <OPTION VALUE=1977>1977</OPTION>
+            <OPTION VALUE=1978>1978</OPTION>
+            <OPTION VALUE=1979>1979</OPTION>
+            <OPTION VALUE=1980>1980</OPTION>
+            <OPTION VALUE=1981>1981</OPTION>
+            <OPTION VALUE=1982>1982</OPTION>
+            <OPTION VALUE=1983>1983</OPTION>
+            <OPTION VALUE=1984>1984</OPTION>
+            <OPTION VALUE=1985>1985</OPTION>
+            <OPTION VALUE=1986>1986</OPTION>
+            <OPTION VALUE=1987>1987</OPTION>
+            <OPTION VALUE=1988>1988</OPTION>
+            <OPTION VALUE=1989>1989</OPTION>
+            <OPTION VALUE=1990>1990</OPTION>
+            <OPTION VALUE=1991>1991</OPTION>
+            <OPTION VALUE=1992>1992</OPTION>
+            <OPTION VALUE=1993>1993</OPTION>
+            <OPTION VALUE=1994>1994</OPTION>
+            <OPTION VALUE=1995>1995</OPTION>
+            <OPTION VALUE=1996>1996</OPTION>
+            <OPTION VALUE=1997>1997</OPTION>
+            <OPTION VALUE=1998>1998</OPTION>
+            <OPTION VALUE=1999>1999</OPTION>
+            <OPTION VALUE=2001>2001</OPTION>
+            <OPTION VALUE=2002>2002</OPTION>
+            <OPTION VALUE=2003>2003</OPTION>
+            <OPTION VALUE=2004>2004</OPTION>
+            <OPTION VALUE=2005>2005</OPTION>
+            <OPTION VALUE=2006>2006</OPTION>
+            <OPTION VALUE=2007>2007</OPTION>
+            <OPTION VALUE=2008>2008</OPTION>
+            <OPTION VALUE=2009>2009</OPTION>
+            <OPTION VALUE=2010>2010</OPTION>
+            <OPTION VALUE=2011>2011</OPTION>
         </select>
+        <br><br>
+        <SELECT name="sex" required><p><font size="3" color="red">${errorInSex}</font></p>
+            <OPTION SELECTED value="">Gender</OPTION>
+            <OPTION VALUE=Male>male</OPTION>
+            <OPTION VALUE=Female>female</OPTION>
+            <OPTION VALUE=Other>other</OPTION>
+        </SELECT>
         <br><br>
         <p>Phone number</p><p><font size="3" color="red">${errorInPnum}</font></p>
         <input type="number" name="contact" placeholder="Phone number" value="${user.pnum}" >
