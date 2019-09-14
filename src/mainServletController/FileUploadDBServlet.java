@@ -7,6 +7,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import model.User;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -24,9 +27,9 @@ public class FileUploadDBServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
         // gets values of text fields
-
+        ServletContext context = request.getServletContext();
         InputStream inputStream = null; // input stream of the upload file
-
+        RequestDispatcher dispatch =null;
         // obtains the upload file part in this multipart request
         Part filePart = request.getPart("upload2");
         if (filePart != null) {
@@ -89,10 +92,12 @@ public class FileUploadDBServlet extends HttpServlet {
             session =request.getSession();
             session.setAttribute("loginUser", udetail);
 
-            session.setAttribute("errorMessage", message);
+            session.setAttribute("errorInNotSelect", message);
             session.setAttribute("img2",s);
+            session.setAttribute("login","yes");
 
             // forwards to the message page
+            //dispatch = context.getRequestDispatcher("/home.jsp");
             getServletContext().getRequestDispatcher("/home.jsp").forward(request, response);
         }
     }

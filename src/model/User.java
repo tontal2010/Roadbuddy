@@ -29,6 +29,10 @@ public class User implements Serializable{
 	 private String img;
 	 private String imgfull;
 	 private String check;
+	 private String bday;
+	 private String bmonth;
+	 private String byear;
+	 private String birthday;
 	public static final String ONLINE="online";
 	public static final String OFFLINE="offline";
 
@@ -64,6 +68,18 @@ public class User implements Serializable{
 		if(request.getParameter("name") != null) {
 			if (!request.getParameter("name").equals(""))
 				name = request.getParameter("name");
+		}
+		if(request.getParameter("bday") != null) {
+			if (!request.getParameter("bday").equals(""))
+				bday = request.getParameter("bday");
+		}
+		if(request.getParameter("bmonth") != null) {
+			if (!request.getParameter("bmonth").equals(""))
+				bmonth = request.getParameter("bmonth");
+		}
+		if(request.getParameter("byear") != null) {
+			if (!request.getParameter("byear").equals(""))
+				byear = request.getParameter("byear");
 		}
 		if(request.getParameter("check") != null) {
 			if (!request.getParameter("check").equals(""))
@@ -146,6 +162,19 @@ public class User implements Serializable{
 	}
 	 public String getImg() {
 		 return img;
+	 }
+	 public String getBday() {
+		 return bday;
+	 }
+	 public String getBmonth() {
+		 return bmonth;
+	 }
+	 public String getByear() {
+		 return byear;
+	 }
+	 public String getBirthday() {
+		String bd = getByear() + "-"+ getBmonth() + "-"+getBday();
+		return bd;
 	 }
 	 public String getImgfull() {
 		 return imgfull;
@@ -245,6 +274,18 @@ public class User implements Serializable{
 	public void setDay(String Day) {
 		this.Day = Day;
 	}
+	 public void setBday(String bday) {
+		 this.bday = bday;
+	 }
+	 public void setBmonth(String bmonth) {
+		 this.bmonth = bmonth;
+	 }
+	 public void setByear(String byear) {
+		 this.byear = byear;
+	 }
+	/* public void setBirthday(String birthday) {
+		 this.birthday = birthday;
+	 }*/
 	public void setNumber(String Number) {
 		this.Number = Number;
 	}

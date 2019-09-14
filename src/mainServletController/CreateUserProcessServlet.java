@@ -41,7 +41,7 @@ public class CreateUserProcessServlet extends HttpServlet {
 		System.out.println("Emer Phone number is "+ user.getEmerpnum());
 		System.out.println("Email is "+ user.getEmail());
 
-		if (!user.getPass().equals(user.getPass2()) || user.getName() == null || user.getPass() == null || user.getLname() == null || user.getSex() == null || user.getPnum() == null || user.getEmerpnum() == null || user.getEmail() == null) {
+		if (!user.getPass().equals(user.getPass2()) || user.getBday() == null || user.getBmonth() == null || user.getByear() == null || user.getName() == null || user.getPass() == null || user.getLname() == null || user.getSex() == null || user.getPnum() == null || user.getEmerpnum() == null || user.getEmail() == null) {
 			System.out.println("There is an error returning back!");
 			/* The form contained invalid data, transfer control back to original form */
 			
@@ -61,6 +61,8 @@ public class CreateUserProcessServlet extends HttpServlet {
 				request.setAttribute("errorInPnum", "กรุณาใส่่หมายเลขโทรศัพท์!");}
 			if(user.getEmerpnum() == null){
 				request.setAttribute("errorInEmernum", "กรุณาใส่หมายเลขติดต่อฉุกเฉิน !");}
+			if(user.getBday() == null || user.getByear() == null || user.getBmonth() == null){
+				request.setAttribute("errorInBD", "กรุณาเลือกวันเกิดให้ถูกต้อง !");}
 			if(user.getEmail() == null){
 				request.setAttribute("errorInEmail", "กรุณาใส่ Email !");}
 			dispatch = context.getRequestDispatcher("/register2.jsp");
