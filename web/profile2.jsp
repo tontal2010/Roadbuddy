@@ -7,14 +7,22 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String name = "",lname = "",email ="",pnum ="",fullimg ="",sex ="";
+    String name = "",lname = "",email ="",pnum ="",fullimg ="",sex ="",byear ="";
+    int year=0;
     try {
         name = session.getAttribute("name").toString();
         lname = session.getAttribute("lname").toString();
         email = session.getAttribute("email").toString();
         pnum = session.getAttribute("pnum").toString();
         sex = session.getAttribute("sex").toString();
+        byear = session.getAttribute("year").toString();
         fullimg = session.getAttribute("imgfull").toString();
+
+        Integer result = Integer.valueOf(byear);
+        System.out.println("byear = "+ byear + "result" +result );
+        int thisy=2019;
+        year = thisy - result;
+        System.out.println("year = "+year);
     }catch (NullPointerException e){
         e.printStackTrace();
     }
@@ -57,9 +65,9 @@
 
             <br>
             <div class="sub-content2">
-                <img src="./img/icon_age.png" width="25px"/><span> 19 Years </span><img src="./img/icon_gender.png" width="25px"/><span><%=sex%>></span><br>
+                <img src="./img/icon_age.png" width="25px"/><span> <%=year%> Years </span><img src="./img/icon_gender.png" width="25px"/><span><%=sex%></span><br>
                 <img src="./img/icon_tel.png"width="25px"/><span> <%=pnum%></span><br>
-                <img src="./img/icon_email.png"width="25px"/><span> <%=email%>></span><br>
+                <img src="./img/icon_email.png"width="25px"/><span> <%=email%></span><br>
             </div>
             <br>
             <div class="btn3">history</div>

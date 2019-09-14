@@ -54,6 +54,9 @@ public class ProfileProcessServlet extends HttpServlet {
 		String img ="";
 		String imgfull="";
 		String sex="";
+		String year="";
+		String month="";
+		String day="";
 		request.setCharacterEncoding( "UTF-8" );
 		System.out.println(datastr);
 		int numslash = 1;
@@ -85,6 +88,15 @@ public class ProfileProcessServlet extends HttpServlet {
 				if (numslash == 7) {
 					sex = sex + s;
 				}
+				if (numslash == 8) {
+					year = year + s;
+				}
+				if (numslash == 9) {
+					month = month + s;
+				}
+				if (numslash == 10) {
+					day = day + s;
+				}
 			} else {
 				if (numslash == 1) {
 
@@ -113,6 +125,18 @@ public class ProfileProcessServlet extends HttpServlet {
 					System.out.println("string Sex = " + sex);
 					numslash = numslash + 1;
 				}
+				else if (numslash == 8) {
+					System.out.println("string Year = " + year);
+					numslash = numslash + 1;
+				}
+				else if (numslash == 9) {
+					System.out.println("string Month = " + month);
+					numslash = numslash + 1;
+				}
+				else if (numslash == 10) {
+					System.out.println("string Day = " + day);
+					numslash = numslash + 1;
+				}
 			}
 		}
 		session =request.getSession();
@@ -122,6 +146,7 @@ public class ProfileProcessServlet extends HttpServlet {
 		session.setAttribute("pnum",pnum);
 		session.setAttribute("imgfull",imgfull);
 		session.setAttribute("sex",sex);
+		session.setAttribute("year",year);
 
 		dispatch = context.getRequestDispatcher("/profile2.jsp");
 		dispatch.forward(request, response);

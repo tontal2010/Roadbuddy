@@ -42,6 +42,10 @@
         String pnum ="";
         String img ="";
         String imgfull="";
+        String year="";
+        String sex="";
+        String month="";
+        String day="";
         request.setCharacterEncoding( "UTF-8" );
         String loginDetail = session.getAttribute("loginUser").toString();
         System.out.println(loginDetail);
@@ -71,6 +75,18 @@
                 if (numslash == 6) {
                     imgfull = imgfull + s;
                 }
+                if (numslash == 7) {
+                    sex = sex + s;
+                }
+                if (numslash == 8) {
+                    year = year + s;
+                }
+                if (numslash == 9) {
+                    month = month + s;
+                }
+                if (numslash == 10) {
+                    day = day + s;
+                }
             } else {
                 if (numslash == 1) {
 
@@ -95,6 +111,22 @@
                 System.out.println("string imgUploadFull = " + imgfull);
                 numslash = numslash + 1;
             }
+                else if (numslash == 7) {
+                    System.out.println("string Sex = " + sex);
+                    numslash = numslash + 1;
+                }
+                else if (numslash == 8) {
+                    System.out.println("string Year = " + year);
+                    numslash = numslash + 1;
+                }
+                else if (numslash == 9) {
+                    System.out.println("string Month = " + month);
+                    numslash = numslash + 1;
+                }
+                else if (numslash == 10) {
+                    System.out.println("string Day = " + day);
+                    numslash = numslash + 1;
+                }
             }
         }
         session.setAttribute("email",email);
