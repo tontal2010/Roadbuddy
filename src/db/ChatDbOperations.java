@@ -21,8 +21,8 @@ public class ChatDbOperations {
 		// Turn off auto-commit of db changes as they occur
 		dbConn.setAutoCommit(false);
 		
-		String insertStmt = "INSERT INTO `rb_2`.`rb_member`  (`name`, `pass`,`sex`,`pnum`,`emerpnum`,`email`,`lname`,`status`,`uploadimg`)  " +
-				"VALUES (? ,?,?,?,?,?,?,?,?);";
+		String insertStmt = "INSERT INTO `rb_2`.`rb_member`  (`name`, `pass`,`sex`,`pnum`,`emerpnum`,`email`,`lname`,`status`,`uploadimg`,`birthday`)  " +
+				"VALUES (? ,?,?,?,?,?,?,?,?,?);";
 
 				
 		PreparedStatement queryStmt ;
@@ -36,6 +36,7 @@ public class ChatDbOperations {
 		queryStmt.setString(7,user.getLname());
 		queryStmt.setString(8,"offline");
 		queryStmt.setString(9,"0");
+		queryStmt.setString(10,user.getBirthday());
 		System.out.println(queryStmt);
 		try {
 			queryStmt.executeUpdate();
@@ -217,12 +218,7 @@ public class ChatDbOperations {
 		}
 		
 	}
-	
-	/**
-	 * Updating PASSWORD
-	 * @param status - online/offline
-	 * @throws SQLException  When unable to connect to DB or failed Query
-	 */
+
 	public static void changeUserPassword(String userName, String password)throws ChatDbFailure,SQLException {
 		Connection dbConn;
 		int rowsAffected;
