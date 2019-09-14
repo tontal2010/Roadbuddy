@@ -17,7 +17,7 @@ import javax.servlet.http.*;
 public class FileUploadDBServlet extends HttpServlet {
 
     // database connection settings
-    private String dbURL = "jdbc:mysql://roadbuddy.social:3306/rb_2";
+    private String dbURL = "jdbc:mysql://206.189.147.236:3306/rb_2";
     private String dbUser = "roadbuddy";
     private String dbPass = "roadbuddyadmin1";
 

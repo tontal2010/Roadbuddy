@@ -28,6 +28,7 @@ public class User implements Serializable{
 	 private String Year;
 	 private String img;
 	 private String imgfull;
+	 private String check;
 	public static final String ONLINE="online";
 	public static final String OFFLINE="offline";
 
@@ -63,6 +64,10 @@ public class User implements Serializable{
 		if(request.getParameter("name") != null) {
 			if (!request.getParameter("name").equals(""))
 				name = request.getParameter("name");
+		}
+		if(request.getParameter("check") != null) {
+			if (!request.getParameter("check").equals(""))
+				check = request.getParameter("check");
 		}
 		if(request.getParameter("password") != null) {
 			if (!request.getParameter("password").equals(""))
@@ -154,6 +159,9 @@ public class User implements Serializable{
 	public String getLname() {
 		return lname;
 	}
+	 public String getCheck() {
+		 return check;
+	 }
 	public String getSex() {
 		return sex;
 	}
