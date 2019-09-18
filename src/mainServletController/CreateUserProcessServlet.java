@@ -77,7 +77,8 @@ public class CreateUserProcessServlet extends HttpServlet {
 		LineNotify lineNotify = new LineNotify ();
 		lineNotify.callEvent("KgHCReBvyITkPFGwWqCF2GXV0gjwnqnl3RVFIFNkP0I","มีการสมัครสมาชิกใหม่/nชื่อ : "+user.getName()+" "+user.getLname()+"\nEmail : "+user.getEmail());
 		session.setAttribute("createuser","yes");
-		dispatch = context.getRequestDispatcher("/createUserSucess.jsp");
+		session.setAttribute("errorMessage","Create user success ! Please login . . ");
+		dispatch = context.getRequestDispatcher("/login2.jsp");
 		dispatch.forward(request, response);
 		
 	}

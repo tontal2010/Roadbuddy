@@ -151,6 +151,10 @@ public class User implements Serializable{
 			if(!request.getParameter("img").equals(""))
 				img = request.getParameter("img");
 		}
+		if(request.getParameter("imgfull") != null){
+			if(!request.getParameter("imgfull").equals(""))
+				imgfull = request.getParameter("imgfull");
+		}
 
 
 

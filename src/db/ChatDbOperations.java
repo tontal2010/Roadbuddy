@@ -54,8 +54,8 @@ public class ChatDbOperations {
         // Turn off auto-commit of db changes as they occur
         dbConn.setAutoCommit(false);
 
-        String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`month`,`year`,`time`,`minute`,`numberpass`,`platenum`,`numjoin`,`pnum`)  " +
-                "VALUES (? ,?,?,?,?,?,?,?,?,?,?,?,?);";
+        String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`month`,`year`,`time`,`minute`,`numberpass`,`platenum`,`numjoin`,`pnum`,`pic`)  " +
+                "VALUES (? ,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
 
         PreparedStatement queryStmt ;
@@ -76,6 +76,7 @@ public class ChatDbOperations {
         queryStmt.setString(11,"OOO33กน");
         queryStmt.setString(12,"O");
         queryStmt.setString(13,user.getPnum());
+		queryStmt.setString(14,user.getImgfull());
         System.out.println(queryStmt);
         try {
             queryStmt.executeUpdate();
@@ -89,8 +90,7 @@ public class ChatDbOperations {
 	public static User loginToAccount(String userName, String password) throws ChatDbFailure,SQLException {
 		Connection dbConn;
 		int rowsAffected;
-		String queryStr = "SELECT * " + "FROM rb_2.rb_member "
-				+ "WHERE email = '" + userName + "' and pass = '" + password + "'";
+		String queryStr = "SELECT * " + "FROM rb_2.rb_member " + "WHERE email = '" + userName + "' and pass = '" + password + "'";
 		
 		dbConn = ChatAppDataSource.getConnection();
 		Statement queryStmt = dbConn.createStatement();
@@ -120,6 +120,7 @@ public class ChatDbOperations {
 			String name = results.getString("name");
 			String img = results.getString("uploadimg");
 			String bd = results.getString("birthday");
+			String imgfull = results.getString("img");
 			loggedInUser.setBirthday(bd);System.out.println("Set "+ bd);
 			loggedInUser.setImg(img);System.out.println("Set "+ img);
 			loggedInUser.setName(name);System.out.println("Set "+ name);
@@ -127,6 +128,7 @@ public class ChatDbOperations {
 			loggedInUser.setPnum(pnum);System.out.println("Set "+ pnum);
 			loggedInUser.setEmail(userName);System.out.println("Set "+ userName);
 			loggedInUser.setPass(password);System.out.println("Set "+ password);
+			loggedInUser.setImgfull(imgfull);System.out.println("Set "+ imgfull);
 
 
 

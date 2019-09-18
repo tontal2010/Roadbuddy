@@ -7,9 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String name = "",lname = "",email ="",pnum ="",fullimg ="",sex ="",byear ="";
+
+    String name = "",lname = "",email ="",pnum ="",fullimg ="",sex ="",byear ="",loginuser ="";
     int year=0;
     try {
+        loginuser = session.getAttribute("loginUser").toString();
+        session.setAttribute("loginUser",loginuser);
         name = session.getAttribute("name").toString();
         lname = session.getAttribute("lname").toString();
         email = session.getAttribute("email").toString();
