@@ -1,27 +1,25 @@
 package mainServletController;
 
-import java.io.IOException;
-import java.sql.SQLException;
+import db.ChatDbOperations;
+import model.User;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.sql.SQLException;
 
-import db.ChatDbOperations;
-import exceptions.ChatDbFailure;
-import model.User;
-
-@WebServlet("/profileprocess")
-public class ProfileProcessServlet extends HttpServlet {
+@WebServlet("/homeprocess")
+public class HomeProcessServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ProfileProcessServlet() {
+	public HomeProcessServlet() {
 		super();
 	}
 

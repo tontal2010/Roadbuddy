@@ -5,6 +5,8 @@
   Time: 4:20 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8"%>
 <%
 
@@ -31,21 +33,26 @@
         font-size: 1em;
         }
     </style>
-
     <%
-        String name ="";
+        String name = "";
         String email = "";
         String lname = "";
-        String pnum ="";
-        String img ="";
-        String imgfull="";
-        request.setCharacterEncoding( "UTF-8" );
+        String pnum = "";
+        String img = "";
+        String imgfull = "";
+        String year = "";
+        String sex = "";
+        String month = "";
+        String day = "";
+        try {
+
+        request.setCharacterEncoding("UTF-8");
         String loginDetail = session.getAttribute("loginUser").toString();
         System.out.println(loginDetail);
         int numslash = 1;
         int leng = loginDetail.length();
 
-        for(int a =0;a<leng;a++) {
+        for (int a = 0; a < leng; a++) {
             char s = loginDetail.charAt(a);
 
             if (s != '#') {
@@ -68,6 +75,18 @@
                 if (numslash == 6) {
                     imgfull = imgfull + s;
                 }
+                if (numslash == 7) {
+                    sex = sex + s;
+                }
+                if (numslash == 8) {
+                    year = year + s;
+                }
+                if (numslash == 9) {
+                    month = month + s;
+                }
+                if (numslash == 10) {
+                    day = day + s;
+                }
             } else {
                 if (numslash == 1) {
 
@@ -84,25 +103,42 @@
                 } else if (numslash == 4) {
                     System.out.println("string pnum = " + pnum);
                     numslash = numslash + 1;
-                }else if (numslash == 5) {
+                } else if (numslash == 5) {
                     System.out.println("string imgUpload = " + img);
                     numslash = numslash + 1;
+                } else if (numslash == 6) {
+                    System.out.println("string imgUploadFull = " + imgfull);
+                    numslash = numslash + 1;
+                } else if (numslash == 7) {
+                    System.out.println("string Sex = " + sex);
+                    numslash = numslash + 1;
+                } else if (numslash == 8) {
+                    System.out.println("string Year = " + year);
+                    numslash = numslash + 1;
+                } else if (numslash == 9) {
+                    System.out.println("string Month = " + month);
+                    numslash = numslash + 1;
+                } else if (numslash == 10) {
+                    System.out.println("string Day = " + day);
+                    numslash = numslash + 1;
                 }
-            else if (numslash == 6) {
-                System.out.println("string imgUploadFull = " + imgfull);
-                numslash = numslash + 1;
-            }
             }
         }
-        session.setAttribute("email",email);
-        if(img.equals("0")){
+        session.setAttribute("email", email);
+        if (img.equals("0")) {
 
             session.setAttribute("errorMessage", "Please add your image profile !");
             response.sendRedirect("register3.jsp");
         }
+    }catch (NullPointerException e){
+        e.printStackTrace();
+        session.setAttribute("errorMessage", "Please relogin !");
+
+    }
 
 
     %>
+
 
 </head>
 <body>
@@ -126,23 +162,33 @@
         <li><a href="https://www.facebook.com/pg/RoadBuddyFriendly/about/">ROAD BUDDY</a></li>
     </ul>
 </nav>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
 
+
+    function run() {
+        var w = window.open('${pageContext.request.contextPath}/search','Popup_Window','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=400,height=300,left = 312,top = 234');
+        this.target = 'Popup_Window';
+    };
+
+</script>
 <center><p><font size="3" color="red">${errorInNotSelect}</font></p></center>
-
-
+<% session.removeAttribute("errorInNotSelect");%>
 <div class="postBox" align="center">
-<form action="${pageContext.request.contextPath}/createPlaceProcess" method="post">
+
+<form id="formsend1" action="${pageContext.request.contextPath}/createPlaceProcess" method="post">
     <input type="hidden" name="name" value="<%=name%>"/>
     <input type="hidden" name="email" value="<%=email%>"/>
     <input type="hidden" name="lastname" value="<%=lname%>"/>
     <input type="hidden" name="contact" value="<%=pnum%>"/>
+    <input type="hidden" name="imgfull" value="<%=imgfull%>"/>
 
     <table>
         <tr>
-            <td><input type="radio" name="check" value="dri"> Driver<br></td> <td>From </td><p><font size="3" color="red">${errorInFrom}</font></p><td><input type="text" name="from" value="${user.from}" placeholder="Ex FutureparkRangsit"><br></td>
+            <td><input id="driver" type="radio" name="check" value="Driver" > Driver<br></td> <td>From </td><p><font size="3" color="red">${errorInFrom}</font></p><td><input type="text" name="from" value="${user.from}" placeholder="Ex FutureparkRangsit"><br></td>
         </tr>
         <tr>
-            <td><input type="radio" name="check" value="pass"> Passenger<br></td><td>To </td><p><font size="3" color="red">${errorInToo}</font></p><td><input type="text" name="to" value="${user.too}"placeholder="Ex Ongkharak"></td>
+            <td><input id="passenger" type="radio" name="check" value="Passenger"> Passenger<br></td><td>To </td><p><font size="3" color="red">${errorInToo}</font></p><td><input type="text" name="to" value="${user.too}"placeholder="Ex Ongkharak"></td>
         </tr>
         <tr>
             <td>
@@ -328,12 +374,12 @@
     </table>
 </form>
 </div>
-
+<form id="searh"  action="${pageContext.request.contextPath}/search">
 <div class="findsBox" align="center">
     Find places that you will travel<br>
     <input name="keyword" type="text" id="keyword" size="25" />
-    <input name="iFind" type="button" id="iFind" value="Find" />
-</div>
+    <input name="iFind" type="submit" id="iFind" value="Find" />
+</div></form>
 
 <div class="evenBox" align="center">
     Travel together on the upcoming events soon <br>
@@ -425,41 +471,19 @@
     </div>
 </div>
 
-<div class="postDriverPassengerBox" align="center">
+<div class="postDriverPassengerBox"  align="center" >
     Post
-</div>
-
-<div class="psPassenger" align="center">
-    <table width="100%">
-        <tr>
-            <td>
-                <center><img src="./img/rating1.jpg" class="profile-img"/></center>
-            </td>
-            <td>
-                <h3>Kingpatcha Bussas</h3>
-                <table>
-                    <tr>
-                        <td><p>Status </p></td><td><p>Passenger</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Frome</p></td><td><p>มหาวิทยาลัยศรีนครินทรวิโรฒ องครักษ์</p></td>
-                    </tr>
-                    <tr>
-                        <td> <p>To</p></td><td><p>ฟิวเจอร์ปาร์ค รังสิต</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Time</p></td><td><p>14:30</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Date</p></td><td><p>15 Sep 2019</p></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
 
 </div>
 
+<!-- Get data from database -->
+<object type="text/html" data="fetch.jsp"  class="psPassenger" ></object><!--
+<div class="psPassenger" align="center" >
+    <object type="text/html" data="fetch.jsp" width="600px" height="600px" class="psPassenger"></object>
+
+
+</div>
+--><!--
 <div class="psDriverBox" align="center">
     <table width="100%" >
         <tr>
@@ -520,6 +544,9 @@
         </tr>
     </table>
 
-</div>
+</div>-->
+
+
+
 </body>
 </html>

@@ -7,14 +7,25 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String name = "",lname = "",email ="",pnum ="",fullimg ="",sex ="";
+
+    String name = "",lname = "",email ="",pnum ="",fullimg ="",sex ="",byear ="",loginuser ="";
+    int year=0;
     try {
+        loginuser = session.getAttribute("loginUser").toString();
+        session.setAttribute("loginUser",loginuser);
         name = session.getAttribute("name").toString();
         lname = session.getAttribute("lname").toString();
         email = session.getAttribute("email").toString();
         pnum = session.getAttribute("pnum").toString();
         sex = session.getAttribute("sex").toString();
+        byear = session.getAttribute("year").toString();
         fullimg = session.getAttribute("imgfull").toString();
+
+        Integer result = Integer.valueOf(byear);
+        System.out.println("byear = "+ byear + "result" +result );
+        int thisy=2019;
+        year = thisy - result;
+        System.out.println("year = "+year);
     }catch (NullPointerException e){
         e.printStackTrace();
     }

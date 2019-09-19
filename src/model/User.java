@@ -151,6 +151,10 @@ public class User implements Serializable{
 			if(!request.getParameter("img").equals(""))
 				img = request.getParameter("img");
 		}
+		if(request.getParameter("imgfull") != null){
+			if(!request.getParameter("imgfull").equals(""))
+				imgfull = request.getParameter("imgfull");
+		}
 
 
 
@@ -283,9 +287,9 @@ public class User implements Serializable{
 	 public void setByear(String byear) {
 		 this.byear = byear;
 	 }
-	/* public void setBirthday(String birthday) {
+	 public void setBirthday(String birthday) {
 		 this.birthday = birthday;
-	 }*/
+	 }
 	public void setNumber(String Number) {
 		this.Number = Number;
 	}
@@ -301,7 +305,7 @@ public class User implements Serializable{
 				+ "\", status:\"" + status + "\"}";
 	}*/
 	public String toString() {
-		return  name + "#" + lname +"#"+ email + "#" + pnum + "#" + img + "#" + imgfull + "#" + sex + "#";
+		return  name + "#" + lname +"#"+ email + "#" + pnum + "#" + img + "#" + imgfull + "#" + sex + "#" + byear + "#" + bmonth + "#" + bday +"#";
 	}
 	
 }

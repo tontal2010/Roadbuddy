@@ -10,6 +10,7 @@
   <head>
     <title>RoadBuddy</title>
 
+
     <style type="text/css">
       body{background-color: white;
         font-family: srinakharinwirot , sans-serif;
@@ -30,6 +31,7 @@
   <br>
   <br>
   <br>
+
   <div id="wrap">
   <center><img src="./img/logo1.png" width="70%" style=" margin: auto auto auto auto;"/></center>
   <center><font size="5em"> Welcome to Roadbuddy Web Application</font></center>

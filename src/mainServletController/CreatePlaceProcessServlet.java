@@ -49,8 +49,9 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		System.out.println("Month "+ user.getMonth());
 		System.out.println("Year "+ user.getYear());
 		System.out.println("Numpassenger "+ user.getNumber());
+		System.out.println("Img "+ user.getImgfull());
 
-		if ( user.getFrom() == null ||user.getMonth() == null ||user.getYear() == null || user.getToo() == null || user.getTime() == null || user.getDay() == null || user.getNumber() == null) {
+		if ( user.getCheck() == null || user.getFrom() == null ||user.getMonth() == null ||user.getYear() == null || user.getToo() == null || user.getTime() == null || user.getDay() == null || user.getNumber() == null) {
 			System.out.println("There is an error returning back!");
 			/* The form contained invalid data, transfer control back to original form */
 			
@@ -82,7 +83,8 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		System.out.println("User Created Sccuess");
 		HttpSession session = request.getSession();
 		session.setAttribute("create", "yes");
-		dispatch = context.getRequestDispatcher("/createPlaceSucess.jsp");
+		session.setAttribute("errorInNotSelect","Create post success !");
+		dispatch = context.getRequestDispatcher("/home.jsp");
 		dispatch.forward(request, response);
 		
 	}

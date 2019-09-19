@@ -2,6 +2,8 @@ body{
     margin: 0;
     padding: 0;
     font-family: srinakharinwirot , sans-serif;
+
+
 }
 nav
 {
@@ -183,15 +185,18 @@ ul li a {
 }
 .psPassenger{
     position: absolute;
-    top: 170%;
+    top: 193%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 600px;
-    height: 225px;
+    width: 650px;
+    height: 700px;
     padding: 20px 10px ;
     box-sizing: border-box;
-    background: rgba(118, 224, 255, 0.5);
+
+
+
 }
+
 .psPassenger .profile-img{
     width: 120px;
     height: 120px;

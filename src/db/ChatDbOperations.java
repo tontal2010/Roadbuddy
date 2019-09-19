@@ -54,8 +54,8 @@ public class ChatDbOperations {
         // Turn off auto-commit of db changes as they occur
         dbConn.setAutoCommit(false);
 
-        String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`month`,`year`,`time`,`minute`,`numberpass`,`platenum`,`numjoin`,`pnum`)  " +
-                "VALUES (? ,?,?,?,?,?,?,?,?,?,?,?,?);";
+        String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`month`,`year`,`time`,`minute`,`numberpass`,`platenum`,`numjoin`,`pnum`,`pic`)  " +
+                "VALUES (? ,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
 
         PreparedStatement queryStmt ;
@@ -76,6 +76,7 @@ public class ChatDbOperations {
         queryStmt.setString(11,"OOO33กน");
         queryStmt.setString(12,"O");
         queryStmt.setString(13,user.getPnum());
+		queryStmt.setString(14,user.getImgfull());
         System.out.println(queryStmt);
         try {
             queryStmt.executeUpdate();
@@ -89,8 +90,7 @@ public class ChatDbOperations {
 	public static User loginToAccount(String userName, String password) throws ChatDbFailure,SQLException {
 		Connection dbConn;
 		int rowsAffected;
-		String queryStr = "SELECT * " + "FROM rb_2.rb_member "
-				+ "WHERE email = '" + userName + "' and pass = '" + password + "'";
+		String queryStr = "SELECT * " + "FROM rb_2.rb_member " + "WHERE email = '" + userName + "' and pass = '" + password + "'";
 		
 		dbConn = ChatAppDataSource.getConnection();
 		Statement queryStmt = dbConn.createStatement();
@@ -119,12 +119,16 @@ public class ChatDbOperations {
 			String email = results.getString("email");
 			String name = results.getString("name");
 			String img = results.getString("uploadimg");
+			String bd = results.getString("birthday");
+			String imgfull = results.getString("img");
+			loggedInUser.setBirthday(bd);System.out.println("Set "+ bd);
 			loggedInUser.setImg(img);System.out.println("Set "+ img);
 			loggedInUser.setName(name);System.out.println("Set "+ name);
 			loggedInUser.setLname(lname);System.out.println("Set "+ lname);
 			loggedInUser.setPnum(pnum);System.out.println("Set "+ pnum);
 			loggedInUser.setEmail(userName);System.out.println("Set "+ userName);
 			loggedInUser.setPass(password);System.out.println("Set "+ password);
+			loggedInUser.setImgfull(imgfull);System.out.println("Set "+ imgfull);
 
 
 
@@ -300,7 +304,7 @@ public class ChatDbOperations {
 		
 		User userWithId= new User();
 		int userid;
-		String name,lname,pnum,email,uploadimg,imgfull,sex;
+		String name,lname,pnum,email,uploadimg,imgfull,sex,bd;
 		
 		results = queryStmt.executeQuery(queryStr);
 		while (results.next()) { // process results
@@ -313,11 +317,53 @@ public class ChatDbOperations {
 			uploadimg = results.getString("uploadimg");
 			imgfull = results.getString("img");
 			sex = results.getString("sex");
+			bd = results.getString("birthday");
+			String year ="";
+			String month ="";
+			String day ="";
+			int numslash = 1;
+			int leng = bd.length();
+
+			for(int a =0;a<leng;a++) {
+				char s = bd.charAt(a);
+
+				if (s != '-') {
+
+					if (numslash == 1) {
+						year = year + s;
+					}
+					if (numslash == 2) {
+						month = month + s;
+					}
+					if (numslash == 3) {
+						day = day + s;
+					}
+
+				} else {
+					if (numslash == 1) {
+
+						System.out.println("string year = " + year);
+						numslash = numslash + 1;
+					} else if (numslash == 2) {
+						System.out.println("string month = " + month);
+
+						numslash = numslash + 1;
+					} else if (numslash == 3) {
+
+						System.out.println("string day = " + day);
+						numslash = numslash + 1;
+					}
+				}
+			}
+			userWithId.setByear(year);
+			userWithId.setBmonth(month);
+			userWithId.setBday(day);
 			userWithId.setId(userid);
 			userWithId.setName(name);
 			userWithId.setLname(lname);
 			userWithId.setPnum(pnum);
 			userWithId.setEmail(email);
+			userWithId.setImg(uploadimg);
 			userWithId.setImg(uploadimg);
 			userWithId.setImgfull(imgfull);
 			userWithId.setSex(sex);
