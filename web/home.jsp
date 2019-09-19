@@ -25,14 +25,11 @@
 <head>
     <title>home-หน้าแรก</title>
     <link rel="stylesheet" href="css_home.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          rel="stylesheet">
     <style>
         body{background: #e6e6e6;
         font-family: srinakharinwirot , sans-serif;
         font-size: 1em;
         }
-
     </style>
 
     <%
@@ -126,21 +123,14 @@
         <li><a href="#">Chat</a>
         <li><a href="#">Notifications</a></li>
         <li><a href="${pageContext.request.contextPath}/logoutprocess">Log out</a>
-        <li>ROAD BUDDY</li>
+        <li><a href="https://www.facebook.com/pg/RoadBuddyFriendly/about/">ROAD BUDDY</a></li>
     </ul>
 </nav>
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.menu').click(function () {
-            $('ul').toggleClass('active');
-        })
-    })
-</script>
+
 <center><p><font size="3" color="red">${errorInNotSelect}</font></p></center>
 
-<div class="postBox" align="center">
 
+<div class="postBox" align="center">
 <form action="${pageContext.request.contextPath}/createPlaceProcess" method="post">
     <input type="hidden" name="name" value="<%=name%>"/>
     <input type="hidden" name="email" value="<%=email%>"/>
@@ -531,7 +521,5 @@
     </table>
 
 </div>
-
-
 </body>
 </html>
