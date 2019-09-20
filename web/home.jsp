@@ -146,7 +146,7 @@
 
 </head>
 <body>
-<!--<img src="./img/header.png" width="100%" style="float: top"/>-->
+<!--<img src="./img/header.png" width="100%" tyle="float: top"/>-->
 <!--<img src="./img/layerpost.png " width="100%" style="float: top">
 <img src="./img/laayerhome2.png" width="100%" style="float: bottom">
 <center><img src="./img/fids.png" width="13%" style="vertical-align: bottom" ></center>
