@@ -49,13 +49,14 @@
     </div>
     <ul>
         <li><a href="home.jsp">Home</a></li>
-        <li><a href="profile2.jsp">Profile</a>
+        <li><a href="${pageContext.request.contextPath}/profileprocess">Profile</a>
         <li><a href="#">Chat</a>
         <li><a href="#">Notifications</a></li>
-        <li><a href="login2.jsp">Log out</a>
-        <li>ROAD BUDDY</li>
+        <li><a href="${pageContext.request.contextPath}/logoutprocess">Log out</a>
+        <li><a href="https://www.facebook.com/pg/RoadBuddyFriendly/about/">ROAD BUDDY</a></li>
     </ul>
 </nav>
+
 <div class="wrapper">
     <div class="container">
         <img src="<%=fullimg%>" alt="" class="profile-img">
@@ -68,18 +69,21 @@
 
             <br>
             <div class="sub-content2">
-                <img src="./img/icon_age.png" width="25px"/><span> <%=year%> Years </span><img src="./img/icon_gender.png" width="25px"/><span><%=sex%></span><br>
+                <img src="./img/icon_age.png" width="25px"/><span> 19 Years </span><br>
+                <img src="./img/icon_gender.png" width="25px"/><span> <%=sex%></span><br>
                 <img src="./img/icon_tel.png"width="25px"/><span> <%=pnum%></span><br>
                 <img src="./img/icon_email.png"width="25px"/><span> <%=email%></span><br>
             </div>
             <br>
-            <div class="btn3">history</div>
-            <div class="btn2">messenger</div>
-            <div class="btn">follow me</div><br>
-
+            <div class="btnAll" align="center">
+            <button class="btnFollowMe">Follow me</button> <br>
+            <button class="btnMessenger">Messenger</button> <br>
+            <button class="btnHistory">History</button>
+            </div>
         </div>
     </div>
 </div>
+
 
 </body>
 </html>

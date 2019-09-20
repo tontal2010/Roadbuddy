@@ -27,50 +27,21 @@ ul li a {
     color: #17517c;
     text-decoration: none;
 }
-.toggle
-{
-    width: 100%;
-    padding: 10px 20px;
-    background: #3781c5;
-    text-align: right;
-    box-sizing:border-box ;
-    color: white;
-    font-size: 30px;
-    display: none;
-}
-@media(max-width: 768px) {
-    .toggle {
-        display: block;
-    }
-
-    ul {
-        width: 100%;
-        display: none;
-    }
-
-    ul li {
-        display: block;
-        text-align: center;
-    }
-    .active{
-        display: block;
-    }
-}
 
 .postBox{
     position: absolute;
-    top: 25%;
+    top: 150px;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
     height: 150px;
-    padding: 20px 10px ;
+    padding: 10px 10px ;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.5);
 }
 .findsBox{
     position: absolute;
-    top: 43%;
+    top: 280px;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
@@ -81,7 +52,7 @@ ul li a {
 }
 .evenBox{
     position: absolute;
-    top: 66%;
+    top: 448px;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
@@ -101,7 +72,6 @@ ul li a {
     cursor: pointer;
     border-radius: 50px;
 }
-
 .our-team {
     padding: 30px 0 40px;
     margin-bottom: 30px;
@@ -110,7 +80,6 @@ ul li a {
     overflow: hidden;
     position: relative;
 }
-
 .our-team .picture {
     display: inline-block;
     height: 150px;
@@ -119,7 +88,6 @@ ul li a {
     z-index: 1;
     position: relative;
 }
-
 .our-team .picture::before {
     content: "";
     width: 100%;
@@ -134,11 +102,9 @@ ul li a {
     transform: scale(3);
     transition: all 0.3s linear 0s;
 }
-
 .our-team:hover .picture::before {
     height: 100%;
 }
-
 .our-team .picture::after {
     content: "";
     width: 100%;
@@ -150,7 +116,6 @@ ul li a {
     left: 0;
     z-index: -1;
 }
-
 .our-team .picture img {
     width: 100%;
     height: auto;
@@ -158,19 +123,16 @@ ul li a {
     transform: scale(1);
     transition: all 0.9s ease 0s;
 }
-
 .our-team:hover .picture img {
     box-shadow: 0 0 0 14px #ffffff;
     transform: scale(0.7);
 }
-
 .our-team .title {
     display: block;
     font-size: 15px;
     color: #4e5052;
     text-transform: capitalize;
 }
-
 .our-team .social {
     width: 100%;
     padding: 0;
@@ -181,15 +143,12 @@ ul li a {
     left: 0;
     transition: all 0.5s ease 0s;
 }
-
 .our-team:hover .social {
     bottom: 0;
 }
-
 .our-team .social li {
     display: inline-block;
 }
-
 .our-team .social li a {
     display: block;
     padding: 10px;
@@ -198,15 +157,13 @@ ul li a {
     transition: all 0.3s ease 0s;
     text-decoration: none;
 }
-
 .our-team .social li a:hover {
     color: #1369ce;
     background-color: #ffffff;
 }
-
 .box{
     position: absolute;
-    top: 112%;
+    top: 790px;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
@@ -217,11 +174,11 @@ ul li a {
 }
 .postDriverPassengerBox{
     position: absolute;
-    top: 193%;
+    top: 1473px;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;
-    height: 750px;
+    height: 900px;
     padding: 20px 10px ;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.5);
@@ -261,7 +218,6 @@ ul li a {
     height: 120px;
     border-radius: 50%;
 }
-
 .psPassenger2{
     position: absolute;
     top: 236%;

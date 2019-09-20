@@ -27,16 +27,12 @@
 <head>
     <title>home-หน้าแรก</title>
     <link rel="stylesheet" href="css_home.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          rel="stylesheet">
     <style>
         body{background: #e6e6e6;
         font-family: srinakharinwirot , sans-serif;
         font-size: 1em;
         }
-
     </style>
-
     <%
         String name = "";
         String email = "";
@@ -163,7 +159,7 @@
         <li><a href="#">Chat</a>
         <li><a href="#">Notifications</a></li>
         <li><a href="${pageContext.request.contextPath}/logoutprocess">Log out</a>
-        <li>ROAD BUDDY</li>
+        <li><a href="https://www.facebook.com/pg/RoadBuddyFriendly/about/">ROAD BUDDY</a></li>
     </ul>
 </nav>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -174,11 +170,7 @@
         var w = window.open('${pageContext.request.contextPath}/search','Popup_Window','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=400,height=300,left = 312,top = 234');
         this.target = 'Popup_Window';
     };
-    $(document).ready(function() {
-        $('.menu').click(function () {
-            $('ul').toggleClass('active');
-        })
-    })
+
 </script>
 <center><p><font size="3" color="red">${errorInNotSelect}</font></p></center>
 <% session.removeAttribute("errorInNotSelect");%>
