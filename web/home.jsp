@@ -142,7 +142,7 @@
 
 </head>
 <body>
-<!--<img src="./img/header.png" width="100%" style="float: top"/>-->
+<!--<img src="./img/header.png" width="100%" tyle="float: top"/>-->
 <!--<img src="./img/layerpost.png " width="100%" style="float: top">
 <img src="./img/laayerhome2.png" width="100%" style="float: bottom">
 <center><img src="./img/fids.png" width="13%" style="vertical-align: bottom" ></center>
@@ -165,11 +165,19 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 
+    var objectToPass= {keyword:document.getElementById("keyword").value};
+    //define the whole function and assign to a variable
+    function popUp() {
 
-    function run() {
-        var w = window.open('${pageContext.request.contextPath}/search','Popup_Window','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=400,height=300,left = 312,top = 234');
-        this.target = 'Popup_Window';
-    };
+        //here, dynamicallly add items
+
+        localStorage.setItem("keyword", document.getElementById("keyword").value);
+        //......other items......
+
+        popUpObj = window.open('${pageContext.request.contextPath}/search?keyword='+document.getElementById("keyword").value, 'Search Complete !', "toolbar=no,scrollbars=no,location=no,statusbar=no,menubar=no,titlebar=0,directories=0,resizable=0,width=400,height=400");
+        popUpObj.focus();
+    }
+
 
 </script>
 <center><p><font size="3" color="red">${errorInNotSelect}</font></p></center>
@@ -371,12 +379,13 @@
     </table>
 </form>
 </div>
-<form id="searh"  action="${pageContext.request.contextPath}/search">
+<!--<form id="searh"  action="${pageContext.request.contextPath}/search"></form>-->
 <div class="findsBox" align="center">
     Find places that you will travel<br>
     <input name="keyword" type="text" id="keyword" size="25" />
-    <input name="iFind" type="submit" id="iFind" value="Find" />
-</div></form>
+    <button type="button" name="iFind"  id="iFind"  onclick="popUp()">Search !</button>
+</div>
+
 
 <div class="evenBox" align="center">
     Travel together on the upcoming events soon <br>
