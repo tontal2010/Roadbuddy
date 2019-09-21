@@ -84,7 +84,103 @@ public class LoginProcessServlet extends HttpServlet {
 				session.setAttribute("loginUser", loginUser);
 				session.setAttribute("login", "yes");
 				LineNotify lineNotify = new LineNotify ();
-				lineNotify.callEvent("KgHCReBvyITkPFGwWqCF2GXV0gjwnqnl3RVFIFNkP0I","[ "+loginUser+" ]"+" เข้าสู่ระบบ");
+
+				String name = "";
+				String email = "";
+				String lname = "";
+				String pnum = "";
+				String img = "";
+				String imgfull = "";
+				String year = "";
+				String sex = "";
+				String month = "";
+				String day = "";
+				try {
+
+					request.setCharacterEncoding("UTF-8");
+					String loginDetail = session.getAttribute("loginUser").toString();
+					System.out.println(loginDetail);
+					int numslash = 1;
+					int leng = loginDetail.length();
+
+					for (int a = 0; a < leng; a++) {
+						char s = loginDetail.charAt(a);
+
+						if (s != '#') {
+
+							if (numslash == 1) {
+								name = name + s;
+							}
+							if (numslash == 2) {
+								lname = lname + s;
+							}
+							if (numslash == 3) {
+								email = email + s;
+							}
+							if (numslash == 4) {
+								pnum = pnum + s;
+							}
+							if (numslash == 5) {
+								img = img + s;
+							}
+							if (numslash == 6) {
+								imgfull = imgfull + s;
+							}
+							if (numslash == 7) {
+								sex = sex + s;
+							}
+							if (numslash == 8) {
+								year = year + s;
+							}
+							if (numslash == 9) {
+								month = month + s;
+							}
+							if (numslash == 10) {
+								day = day + s;
+							}
+						} else {
+							if (numslash == 1) {
+
+								System.out.println("string name = " + name);
+								numslash = numslash + 1;
+							} else if (numslash == 2) {
+								System.out.println("string lname = " + lname);
+
+								numslash = numslash + 1;
+							} else if (numslash == 3) {
+
+								System.out.println("string email = " + email);
+								numslash = numslash + 1;
+							} else if (numslash == 4) {
+								System.out.println("string pnum = " + pnum);
+								numslash = numslash + 1;
+							} else if (numslash == 5) {
+								System.out.println("string imgUpload = " + img);
+								numslash = numslash + 1;
+							} else if (numslash == 6) {
+								System.out.println("string imgUploadFull = " + imgfull);
+								numslash = numslash + 1;
+							} else if (numslash == 7) {
+								System.out.println("string Sex = " + sex);
+								numslash = numslash + 1;
+							} else if (numslash == 8) {
+								System.out.println("string Year = " + year);
+								numslash = numslash + 1;
+							} else if (numslash == 9) {
+								System.out.println("string Month = " + month);
+								numslash = numslash + 1;
+							} else if (numslash == 10) {
+								System.out.println("string Day = " + day);
+								numslash = numslash + 1;
+							}
+						}
+					}
+				}catch (NullPointerException e){
+					e.printStackTrace();
+					session.setAttribute("errorMessage", "Please relogin !");
+
+				}
+				lineNotify.callEvent("KgHCReBvyITkPFGwWqCF2GXV0gjwnqnl3RVFIFNkP0I","\n[ "+tName+" ]"+"\n["+name+" "+lname+"]\n" + "เข้าสู่ระบบ !");
 				System.out.println("usr"+ loginUser);
 				dispatch = context.getRequestDispatcher("/home.jsp");
 			}

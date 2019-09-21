@@ -131,6 +131,7 @@
         }
     </style>
 </head>
+
 <body>
 <%
     System.out.println(namers.length);
@@ -187,7 +188,7 @@
             out.print("<h3>" + namers[i] + " " + lnamear[i] + "</h3>");
             out.print("<table>");
             out.print("<tr>");
-            out.print("<td><p>Status </p></td><td><p>Passenger</p></td>");
+            out.print("<td><p>Status </p></td><td><p>Driver</p></td>");
             out.print("</tr>");
             out.print("<tr>");
             out.print("<td><p>From</p></td><td><p>" + fromar[i] + "</p></td>");
