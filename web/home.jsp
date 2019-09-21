@@ -185,10 +185,7 @@
 
     <table>
         <tr>
-            <td><input id="driver" type="radio" name="check" value="Driver" > Driver<br></td> <td>From </td><p><font size="3" color="red">${errorInFrom}</font></p><td><input type="text" name="from" value="${user.from}" placeholder="Ex FutureparkRangsit"><br></td>
-        </tr>
-        <tr>
-            <td><input id="passenger" type="radio" name="check" value="Passenger"> Passenger<br></td><td>To </td><p><font size="3" color="red">${errorInToo}</font></p><td><input type="text" name="to" value="${user.too}"placeholder="Ex Ongkharak"></td>
+            <p><font size="3" color="red">${errorInFrom}</font></p><td> From <input type="text" name="from" value="${user.from}" placeholder="Ex FutureparkRangsit"><br></td><td>To </td><p><font size="3" color="red">${errorInToo}</font></p><td><input type="text" name="to" value="${user.too}"placeholder="Ex Ongkharak"></td>
         </tr>
         <tr>
             <td>
