@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: srinakharinwirot , sans-serif;
+    background-color: #e6e6e6;
+}
+nav
+{
+    width: 100%;
+    background: #fffbfb;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+ul li:hover{
+    background: #c3e5f2;
+}
+ul li a {
+    color: #17517c;
+    text-decoration: none;
+}
+
+.pageBox{
+    position: absolute;
+    top: 430px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px;
+    height: 700px;
+    padding: 10px 30px ;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.5);
+}
+.pageBox .historyBox1{
+    position: absolute;
+    top: 190px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 190px;
+    padding: 10px 10px ;
+    box-sizing: border-box;
+    background: rgba(115, 197, 241, 0.5);
+}
+.pageBox .historyBox1 p {
+    color: #17517c;
+}
+.pageBox .historyBox2{
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 190px;
+    padding: 10px 10px ;
+    box-sizing: border-box;
+    background: rgba(129, 255, 160, 0.5);
+}
+.pageBox .historyBox2 p {
+    color: #00952f;
+}
+.pageBox .historyBox3{
+    position: absolute;
+    top: 570px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 190px;
+    padding: 10px 10px ;
+    box-sizing: border-box;
+    background: rgba(115, 197, 241, 0.5);
+}
+.pageBox .historyBox3 p {
+    color: #17517c;
+}

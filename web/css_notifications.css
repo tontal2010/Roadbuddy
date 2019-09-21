@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: srinakharinwirot , sans-serif;
+    background-color: #e6e6e6;
+}
+nav
+{
+    width: 100%;
+    background: #fffbfb;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+ul li:hover{
+    background: #c3e5f2;
+}
+ul li a {
+    color: #17517c;
+    text-decoration: none;
+}
+
+.pageBox{
+    position: absolute;
+    top: 430px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px;
+    height: 700px;
+    padding: 10px 30px ;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.5);
+}
+.pageBox .notificationBox1{
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 120px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(224, 224, 224, 0.5);
+    line-height: 18pt
+}
+.pageBox .notificationBox1 .profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.pageBox .notificationBox2{
+    position: absolute;
+    top: 291px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 120px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(224, 224, 224, 0.5);
+    line-height: 18pt
+}
+.pageBox .notificationBox2 .profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.pageBox .notificationBox3{
+    position: absolute;
+    top: 412px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 120px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(224, 224, 224, 0.5);
+    line-height: 18pt
+}
+.pageBox .notificationBox3 .profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.pageBox .notificationBox4{
+    position: absolute;
+    top: 533px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 120px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(224, 224, 224, 0.5);
+    line-height: 18pt
+}
+.pageBox .notificationBox4 .profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}

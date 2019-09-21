@@ -51,9 +51,8 @@
         <li><a href="home.jsp">Home</a></li>
         <li><a href="${pageContext.request.contextPath}/profileprocess">Profile</a>
         <li><a href="#">Chat</a>
-        <li><a href="#">Notifications</a></li>
+        <li><a href="notification.jsp">Notifications</a></li>
         <li><a href="${pageContext.request.contextPath}/logoutprocess">Log out</a>
-        <li><a href="https://www.facebook.com/pg/RoadBuddyFriendly/about/">ROAD BUDDY</a></li>
     </ul>
 </nav>
 

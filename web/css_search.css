@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: srinakharinwirot , sans-serif;
+    background-color: #e6e6e6;
+}
+nav
+{
+    width: 100%;
+    background: #fffbfb;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+ul li:hover{
+    background: #c3e5f2;
+}
+ul li a {
+    color: #17517c;
+    text-decoration: none;
+}
+
+.pageBox{
+    position: absolute;
+    top: 430px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px;
+    height: 700px;
+    padding: 10px 10px ;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.5);
+}
+.pageBox .resultBox1{
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 225px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(115, 197, 241, 0.5);
+}
+.pageBox .resultBox1 .profile-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.pageBox .resultBox2{
+    position: absolute;
+    top: 495px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 225px;
+    padding: 20px 10px ;
+    box-sizing: border-box;
+    background: rgba(115, 197, 241, 0.5);
+}
+.pageBox .resultBox2 .profile-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
