@@ -46,7 +46,8 @@
         String day = "";
         try {
 
-        request.setCharacterEncoding("UTF-8");
+            response.setCharacterEncoding("UTF-8");
+            request.setCharacterEncoding("UTF-8");
         String loginDetail = session.getAttribute("loginUser").toString();
         System.out.println(loginDetail);
         int numslash = 1;
@@ -378,13 +379,14 @@
     </table>
 </form>
 </div>
-<!--<form id="searh"  action="${pageContext.request.contextPath}/search"></form>-->
+<form id="searh"  action="search.jsp">
 <div class="findsBox" align="center">
     Find places that you will travel<br>
+    <input type="hidden" name="email" value="<%=email%>"/>
     <input name="keyword" type="text" id="keyword" size="25" />
-    <button type="button" name="iFind"  id="iFind"  onclick="popUp()">Search !</button>
+    <input type="submit" name="iFind"  id="iFind"  />
 </div>
-
+</form>
 
 <div class="evenBox" align="center">
     Travel together on the upcoming events soon <br>

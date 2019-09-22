@@ -51,7 +51,7 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		System.out.println("Numpassenger "+ user.getNumber());
 		System.out.println("Img "+ user.getImgfull());
 
-		if ( user.getCheck() == null || user.getFrom() == null ||user.getMonth() == null ||user.getYear() == null || user.getToo() == null || user.getTime() == null || user.getDay() == null || user.getNumber() == null) {
+		if ( user.getFrom() == null ||user.getMonth() == null ||user.getYear() == null || user.getToo() == null || user.getTime() == null || user.getDay() == null || user.getNumber() == null) {
 			System.out.println("There is an error returning back!");
 			/* The form contained invalid data, transfer control back to original form */
 			
