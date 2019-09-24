@@ -12,7 +12,7 @@
 <%
 
 
-    String connectionUrl = "jdbc:mysql://206.189.147.236:3306/rb_2";
+    String connectionUrl = "jdbc:mysql://167.71.211.97:3306/rb_2";
     String userid = "roadbuddy";
     String password = "roadbuddyadmin1";
     try {

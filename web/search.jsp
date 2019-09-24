@@ -19,7 +19,7 @@
 
 
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-        String dbURL = "jdbc:mysql://206.189.147.236:3306/rb_2";
+        String dbURL = "jdbc:mysql://167.71.211.97:3306/rb_2";
         String dbUser = "roadbuddy";
         String dbPass = "roadbuddyadmin1";
         Connection con = DriverManager.getConnection(dbURL, dbUser, dbPass);
