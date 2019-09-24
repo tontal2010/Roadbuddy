@@ -88,19 +88,23 @@ public class ChatDbOperations {
     }
 
 	public static User loginToAccount(String userName, String password) throws ChatDbFailure,SQLException {
-		Connection dbConn;
-		int rowsAffected;
-		String queryStr = "SELECT * " + "FROM rb_2.rb_member " + "WHERE email = '" + userName + "' and pass = '" + password + "'";
-		
+		Connection dbConn ;
 		dbConn = ChatAppDataSource.getConnection();
-		Statement queryStmt = dbConn.createStatement();
+		int rowsAffected;
+		String queryStr = "SELECT * " + "FROM rb_2.rb_member " + "WHERE email = ? and pass = ?";
+		PreparedStatement sqlprep = dbConn.prepareStatement(queryStr);
+		sqlprep.setString(1,userName);
+		sqlprep.setString(2,password);
+
+		//Statement queryStmt = dbConn.createStatement();
+		//Statement queryStmt = dbConn.prepareStatement(sqlprep);
 		ResultSet results;
 		
 		User loggedInUser= new User();
 		int userid;
 		
-		results = queryStmt.executeQuery(queryStr);
-		
+		//results = queryStmt.executeQuery(queryStr);
+		results = sqlprep.executeQuery();
 		if(results.last()){
 			rowsAffected =  results.getRow();
 		} else {
@@ -139,7 +143,8 @@ public class ChatDbOperations {
 			
 			// Free resources
 			results.close();
-			queryStmt.close();
+			sqlprep.close();
+			//sqlprep.close();
 			dbConn.close();
 			System.out.println("welcome " +userName+" Login Sucessful !! ");
 			return loggedInUser;
