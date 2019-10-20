@@ -2,6 +2,8 @@ body{
     margin: 0;
     padding: 0;
     font-family: srinakharinwirot , sans-serif;
+
+
 }
 nav
 {
@@ -24,4 +26,72 @@ ul li:hover{
 ul li a {
     color: #17517c;
     text-decoration: none;
+}
+.pageBox{
+    position: absolute;
+    top: 650px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 1000px;
+    padding: 10px 30px ;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.5);
+}
+.pageBox input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.pageBox input[type= "text"],
+.pageBox input[type= "password"],
+.pageBox input[type="number"],
+.pageBox input[type= "email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff ;
+    background: transparent;
+    outline: none ;
+    height: 40px;
+    color: #ffff;
+    font-size: 16px;
+}
+
+.pageBox input:valid{
+    color: #242424;
+}
+.pageBox input:invalid{
+    color: #ffffff;
+}
+::placeholder
+{
+    color: rgba(255,255,255,.5);
+}
+.pageBox input[type="submit"]
+{
+    border : none;
+    outline: none;
+    height: 40px;
+    color: #ffff;
+    font-size: 16px;
+    background: #3781c5;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.pageBox input[type="submit"]:hover
+{
+    background: #17517c;
+    color: #ffffff;
+}
+.pageBox a
+{
+    color: white;
+    font-size: 14px ;
+    font-weight: bold;
+    text-decoration: none;
+}
+.pageBox.profile-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }

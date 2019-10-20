@@ -75,9 +75,14 @@
             </div>
             <br>
             <div class="btnAll" align="center">
-            <button class="btnFollowMe">Follow me</button> <br>
-            <button class="btnMessenger">Messenger</button> <br>
-            <button class="btnHistory">History</button>
+                <button class="buttonFollow"  style="vertical-align:middle"><span>Follow</span> </button>
+                <button class="buttonUnFollow"  style="vertical-align:middle"><span>UnFollow</span> </button>
+                <button class="buttonMessenger"  style="vertical-align:middle"><span>Messenger</span> </button>
+                <br>
+                <button class="buttonHistory"  style="vertical-align:middle"><span>History</span> </button>
+                <br>
+                <button class="buttonEditProfile"  style="vertical-align:middle"><span>Edit Profile</span> </button>
+
             </div>
         </div>
     </div>
