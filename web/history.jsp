@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>History-ประวัติการใช้งาน</title>
+    <title>History-ประวัติการใช้งาน </title>
     <link rel="stylesheet" href="css_history.css">
 </head>
 <body>
