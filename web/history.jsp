@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="css_history.css">
 </head>
 <body>
-
-
 <nav>
     <div class="toggle">
     </div>

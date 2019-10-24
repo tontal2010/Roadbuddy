@@ -159,6 +159,8 @@
         <li><a href="${pageContext.request.contextPath}/profileprocess">Profile</a>
         <li><a href="chat.jsp">Chat</a>
         <li><a href="notification.jsp">Notifications</a></li>
+        <li> <input name="keyword" type="text" id="IdUser" size="25" />
+            <input type="submit" name="iFind"  id="IdUserName"  /> </li>
         <li><a href="${pageContext.request.contextPath}/logoutprocess">Log out</a>
     </ul>
 </nav>
@@ -387,13 +389,12 @@
     <input type="submit" name="iFind"  id="iFind"  />
 </div>
 </form>
-
 <div class="evenBox" align="center">
     Travel together on the upcoming events soon <br>
-    <img src="./img/event1.png"width="155" height="155"/>
-    <img src="./img/event2.jpg"width="155" height="155"/>
+    <img src="./img/even11.jpg"width="155" height="155"/>
+    <img src="./img/even12.jpg"width="155" height="155"/>
+    <img src="./img/even13.jpg"width="155" height="155"/>
     <img src="./img/event3.jpg"width="155" height="155"/>
-    <img src="./img/event4.PNG"width="155" height="155"/>
 </div>
 
 <div class="box" align="center">
