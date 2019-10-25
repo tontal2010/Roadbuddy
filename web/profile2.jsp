@@ -28,6 +28,8 @@
         System.out.println("year = "+year);
     }catch (NullPointerException e){
         e.printStackTrace();
+        session.setAttribute("errorMessage", "Please relogin !");
+        response.sendRedirect("login2.jsp");
     }
 
 
@@ -68,7 +70,7 @@
 
             <br>
             <div class="sub-content2">
-                <img src="./img/icon_age.png" width="25px"/><span> 19 Years </span><br>
+                <img src="./img/icon_age.png" width="25px"/><span> <%=year%> Years </span><br>
                 <img src="./img/icon_gender.png" width="25px"/><span> <%=sex%></span><br>
                 <img src="./img/icon_tel.png"width="25px"/><span> <%=pnum%></span><br>
                 <img src="./img/icon_email.png"width="25px"/><span> <%=email%></span><br>

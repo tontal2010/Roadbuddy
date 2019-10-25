@@ -27,8 +27,9 @@ public class Search extends HttpServlet {
             String dbPass = "roadbuddyadmin1";
             Connection con = DriverManager.getConnection(dbURL, dbUser, dbPass);
 
-            PreparedStatement ps = con.prepareStatement("select * from rb_2.place where too like  '%" + roll + "%'");
-           // ps.setString(1, roll);
+            PreparedStatement ps = con.prepareStatement("select * from rb_2.place where too like  ?");
+            String forSql = "%" + roll + "%";
+            ps.setString(1, forSql);
 
             //out.print("<table width=50% border=1>");
             //out.print("<caption>Result:</caption>");

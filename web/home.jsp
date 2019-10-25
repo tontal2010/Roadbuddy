@@ -485,74 +485,13 @@
 </div>
 
 <!-- Get data from database -->
-<object type="text/html" data="fetch.jsp"  class="psPassenger" ></object><!--
-<div class="psPassenger" align="center" >
-    <object type="text/html" data="fetch.jsp" width="600px" height="600px" class="psPassenger"></object>
+<object type="text/html" data="fetch.jsp"  class="psPassenger" ></object>
+<!--<div class="psPassenger" style="overflow-y: scroll;height:400px">
 
-
-</div>
---><!--
-<div class="psDriverBox" align="center">
-    <table width="100%" >
-        <tr>
-            <td>
-                <center><img src="./img/rating2.jpg" class="profile-img"/></center>
-            </td>
-            <td>
-                <h3>Sompong sonthi</h3>
-                <table>
-                    <tr>
-                        <td><p>Status </p></td><td><p>Driver</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Frome</p></td><td><p>มหาวิทยาลัยศรีนครินทรวิโรฒ องครักษ์</p></td>
-                    </tr>
-                    <tr>
-                        <td> <p>To</p></td><td><p>ฟิวเจอร์ปาร์ค รังสิต</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Time</p></td><td><p>14:30</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Date</p></td><td><p>15 Sep 2019</p></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-
-</div>
-
-<div class="psPassenger2" align="center">
-    <table width="100%">
-        <tr>
-            <td>
-                <center><img src="./img/rating3.jpg" class="profile-img"/></center>
-            </td>
-            <td>
-                <h3>Mario KP</h3>
-                <table>
-                    <tr>
-                        <td><p>Status </p></td><td><p>Passenger</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Frome</p></td><td><p>ไอคอนสยาม กรุงเทพมหานคร</p></td>
-                    </tr>
-                    <tr>
-                        <td> <p>To</p></td><td><p>พัทยา</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Time</p></td><td><p>17:30</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>Date</p></td><td><p>18 Sep 2019</p></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
 
 </div>-->
+
+
 
 
 

@@ -6,6 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String name = session.getAttribute("name").toString();
+    String lname = session.getAttribute("lname").toString();
+    String from = session.getAttribute("from").toString();
+    String too = session.getAttribute("too").toString();
+    String date = session.getAttribute("date").toString();
+    String year = session.getAttribute("year").toString();
+    String time = session.getAttribute("time").toString();
+    String month = session.getAttribute("month").toString();
+    String minute = session.getAttribute("minute").toString();
+    String pic = session.getAttribute("pic").toString();
+%>
 <html>
 <head>
     <title>join tavel - เข้าร่วมการเดินทาง</title>
@@ -31,24 +43,24 @@
     </ul>
 </nav>
 <div class="pageBox">
-<h1>ร่วมเดินทางจาก กรุงเทพ ไป เชียงใหม่ </h1>
+<h1>ร่วมเดินทางจาก <%=from%> ไป <%=too%> </h1>
     <div class="tbJoin" align="center">
         <table width="100%" >
             <tr>
                 <td>
-                    <center><img src="./img/rating2.jpg" class="profileDriver-img" /></center>
+                    <center><img src="<%=pic%>" class="profileDriver-img" /></center>
                 </td>
                 <td>
-                    <h3>Sompong sonthi</h3>
+                    <h3><%=name%> <%=lname%></h3>
                     <table>
                         <tr>
                             <td><p>Status </p></td><td><p>Driver</p></td>
                         </tr>
                         <tr>
-                            <td><p>Time</p></td><td><p>14:30</p></td>
+                            <td><p>Time</p></td><td><p><%=time%>:<%=minute%></p></td>
                         </tr>
                         <tr>
-                            <td><p>Date</p></td><td><p>15 Sep 2019</p></td>
+                            <td><p>Date</p></td><td><p><%=date%> <%=month%> <%=year%></p></td>
                         </tr>
                         <tr>
                             <td><p>Passenger</p><td><img src="./img/rating1.jpg" class="profilePassenger-img" /> <img src="./img/rating3.jpg" class="profilePassenger-img" /> <img src="./img/rating4.jpg" class="profilePassenger-img" /> </td>

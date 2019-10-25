@@ -8,6 +8,9 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Arrays" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="db.ChatDbOperations" %>
+<%@ page import="javax.persistence.criteria.CriteriaBuilder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 
@@ -25,6 +28,7 @@
     ResultSet resultSet = null;
 
     ArrayList<String> names = new ArrayList<String>();
+    ArrayList<String> ids = new ArrayList<String>();
     ArrayList<String> lnames = new ArrayList<String>();
     ArrayList<String> from = new ArrayList<String>();
     ArrayList<String> too = new ArrayList<String>();
@@ -40,9 +44,67 @@
         String sql ="select * from place";
         resultSet = statement.executeQuery(sql);
 
-        while(resultSet.next()) {
-            response.setCharacterEncoding("UTF-8");
 
+
+
+
+        while(resultSet.next()) {
+
+            Calendar now = Calendar.getInstance();
+            int dayOfMonth = now.get(Calendar.DAY_OF_MONTH);
+            int monthh = now.get(Calendar.MONTH);
+            int yearr = now.get(Calendar.YEAR);
+            String moninnum ="";
+            String monthhinstr = resultSet.getString("month");
+            if (monthhinstr.equals("January")){
+                moninnum = "1";
+            }if(monthhinstr.equals("February")){
+                moninnum = "2";
+            }if(monthhinstr.equals("March")){
+                moninnum = "3";
+            }if(monthhinstr.equals("April")){
+                moninnum = "4";
+            }if(monthhinstr.equals("May")){
+                moninnum = "5";
+            }if(monthhinstr.equals("June")){
+                moninnum = "6";
+            }if(monthhinstr.equals("July")){
+                moninnum = "7";
+            }if(monthhinstr.equals("August")){
+                moninnum = "8";
+            }if(monthhinstr.equals("September")){
+                moninnum = "9";
+            }if(monthhinstr.equals("October")){
+                moninnum = "10";
+            }if(monthhinstr.equals("November")){
+                moninnum = "11";
+            }if(monthhinstr.equals("December")){
+                moninnum = "12";
+            }
+            String indate = resultSet.getString("date");
+            String inyear = resultSet.getString("year");
+            //moninnum is inmonth
+            int dateint = Integer.parseInt(indate);
+            int monthint = Integer.parseInt(moninnum);
+            int yearint = Integer.parseInt(inyear);
+
+            if(yearint < yearr ) {
+                int placeid = resultSet.getInt("id");
+                ChatDbOperations.deleteplace(placeid);
+            }
+            if(yearint == yearr) {
+                if (monthint < monthh) {
+                    int placeid = resultSet.getInt("id");
+                    ChatDbOperations.deleteplace(placeid);
+                }else if(dateint < dayOfMonth){
+                    int placeid = resultSet.getInt("id");
+                    ChatDbOperations.deleteplace(placeid);
+                }
+
+            }
+
+            response.setCharacterEncoding("UTF-8");
+            ids.add((resultSet.getString("id")));
             names.add((resultSet.getString("name")));
             lnames.add((resultSet.getString("lname")));
             from.add((resultSet.getString("from")));
@@ -64,6 +126,7 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
+    String[] ides = new String[ids.size()];
     String[] namers = new String[names.size()];
     String[] lnamear = new String[lnames.size()];
     String[] fromar = new String[from.size()];
@@ -75,6 +138,7 @@
     String[] yearar = new String[year.size()];
     String[] imgfullar = new String[imgfull.size()];
     namers = names.toArray(namers);
+    ides = ids.toArray(ides);
     lnamear = lnames.toArray(lnamear);
     fromar = from.toArray(fromar);
     tooar = too.toArray(tooar);
@@ -136,17 +200,18 @@
 <%
     System.out.println(namers.length);
     System.out.println(Arrays.toString(namers));
+    int len = namers.length;
     for (int i = 0; i < namers.length; i++) {
         int a = i%2;
-        System.out.println(i);
-        System.out.println(a);
 
         if(a == 0) {
-            System.out.println("blue");
+
             response.setContentType("text/html");
-            out.print("<div class=\"psPassenger\" align=\"center\">");
+            out.print("<form target=\"_blank\" class=\"Passenger\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
+            out.print("<div onclick=\"javascript: document.form.submit();\" name=\"test\" class=\"psPassenger\" id=\"box"+i+"\" align=\"center\" >");
             out.print("<table width=\"100%\">");
             out.print("<tr>");
+            out.print("<input type=\"hidden\" name=\"joinid\" value=\""+ides[i]+"\">");
             out.print("<td>");
             out.print("<center>");
             out.print("<img src=\"" + imgfullar[i] + "\" class =\"profile-img\" /></center>");
@@ -174,11 +239,14 @@
             out.print("</tr>");
             out.print("</table>");
             out.print("</div>");
+            out.print("</form>");
         }else {
-            System.out.println("green");
+
             response.setContentType("text/html");
-            out.print("<div class=\"psPassenger2\" align=\"center\">");
+            out.print("<form target=\"_blank\" class=\"Passenger2\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"post\">");
+            out.print("<div onclick=\"javascript: document.form.submit();\" name=\"test\" class=\"psPassenger2\" id=\"box"+i+"\" align=\"center\">");
             out.print("<table width=\"100%\">");
+            out.print("<input type=\"hidden\" name=\"joinid\" value=\""+ides[i]+"\">");
             out.print("<tr>");
             out.print("<td>");
             out.print("<center>");
@@ -207,13 +275,37 @@
             out.print("</tr>");
             out.print("</table>");
             out.print("</div>");
+            out.print("</form>");
 
         }
     }
 
 %>
 
+<script>
+    var form = document.getElementsByClassName("Passenger2");
+    form.action = "${pageContext.request.contextPath}/joincar";
+    var form2 = document.getElementsByClassName("Passenger");
+    form2.action = "${pageContext.request.contextPath}/joincar";
+    for( i = 0; i < <%=len%>; i++){
+        var something = document.getElementById("box"+i);
 
+        something.style.cursor = 'pointer';
+      /*  something.onclick = function() {
+            document.forms[0].submit();
+        };*/
+        something.onmouseover = function() {
+            this.style.backgroundColor = 'red';
+        };
+        something.onmouseout = function() {
+            this.style.backgroundColor = '';
+        };
+    }
+
+
+
+
+</script>
 
 </body>
 </html>

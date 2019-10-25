@@ -39,7 +39,7 @@ ul li a {
     background: rgba(255, 255, 255, 0.5);
 }
 .pageBox .resultBox1{
-    position: absolute;
+    position: relative;
     top: 270px;
     left: 50%;
     transform: translate(-50%,-50%);

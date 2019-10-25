@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
+import java.util.Calendar;
 @WebServlet("/createPlaceProcess")
 public class CreatePlaceProcessServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -50,6 +50,73 @@ public class CreatePlaceProcessServlet extends HttpServlet {
 		System.out.println("Year "+ user.getYear());
 		System.out.println("Numpassenger "+ user.getNumber());
 		System.out.println("Img "+ user.getImgfull());
+
+		Calendar now = Calendar.getInstance();
+		int dayOfMonth = now.get(Calendar.DAY_OF_MONTH);
+		int monthh = now.get(Calendar.MONTH);
+		int yearr = now.get(Calendar.YEAR);
+
+		String moninnum ="";
+		String monthhinstr = user.getMonth();
+		if (monthhinstr.equals("January")){
+			moninnum = "1";
+		}if(monthhinstr.equals("February")){
+			moninnum = "2";
+		}if(monthhinstr.equals("March")){
+			moninnum = "3";
+		}if(monthhinstr.equals("April")){
+			moninnum = "4";
+		}if(monthhinstr.equals("May")){
+			moninnum = "5";
+		}if(monthhinstr.equals("June")){
+			moninnum = "6";
+		}if(monthhinstr.equals("July")){
+			moninnum = "7";
+		}if(monthhinstr.equals("August")){
+			moninnum = "8";
+		}if(monthhinstr.equals("September")){
+			moninnum = "9";
+		}if(monthhinstr.equals("October")){
+			moninnum = "10";
+		}if(monthhinstr.equals("November")){
+			moninnum = "11";
+		}if(monthhinstr.equals("December")){
+			moninnum = "12";
+		}
+
+		String indate = user.getDay();
+		String inyear = user.getYear();
+		//moninnum is inmonth
+		int dateint = Integer.parseInt(indate);
+		int monthint = Integer.parseInt(moninnum);
+		int yearint = Integer.parseInt(inyear);
+
+
+		if(yearint < yearr ) {
+			request.setAttribute("user", user);
+			request.setAttribute("errorInNotSelect", "คุณกรอกวันที่ที่ผ่านมาแล้ว !");
+			dispatch = context.getRequestDispatcher("/home.jsp");
+			dispatch.forward(request, response);
+			return;
+		}
+		if(yearint == yearr) {
+			if (monthint < monthh) {
+				request.setAttribute("user", user);
+				request.setAttribute("errorInNotSelect", "คุณกรอกวันที่ที่ผ่านมาแล้ว !");
+				dispatch = context.getRequestDispatcher("/home.jsp");
+				dispatch.forward(request, response);
+				return;
+			}else if(dateint < dayOfMonth){
+				request.setAttribute("user", user);
+				request.setAttribute("errorInNotSelect", "คุณกรอกวันที่ที่ผ่านมาแล้ว !");
+				dispatch = context.getRequestDispatcher("/home.jsp");
+				dispatch.forward(request, response);
+				return;
+			}
+
+		}
+
+
 
 		if ( user.getFrom() == null ||user.getMonth() == null ||user.getYear() == null || user.getToo() == null || user.getTime() == null || user.getDay() == null || user.getNumber() == null) {
 			System.out.println("There is an error returning back!");
