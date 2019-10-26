@@ -54,29 +54,30 @@ public class ChatDbOperations {
         // Turn off auto-commit of db changes as they occur
         dbConn.setAutoCommit(false);
 
-        String insertStmt = "INSERT INTO `rb_2`.`place`  (`name`, `lname`,`from`,`too`,`date`,`month`,`year`,`time`,`minute`,`numberpass`,`platenum`,`numjoin`,`pnum`,`pic`)  " +
-                "VALUES (? ,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        String insertStmt = "INSERT INTO `rb_2`.`place`  (`ownerid`,`name`, `lname`,`from`,`too`,`date`,`month`,`year`,`time`,`minute`,`numberpass`,`platenum`,`numjoin`,`pnum`,`pic`)  " +
+                "VALUES (?,? ,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
 
         PreparedStatement queryStmt ;
         queryStmt = dbConn.prepareStatement(insertStmt);
        // queryStmt.setString(1, user.getName());
        // queryStmt.setString(2,user.getLname());
+		queryStmt.setInt(1, user.getId());
+		queryStmt.setString(2, user.getName());
+		queryStmt.setString(3,user.getLname());
+        queryStmt.setString(4,user.getFrom());
+		queryStmt.setString(5,user.getToo());
+        queryStmt.setString(6,user.getDay());
+        queryStmt.setString(7,user.getMonth());
+        queryStmt.setString(8,user.getYear());
+        queryStmt.setString(9,user.getTime());
+		queryStmt.setString(10,user.getMinute());
+		queryStmt.setString(11,user.getNumber());
+        queryStmt.setString(12,"OOO33กน");
+        queryStmt.setString(13,"O");
+        queryStmt.setString(14,user.getPnum());
+		queryStmt.setString(15,user.getImgfull());
 
-		queryStmt.setString(1, user.getName());
-		queryStmt.setString(2,user.getLname());
-        queryStmt.setString(3,user.getFrom());
-		queryStmt.setString(4,user.getToo());
-        queryStmt.setString(5,user.getDay());
-        queryStmt.setString(6,user.getMonth());
-        queryStmt.setString(7,user.getYear());
-        queryStmt.setString(8,user.getTime());
-		queryStmt.setString(9,user.getMinute());
-		queryStmt.setString(10,user.getNumber());
-        queryStmt.setString(11,"OOO33กน");
-        queryStmt.setString(12,"O");
-        queryStmt.setString(13,user.getPnum());
-		queryStmt.setString(14,user.getImgfull());
         System.out.println(queryStmt);
         try {
             queryStmt.executeUpdate();
@@ -133,11 +134,13 @@ public class ChatDbOperations {
 			loggedInUser.setEmail(userName);System.out.println("Set "+ userName);
 			loggedInUser.setPass(password);System.out.println("Set "+ password);
 			loggedInUser.setImgfull(imgfull);System.out.println("Set "+ imgfull);
+			loggedInUser.setId(userid);System.out.println("Set "+ userid);
 
 
 
 
-            changeUserStatus(userid, User.ONLINE);
+
+			changeUserStatus(userid, User.ONLINE);
 			
 			loggedInUser.setStatus(User.ONLINE);
 			

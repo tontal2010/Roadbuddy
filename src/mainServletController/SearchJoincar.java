@@ -23,9 +23,9 @@ public class SearchJoincar extends HttpServlet {
              response.setCharacterEncoding("UTF-8");
              HttpSession session = request.getSession(false);
 
-            String roll = request.getParameter("joinid");
+            String roll = request.getParameter("postid");
             Integer rollint = Integer.parseInt(roll);
-            System.out.println(roll);
+            System.out.println("post id = "+roll);
             /*DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             String dbURL = "jdbc:mysql://167.71.211.97:3306/rb_2";
             String dbUser = "roadbuddy";
@@ -69,7 +69,11 @@ public class SearchJoincar extends HttpServlet {
                     String time = rs.getString("time");
                     String minute = rs.getString("minute");
                     String pic = rs.getString("pic");
-
+                    String ownerid = rs.getString("ownerid");
+                    String passid = rs.getString("passengerid");
+                    String postid = rs.getString("id");
+                    String id = request.getParameter("id");
+                    session.setAttribute("id",id);
                     session.setAttribute("name", name);
                     session.setAttribute("lname", lname);
                     session.setAttribute("from", from);
@@ -80,6 +84,9 @@ public class SearchJoincar extends HttpServlet {
                     session.setAttribute("minute", minute);
                     session.setAttribute("month", month);
                     session.setAttribute("pic", pic);
+                    session.setAttribute("passid", passid);
+                    session.setAttribute("ownerid", ownerid);
+                    session.setAttribute("postid",postid);
                     RequestDispatcher dispatch;
                     ServletContext context;
                     context = getServletContext();

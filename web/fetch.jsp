@@ -159,9 +159,9 @@
           rel="stylesheet">
     <style type="text/css">
 
-        .psPassenger{
+        .psPassenger22{
             position: relative;
-            top: 17%;
+            top: 100px;
             left: 50%;
             padding: 20px 10px ;
             transform: translate(-50%,-50%);
@@ -171,9 +171,9 @@
             box-sizing: border-box;
             background: rgba(118, 224, 255, 0.5);
         }
-        .psPassenger2{
+        .psPassenger222{
             position: relative;
-            top: 17%;
+            top: 100px;
             left: 50%;
             padding: 20px 10px ;
             transform: translate(-50%,-50%);
@@ -183,12 +183,12 @@
             box-sizing: border-box;
             background: rgba(101, 255, 153, 0.5);
         }
-        .psPassenger2 .profile-img{
+        .psPassenger222 .profile-img{
             width: 120px;
             height: 120px;
             border-radius: 50%;
         }
-        .psPassenger .profile-img{
+        .psPassenger22 .profile-img{
             width: 120px;
             height: 120px;
             border-radius: 50%;
@@ -206,9 +206,9 @@
 
         if(a == 0) {
 
-            response.setContentType("text/html");time
-            out.print("<form id=\""+i+"\" target=\"_blank\" class=\"Passenger\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
-            out.print("<div  name=\"test\" class=\"psPassenger\" id=\"box"+i+"\" align=\"center\" >");
+            response.setContentType("text/html");
+            out.print("<form id=\""+i+"\" target=\"_parent\" class=\"Passenger\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
+            out.print("<div  name=\"test\" class=\"psPassenger22\" id=\"box"+i+"\" align=\"center\" >");
             out.print("<table width=\"100%\">");
             out.print("<tr>");
             out.print("<input type=\"hidden\" name=\"joinid\" value=\""+ides[i]+"\">");
@@ -243,8 +243,8 @@
         }else {
 
             response.setContentType("text/html");
-            out.print("<form id=\""+i+"\" target=\"_blank\" class=\"Passenger2\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
-            out.print("<div name=\"test\" class=\"psPassenger2\" id=\"box"+i+"\" align=\"center\">");
+            out.print("<form id=\""+i+"\" target=\"_parent\" class=\"Passenger2\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
+            out.print("<div name=\"test\" class=\"psPassenger222\" id=\"box"+i+"\" align=\"center\">");
             out.print("<table width=\"100%\">");
             out.print("<input type=\"hidden\" name=\"joinid\" value=\""+ides[i]+"\">");
             out.print("<tr>");
@@ -292,7 +292,9 @@
 
         something.style.cursor = 'pointer';
         something.onclick = function() {
+
             this.parentNode.submit();
+
         };
         something.onmouseover = function() {
             this.style.backgroundColor = 'red';

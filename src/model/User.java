@@ -303,13 +303,14 @@ public class User implements Serializable{
 	 public void setYear(String Year) {
 		 this.Year = Year;
 	 }
-	@Override
+
 	/*public String toString() {
 		return " {id:" + id + ", name:\"" + name + "\", pass:\"" + pass
 				+ "\", status:\"" + status + "\"}";
 	}*/
+
 	public String toString() {
-		return  name + "#" + lname +"#"+ email + "#" + pnum + "#" + img + "#" + imgfull + "#" + sex + "#" + byear + "#" + bmonth + "#" + bday +"#";
+		return  name + "#" + lname +"#"+ email + "#" + pnum + "#" + img + "#" + imgfull + "#" + sex + "#" + byear + "#" + bmonth + "#" + bday +"#"+ id+"#";
 	}
 	
 }

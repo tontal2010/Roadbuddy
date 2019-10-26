@@ -74,6 +74,7 @@ var Demo = (function() {
             $uploadCrop.croppie('result', {
                 type: 'base64',
                 format:'jpeg',
+                //size: 'original'
                 size: {width: 150,height: 150}
             })
 
