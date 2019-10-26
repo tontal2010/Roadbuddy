@@ -206,9 +206,9 @@
 
         if(a == 0) {
 
-            response.setContentType("text/html");
-            out.print("<form target=\"_blank\" class=\"Passenger\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
-            out.print("<div onclick=\"javascript: document.form.submit();\" name=\"test\" class=\"psPassenger\" id=\"box"+i+"\" align=\"center\" >");
+            response.setContentType("text/html");time
+            out.print("<form id=\""+i+"\" target=\"_blank\" class=\"Passenger\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
+            out.print("<div  name=\"test\" class=\"psPassenger\" id=\"box"+i+"\" align=\"center\" >");
             out.print("<table width=\"100%\">");
             out.print("<tr>");
             out.print("<input type=\"hidden\" name=\"joinid\" value=\""+ides[i]+"\">");
@@ -243,8 +243,8 @@
         }else {
 
             response.setContentType("text/html");
-            out.print("<form target=\"_blank\" class=\"Passenger2\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"post\">");
-            out.print("<div onclick=\"javascript: document.form.submit();\" name=\"test\" class=\"psPassenger2\" id=\"box"+i+"\" align=\"center\">");
+            out.print("<form id=\""+i+"\" target=\"_blank\" class=\"Passenger2\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
+            out.print("<div name=\"test\" class=\"psPassenger2\" id=\"box"+i+"\" align=\"center\">");
             out.print("<table width=\"100%\">");
             out.print("<input type=\"hidden\" name=\"joinid\" value=\""+ides[i]+"\">");
             out.print("<tr>");
@@ -284,16 +284,16 @@
 
 <script>
     var form = document.getElementsByClassName("Passenger2");
-    form.action = "${pageContext.request.contextPath}/joincar";
+    form.action = "${pageContext.request.contextPath}/joincar";// /w/joincar
     var form2 = document.getElementsByClassName("Passenger");
     form2.action = "${pageContext.request.contextPath}/joincar";
     for( i = 0; i < <%=len%>; i++){
         var something = document.getElementById("box"+i);
 
         something.style.cursor = 'pointer';
-      /*  something.onclick = function() {
-            document.forms[0].submit();
-        };*/
+        something.onclick = function() {
+            this.parentNode.submit();
+        };
         something.onmouseover = function() {
             this.style.backgroundColor = 'red';
         };
