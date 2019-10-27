@@ -164,7 +164,6 @@ public class clickProfileProcessServlet extends HttpServlet {
 		session =request.getSession();
 		session.setAttribute("name",name);
 		session.setAttribute("lname",lname);
-		session.setAttribute("email",email2);
 		session.setAttribute("pnum",pnum);
 		session.setAttribute("imgfull",imgfull);
 		session.setAttribute("sex",sex);
