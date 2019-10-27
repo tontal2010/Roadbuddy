@@ -96,6 +96,7 @@ public class LoginProcessServlet extends HttpServlet {
 				String month = "";
 				String day = "";
 				String id = "";
+				String bio = "";
 				try {
 
 					request.setCharacterEncoding("UTF-8");
@@ -142,6 +143,9 @@ public class LoginProcessServlet extends HttpServlet {
 							if (numslash == 11) {
 								id = id + s;
 							}
+							if (numslash == 12) {
+								bio = bio + s;
+							}
 						} else {
 							if (numslash == 1) {
 
@@ -179,6 +183,10 @@ public class LoginProcessServlet extends HttpServlet {
 							}
 							else if (numslash == 11) {
 								System.out.println("string ID = " + id);
+								numslash = numslash + 1;
+							}
+							else if (numslash == 12) {
+								System.out.println("string bio = " + bio);
 								numslash = numslash + 1;
 							}
 						}

@@ -6,9 +6,23 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
 
-    String name = "",lname = "",email ="",pnum ="",fullimg ="",sex ="",byear ="",loginuser ="";
+
+<%
+    String owner = session.getAttribute("owner").toString();
+    String followdisplay = "block";
+    String unfollowdisplay = "block";
+    String messagedisplay = "block";
+    String historydisplay = "block";
+    String editdisplay = "block";
+    if(owner.equals("1")) {
+        followdisplay = "none";
+        unfollowdisplay = "none";
+        messagedisplay = "none";
+        historydisplay = "block";
+        editdisplay = "block";
+    }
+    String name = "",emerpnum="",bio = "",lname = "",email ="",pnum ="",fullimg ="",sex ="",byear ="",loginuser ="";
     int year=0;
     try {
         loginuser = session.getAttribute("loginUser").toString();
@@ -20,6 +34,8 @@
         sex = session.getAttribute("sex").toString();
         byear = session.getAttribute("year").toString();
         fullimg = session.getAttribute("imgfull").toString();
+        emerpnum = session.getAttribute("emerpnum").toString();
+        bio = session.getAttribute("bio").toString();
 
         Integer result = Integer.valueOf(byear);
         System.out.println("byear = "+ byear + "result" +result );
@@ -65,7 +81,7 @@
         <div class="content">
             <div class="sub-content">
                 <h1><%=name%> <%=lname%></h1>
-                <span>เดินทาง กรุงเทพ หัวหิน ทุกวันศุกร์ ใครสนใจร่วมเดินทางติดต่อได้เลยค่ะ</span>
+                <span><%=bio%></span>
             </div>
 
             <br>
@@ -77,13 +93,13 @@
             </div>
             <br>
             <div class="btnAll" align="center">
-                <button class="buttonFollow"  style="vertical-align:middle"><span>Follow</span> </button>
-                <button class="buttonUnFollow"  style="vertical-align:middle"><span>UnFollow</span> </button>
-                <button class="buttonMessenger"  style="vertical-align:middle"><span>Messenger</span> </button>
+                <button class="buttonFollow"  style="vertical-align:middle;display: <%=followdisplay%>;"><span>Follow</span> </button>
+                <button class="buttonUnFollow"  style="vertical-align:middle;display: <%=unfollowdisplay%>;"><span>UnFollow</span> </button>
+                <button class="buttonMessenger"  style="vertical-align:middle;display: <%=messagedisplay%>;"><span>Messenger</span> </button>
                 <br>
-                <button class="buttonHistory"  style="vertical-align:middle"><span>History</span> </button>
+                <button class="buttonHistory"  style="vertical-align:middle;display: <%=historydisplay%>;"><span>History</span> </button>
                 <br>
-                <button class="buttonEditProfile"  style="vertical-align:middle"><span>Edit Profile</span> </button>
+                <button class="buttonEditProfile" onclick="window.location.href = 'edit_profile.jsp';"  style="vertical-align:middle;display: <%=editdisplay%>;"><span>Edit Profile</span> </button>
 
             </div>
         </div>

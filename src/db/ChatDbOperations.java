@@ -17,14 +17,14 @@ public class ChatDbOperations {
 		Connection dbConn;
 		System.out.println("Trying to create dbConn");
 		dbConn = ChatAppDataSource.getConnection();
-		
+
 		// Turn off auto-commit of db changes as they occur
 		dbConn.setAutoCommit(false);
-		
-		String insertStmt = "INSERT INTO `rb_2`.`rb_member`  (`name`, `pass`,`sex`,`pnum`,`emerpnum`,`email`,`lname`,`status`,`uploadimg`,`birthday`)  " +
-				"VALUES (? ,?,?,?,?,?,?,?,?,?);";
 
-				
+		String insertStmt = "INSERT INTO `rb_2`.`rb_member`  (`name`, `pass`,`sex`,`pnum`,`emerpnum`,`email`,`lname`,`status`,`uploadimg`,`birthday`,`bio`)  " +
+				"VALUES (? ,?,?,?,?,?,?,?,?,?,?);";
+
+
 		PreparedStatement queryStmt ;
 		queryStmt = dbConn.prepareStatement(insertStmt);
 		queryStmt.setString(1, user.getName());
@@ -37,6 +37,7 @@ public class ChatDbOperations {
 		queryStmt.setString(8,"offline");
 		queryStmt.setString(9,"0");
 		queryStmt.setString(10,user.getBirthday());
+		queryStmt.setString(11,"ยังไม่มีคำแนะนำตัว");
 		System.out.println(queryStmt);
 		try {
 			queryStmt.executeUpdate();
@@ -46,6 +47,7 @@ public class ChatDbOperations {
 			dbErrorRollBackTx(dbConn); // call this function to give error and ROLLBACK
 		}
 	}
+
     public static void insertPlace(User user) throws SQLException{
         Connection dbConn;
         System.out.println("Trying to create dbConn");
@@ -126,7 +128,10 @@ public class ChatDbOperations {
 			String img = results.getString("uploadimg");
 			String bd = results.getString("birthday");
 			String imgfull = results.getString("img");
+			String bio = results.getString("bio");
+
 			loggedInUser.setBirthday(bd);System.out.println("Set "+ bd);
+			loggedInUser.setEmerpnum(emerpnum);System.out.println("Set "+ emerpnum);
 			loggedInUser.setImg(img);System.out.println("Set "+ img);
 			loggedInUser.setName(name);System.out.println("Set "+ name);
 			loggedInUser.setLname(lname);System.out.println("Set "+ lname);
@@ -135,6 +140,7 @@ public class ChatDbOperations {
 			loggedInUser.setPass(password);System.out.println("Set "+ password);
 			loggedInUser.setImgfull(imgfull);System.out.println("Set "+ imgfull);
 			loggedInUser.setId(userid);System.out.println("Set "+ userid);
+			loggedInUser.setBio(bio);System.out.println("Set "+ bio);
 
 
 
@@ -199,7 +205,40 @@ public class ChatDbOperations {
 		}
 		
 	}
-	
+	public static void changeUserData(User user)throws ChatDbFailure,SQLException {
+		Connection dbConn;
+		int rowsAffected;
+		String queryStr = "UPDATE rb_2.rb_member SET name = ?,lname = ?,bio = ?,pnum = ?,emerpnum = ?,email = ? where userid = ?;";
+
+		dbConn = ChatAppDataSource.getConnection();
+
+		// Turn off auto-commit so we can use transactions
+		dbConn.setAutoCommit(false);
+
+		// Update the balance
+		try (PreparedStatement updateCurBalStmt = dbConn.prepareStatement(queryStr)) {
+			updateCurBalStmt.setString(1, user.getName());
+			updateCurBalStmt.setString(2, user.getLname());
+			updateCurBalStmt.setString(3, user.getBio());
+			updateCurBalStmt.setString(4, user.getPnum());
+			updateCurBalStmt.setString(5, user.getEmerpnum());
+			updateCurBalStmt.setString(6, user.getEmail());
+			updateCurBalStmt.setInt(7, user.getId());
+
+			rowsAffected = updateCurBalStmt.executeUpdate();
+
+			if(rowsAffected != 1){
+				dbErrorRollBackTx(dbConn);
+				throw new ChatDbFailure(ChatDbFailure.INVALID_CREDENTIAL);
+			}
+			dbConn.commit(); /* Everything went OK */
+			dbConn.close();
+			//	System.out.println("Status updated to " +newStatus);
+		} catch (SQLException ex) {
+			dbErrorRollBackTx(dbConn);
+		}
+
+	}
 
 	public static void changeUserStatus(String name, String newStatus)throws ChatDbFailure,SQLException {
 		Connection dbConn;
@@ -312,7 +351,7 @@ public class ChatDbOperations {
 		
 		User userWithId= new User();
 		int userid;
-		String name,lname,pnum,email,uploadimg,imgfull,sex,bd;
+		String name,lname,pnum,email,uploadimg,imgfull,sex,bd,bio,emerpnum;
 		
 		results = queryStmt.executeQuery(queryStr);
 		while (results.next()) { // process results
@@ -326,6 +365,8 @@ public class ChatDbOperations {
 			imgfull = results.getString("img");
 			sex = results.getString("sex");
 			bd = results.getString("birthday");
+			bio = results.getString("bio");
+			emerpnum = results.getString("emerpnum");
 			String year ="";
 			String month ="";
 			String day ="";
@@ -375,6 +416,8 @@ public class ChatDbOperations {
 			userWithId.setImg(uploadimg);
 			userWithId.setImgfull(imgfull);
 			userWithId.setSex(sex);
+			userWithId.setBio(bio);
+			userWithId.setEmerpnum(emerpnum);
 
 		}
 		

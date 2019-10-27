@@ -17,6 +17,7 @@ public class User implements Serializable{
 	private String email;
 	private String lname;
 	private String pass2;
+	 private String bio;
 	// Driver Create
 	private String From;
 	private String Too;
@@ -159,6 +160,10 @@ public class User implements Serializable{
 			if(!request.getParameter("id").equals(""))
 				id = Integer.parseInt(request.getParameter("id"));
 		}
+		if(request.getParameter("bio") != null){
+			if(!request.getParameter("bio").equals(""))
+				bio = request.getParameter("bio");
+		}
 
 
 
@@ -170,6 +175,9 @@ public class User implements Serializable{
 	}
 	 public String getImg() {
 		 return img;
+	 }
+	 public String getBio() {
+		 return bio;
 	 }
 	 public String getBday() {
 		 return bday;
@@ -279,6 +287,9 @@ public class User implements Serializable{
 	public void setTime(String Time) {
 		this.Time = Time;
 	}
+	 public void setBio(String Bio) {
+		 this.bio = Bio;
+	 }
 	public void setDay(String Day) {
 		this.Day = Day;
 	}
@@ -310,7 +321,7 @@ public class User implements Serializable{
 	}*/
 
 	public String toString() {
-		return  name + "#" + lname +"#"+ email + "#" + pnum + "#" + img + "#" + imgfull + "#" + sex + "#" + byear + "#" + bmonth + "#" + bday +"#"+ id+"#";
+		return  name + "#" + lname +"#"+ email + "#" + pnum + "#" + img + "#" + imgfull + "#" + sex + "#" + byear + "#" + bmonth + "#" + bday +"#"+ id+"#"+ bio+"#"+ emerpnum+"#";
 	}
 	
 }

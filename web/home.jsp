@@ -46,6 +46,8 @@
         String month = "";
         String day = "";
         String id = "";
+        String bio = "";
+        String emerpnum = "";
         try {
 
             response.setCharacterEncoding("UTF-8");
@@ -93,6 +95,12 @@
                 if (numslash == 11) {
                     id = id + s;
                 }
+                if (numslash == 12) {
+                    bio = bio + s;
+                }
+                if (numslash == 13) {
+                    emerpnum= emerpnum + s;
+                }
             } else {
                 if (numslash == 1) {
 
@@ -129,6 +137,12 @@
                     numslash = numslash + 1;
                 }else if (numslash == 11) {
                     System.out.println("string ID = " + id);
+                    numslash = numslash + 1;
+                }else if (numslash == 12) {
+                    System.out.println("string bio = " + bio);
+                    numslash = numslash + 1;
+                }else if (numslash == 13) {
+                    System.out.println("string emerpnum = " + emerpnum);
                     numslash = numslash + 1;
                 }
             }
@@ -689,7 +703,7 @@
             if(a == 0) {
 
                 response.setContentType("text/html");
-                out.print("<form id=\""+i+"\" target=\"_parent\" class=\"Passenger\" action=\"/w/joincar\" method=\"get\">");
+                out.print("<form id=\""+i+"\" target=\"_parent\" class=\"Passenger\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
                 out.print("<div  name=\"test\" class=\"psPassenger22\" id=\"box"+i+"\" align=\"center\" >");
                 out.print("<table width=\"100%\">");
                 out.print("<tr>");
@@ -726,7 +740,7 @@
             }else {
 
                 response.setContentType("text/html");
-                out.print("<form id=\""+i+"\" target=\"_parent\" class=\"Passenger2\" action=\"/w/joincar\" method=\"get\">");
+                out.print("<form id=\""+i+"\" target=\"_parent\" class=\"Passenger2\" action=\"/Roadbuddy_war_exploded/joincar\" method=\"get\">");
                 out.print("<div name=\"test\" class=\"psPassenger222\" id=\"box"+i+"\" align=\"center\">");
                 out.print("<table width=\"100%\">");
                 out.print("<input type=\"hidden\" name=\"id\" value=\""+id+"\">");
@@ -770,9 +784,9 @@
 
 <script>
     var form = document.getElementsByClassName("Passenger2");
-    form.action = "${pageContext.request.contextPath}/joincar";// /w/joincar
+    form.action = "Roadbuddy_war_exploded/joincar";// /w/joincar
     var form2 = document.getElementsByClassName("Passenger");
-    form2.action = "${pageContext.request.contextPath}/joincar";
+    form2.action = "Roadbuddy_war_exploded/joincar";
     for( i = 0; i < <%=len%>; i++){
         var something = document.getElementById("box"+i);
 

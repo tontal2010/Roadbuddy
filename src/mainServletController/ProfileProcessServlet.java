@@ -57,6 +57,9 @@ public class ProfileProcessServlet extends HttpServlet {
 		String year="";
 		String month="";
 		String day="";
+		String id="";
+		String bio="";
+		String emerpnum="";
 		request.setCharacterEncoding( "UTF-8" );
 		System.out.println(datastr);
 		int numslash = 1;
@@ -96,6 +99,15 @@ public class ProfileProcessServlet extends HttpServlet {
 				}
 				if (numslash == 10) {
 					day = day + s;
+				}
+				if (numslash == 11) {
+					id = id + s;
+				}
+				if (numslash == 12) {
+					bio = bio + s;
+				}
+				if (numslash == 13) {
+					emerpnum = emerpnum + s;
 				}
 			} else {
 				if (numslash == 1) {
@@ -137,6 +149,18 @@ public class ProfileProcessServlet extends HttpServlet {
 					System.out.println("string Day = " + day);
 					numslash = numslash + 1;
 				}
+				else if (numslash == 11) {
+					System.out.println("string ID = " + id);
+					numslash = numslash + 1;
+				}
+				else if (numslash == 12) {
+					System.out.println("string bio = " + bio);
+					numslash = numslash + 1;
+				}
+				else if (numslash == 13) {
+					System.out.println("string emerpnum = " + emerpnum);
+					numslash = numslash + 1;
+				}
 			}
 		}
 		session =request.getSession();
@@ -148,6 +172,10 @@ public class ProfileProcessServlet extends HttpServlet {
 		session.setAttribute("sex",sex);
 		session.setAttribute("year",year);
 		session.setAttribute("loginUser",data);
+		session.setAttribute("owner","1");
+		session.setAttribute("id",id);
+		session.setAttribute("bio",bio);
+		session.setAttribute("emerpnum",emerpnum);
 		dispatch = context.getRequestDispatcher("/profile2.jsp");
 		dispatch.forward(request, response);
 	}
