@@ -112,7 +112,7 @@ String name = "",id="",bio = "",emerpnum = "",lname = "",email ="",pnum ="",full
     <div class="modal-content">
         <form name="block" action="${pageContext.request.contextPath}/profileprocess" method="get"></form>
         <hz>ทำการแก้ไขข้อมูลสำเร็จ !</hz>
-        <h4>ระบบกำลังจะพาไปหน้า Profile . . .</h4>
+        <h4>ระบบกำลังจะพาไปหน้า Profile <img style="width: 35px;height: 35px;" src="img/load.gif" alt=""> </h4>
 
     </div>
 </div>
