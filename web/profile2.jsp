@@ -22,6 +22,13 @@
         historydisplay = "block";
         editdisplay = "block";
     }
+    if(owner.equals("0")) {
+        followdisplay = "block";
+        unfollowdisplay = "none";
+        messagedisplay = "block";
+        historydisplay = "block";
+        editdisplay = "none";
+    }
     String name = "",emerpnum="",bio = "",lname = "",email ="",pnum ="",fullimg ="",sex ="",byear ="",loginuser ="";
     int year=0;
     try {

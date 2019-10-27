@@ -27,15 +27,26 @@
     String img3 = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D";
     String img4 = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D";
     String img5 = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D";
+    String passid1 = "";
+    String passid2 = "";
+    String passid3 = "";
+    String passid4 = "";
+    String passid5 = "";
     String type = "submit";
     String btntxt = "JOIN";
+    String sty1 = "hidden";
+    String sty2 = "hidden";
+    String sty3 = "hidden";
+    String sty4 = "hidden";
+    String sty5 = "hidden";
 
     String passid = "";
     String passen = "";
+    int numslash = 1;
     try {
         passid = session.getAttribute("passid").toString();
         System.out.println(passid);
-        int numslash = 1;
+
         String passen1 = "";
         String passen2 = "";
         String passen3 = "";
@@ -114,41 +125,61 @@
         try{
             connection = DriverManager.getConnection(connectionUrl, userid, password);
             statement=connection.createStatement();
-            if(passen1 != null) {
+            if(numslash >= 2) {
                 String sql = "select * from rb_member where userid = '" + passen1 + "'";
                 resultSet = statement.executeQuery(sql);
+                sty1 = "image";
                 while (resultSet.next()) {
                     img1 = resultSet.getString("img");
+                    passid1 = resultSet.getString("userid");
                 }
+            }else {
+                sty1 = "hidden";
             }
-            if(passen2 != null) {
+            if(numslash >= 3) {
                 String sql2 = "select * from rb_member where userid = '" + passen2 + "'";
                 resultSet2 = statement.executeQuery(sql2);
+                sty2 = "image";
                while (resultSet2.next()) {
                    img2 = resultSet2.getString("img");
+                   passid2 = resultSet2.getString("userid");
                }
+            }else {
+                sty2 = "hidden";
             }
-            if(passen3 != null) {
+            if(numslash >= 4) {
                 String sql3 = "select * from rb_member where userid = '" + passen3 + "'";
                 resultSet3 = statement.executeQuery(sql3);
+                sty3 = "image";
                 while (resultSet3.next()) {
                     img3 = resultSet3.getString("img");
+                    passid3 = resultSet3.getString("userid");
                 }
+            }else {
+                sty3 = "hidden";
             }
 
-            if(passen4 != null) {
+            if(numslash >= 5) {
                 String sql4 = "select * from rb_member where userid = '" + passen4 + "'";
                 resultSet4 = statement.executeQuery(sql4);
+                sty4 = "image";
                 while (resultSet4.next()) {
                     img4 = resultSet4.getString("img");
+                    passid4 = resultSet4.getString("userid");
                 }
+            }else {
+                sty4 = "hidden";
             }
-            if(passen5 != null) {
+            if(numslash >= 6) {
                 String sql5 = "select * from rb_member where userid = '" + passen5 + "'";
                 resultSet5 = statement.executeQuery(sql5);
+                sty5 = "image";
                 while (resultSet5.next()) {
                     img5 = resultSet5.getString("img");
+                    passid5 = resultSet5.getString("userid");
                 }
+            }else {
+                sty5 = "hidden";
             }
             connection.close();
         } catch (Exception e) {
@@ -205,7 +236,7 @@
                             <td><p>Date</p></td><td><p><%=date%> <%=month%> <%=year%></p></td>
                         </tr>
                         <tr>
-                           <td><p>Passenger</p><td><%=passen%><img src="<%=img1%>" class="profilePassenger-img" /> <img src="<%=img2%>" class="profilePassenger-img" /> <img src="<%=img3%>" class="profilePassenger-img" /> <img src="<%=img4%>" class="profilePassenger-img" /> <img src="<%=img5%>" class="profilePassenger-img" /> </td>
+                           <td><p>Passenger</p><td><%=passen%><form style="width: 0px;height: 0px;display: inline;" action="${pageContext.request.contextPath}/clickprofileprocess" method="get"><input type="hidden" value="<%=passid1%>" name="id2"> <input type="<%=sty1%>" src="<%=img1%>" alt="Submit" class="profilePassenger-img" /></form> <form style="width: 0px;height: 0px;display: inline;" action="${pageContext.request.contextPath}/clickprofileprocess" method="get"><input type="hidden" value="<%=passid2%>" name="id2"><input type="<%=sty2%>" alt="Submit" src="<%=img2%>" class="profilePassenger-img" /></form> <form style="width: 0px;height: 0px;display: inline;" action="${pageContext.request.contextPath}/clickprofileprocess" method="get"><input type="hidden" value="<%=passid3%>" name="id2"><input type="<%=sty3%>" alt="Submit" src="<%=img3%>" class="profilePassenger-img" /></form> <form style="width: 0px;height: x0px;display: inline;" action="${pageContext.request.contextPath}/clickprofileprocess" method="get"><input type="hidden" value="<%=passid4%>" name="id2"><input alt="Submit" type="<%=sty4%>" src="<%=img4%>" class="profilePassenger-img" /></form> <form style="width: 0px;height: 0px;display: inline;" action="${pageContext.request.contextPath}/clickprofileprocess" method="get"><input type="hidden" value="<%=passid5%>" name="id2"><input alt="Submit" type="<%=sty5%>" src="<%=img5%>" class="profilePassenger-img" /></form> </td>
                            <!-- <td><p>Passenger</p><td></td> -->
                         </tr>
                     </table>
